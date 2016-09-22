@@ -1,6 +1,12 @@
 <p class="lead">
-	<strong>Demoiselle JEE</strong> is a documentation generator that uses a simple folder structure and Markdown files to create custom documentation on the fly. It helps you create great looking documentation in a developer friendly way.
+	<strong>Framework Demoiselle</strong> implementa o conceito de framework integrador. Seu objetivo é facilitar a construção de aplicações minimizando tempo dedicado à escolha e integração de frameworks especialistas, o que resulta no aumento da produtividade e garante a manutenibilidade dos sistemas. Disponibiliza mecanismos reusáveis voltados as funcionalidades mais comuns de uma aplicação (arquitetura, segurança, transação, mensagem, configuração, tratamento de exceções, etc).
 </p>
+
+<hr/>
+
+# Referência
+
+* [Documentação 2.5.0-RC1 - html](http://demoiselle.sourceforge.net/docs/framework/reference/2.5.0-RC1/html/)
 
 <hr/>
 <h3>Features</h3>
@@ -10,25 +16,16 @@
 
 #### For Authors
 
-* [Auto Generated Navigation / Page sorting](01_Features/Navigation_and_Sorting.md)
-* [Internal documentation links](01_Features/Internal_links.md)
-* [Github Flavored Markdown](01_Features/GitHub_Flavored_Markdown.md)
-* [Auto created homepage/landing page](01_Features/Landing_page.md)
-* [Multiple Output Formats](01_Features/Multiple_Output_Formats.md)
-* [Multiple Languages Support](01_Features/Multilanguage.md)
-* [No Build Step](01_Features/Live_mode.md)
-* [Static Output Generation](01_Features/Static_Site_Generation.md)
-* [Table of Contents](01_Features/Table_of_contents.md)
+* Item 1
+* Item 2
 
 </div>
 <div class=col-third>
 
 #### For Developers
 
-* [Auto Syntax Highlighting](01_Features/Auto_Syntax_Highlight.md)
-* [Extend Daux.io with Processors](01_For_Developers/Creating_a_Processor.md)
-* Full access to the internal API to create new pages programatically
-* Work with pages metadata
+* Item 1
+* Item 2
 
 </div>
 <div class=col-third>
@@ -46,9 +43,3 @@
 </div>
 
 <hr/>
-
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/983836026/?value=0&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
