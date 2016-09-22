@@ -28,7 +28,7 @@
         "auto_toc": false,
         "inherit_index": true,
         "edit_on_github": "demoiselle/framework-documentation/blob/master/docs",
-        "repo": "https://github.com/demoiselle/framework",
+        "repo": "demoiselle/framework",
         "links": {		    
             "Framework GitHub Repo": "https://github.com/demoiselle/framework",
             "Help/Support/Bugs": "https://github.com/demoiselle/framework/issues"
