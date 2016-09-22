@@ -30,7 +30,7 @@
         "date_modified": true,
         "float": false,
         "auto_landing": true,
-        "search": true,
+        "search": false,
         "auto_toc": false,
         "inherit_index": false,
 
