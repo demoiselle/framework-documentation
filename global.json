@@ -26,7 +26,7 @@
         "auto_landing": true,
         "search": false,
         "auto_toc": false,
-        "inherit_index": false,
+        "inherit_index": true,
         "edit_on_github": "demoiselle/framework-documentation/blob/master/docs",
         "repo": "https://github.com/demoiselle/framework",
         "links": {		    

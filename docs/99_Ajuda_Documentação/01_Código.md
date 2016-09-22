@@ -1,6 +1,6 @@
 Highlight.js highlights syntax in code examples on blogs, forums and in fact on any web pages. It's very easy to use because it works automatically: finds blocks of code, detects a language, highlights it. [Learn more.](https://highlightjs.org/)
 
-You can even use [Github Flavored Markdown](!Exemplos/Markdown)
+You can even use [Github Flavored Markdown](!Ajuda_Documentação/Markdown)
 
 
 **Python**
