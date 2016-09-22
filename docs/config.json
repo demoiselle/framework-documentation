@@ -20,7 +20,7 @@
         "inherit_index": true,
 
         "repo": "demoiselle/framework",
-        "edit_on_github": "framework-documentation/blob/master/docs",        
+        "edit_on_github": "demoiselle/framework-documentation/blob/master/docs",        
         "google_analytics": "",
         "links": {
             "Framework GitHub Repo": "https://github.com/demoiselle/framework",
