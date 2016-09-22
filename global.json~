@@ -36,7 +36,7 @@
 
         "repo": "",
         "links": {
-		"GitHub Repo": "https://github.com/demoiselle/framework"
+		"GitHub Repo": "https://github.com/demoiselle/framework",
         },
 
         "google_analytics": false,
