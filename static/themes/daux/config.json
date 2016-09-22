@@ -3,6 +3,10 @@
     "fonts": ["https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic"],
     "js": [],
     "variants": {
+        "demoiselle": {
+            "favicon": "<theme_url>img/favicon-blue.png",
+            "css": ["<theme_url>css/theme-demoiselle.min.css"]
+        },
         "blue": {
             "favicon": "<theme_url>img/favicon-blue.png",
             "css": ["<theme_url>css/theme-blue.min.css"]

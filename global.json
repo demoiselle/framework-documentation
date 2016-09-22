@@ -17,7 +17,7 @@
         "clean_urls": true
     },
     "html": {
-        "theme": "daux-navy",
+        "theme": "daux-demoiselle",
         "breadcrumbs": false,
 	    "breadcrumb_separator": "Chevrons",        
         "date_modified": true,
