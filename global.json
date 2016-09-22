@@ -23,9 +23,9 @@
     },
 
     "html": {
-        "theme": "common",
+        "theme": "daux-navy",
         "breadcrumbs": true,
-	"breadcrumb_separator": "Chevrons",
+	    "breadcrumb_separator": "Chevrons",
         "toggle_code": true,
         "date_modified": true,
         "float": false,

@@ -1,7 +1,7 @@
 {
-    "title": "DAUX.IO",
-    "tagline": "The Easiest Way To Document Your Project",
-    "author": "Justin Walsh",
+    "title": "Demoiselle JEE",
+    "tagline": "Documentação do Framework Demoiselle JEE",
+    "author": "SERPRO",
     "image": "app.png",
     "ignore": {
             "files": ["Work_In_Progress.md"],
@@ -11,7 +11,7 @@
         "clean_urls": true
     },
     "html": {
-        "theme": "daux-blue",
+        "theme": "daux-navy",
         "breadcrumbs": true,
         "breadcrumb_separator": "Chevrons",
         "toggle_code": true,
@@ -19,15 +19,12 @@
         "float": true,
         "inherit_index": true,
 
-        "repo": "justinwalsh/daux.io",
-        "edit_on_github": "justinwalsh/daux.io/blob/master/docs",
-        "twitter": ["justin_walsh", "todaymade"],
-        "google_analytics": "UA-12653604-10",
+        "repo": "demoiselle/framework",
+        "edit_on_github": "framework-documentation/blob/master/docs",        
+        "google_analytics": "",
         "links": {
-            "Download": "https://github.com/justinwalsh/daux.io/archive/master.zip",
-            "GitHub Repo": "https://github.com/justinwalsh/daux.io",
-            "Help/Support/Bugs": "https://github.com/justinwalsh/daux.io/issues",
-            "Made by Todaymade": "http://todaymade.com"
+            "Framework GitHub Repo": "https://github.com/demoiselle/framework",
+            "Help/Support/Bugs": "https://github.com/demoiselle/framework/issues"
         }
     }
 }
