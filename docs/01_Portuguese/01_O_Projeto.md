@@ -1,3 +1,0 @@
-O nome **Demoiselle** é uma homenagem à série de aeroplanos construídos por Santos Dummont entre 1907 e 1909. Também conhecido como Libellule, as Demoiselles foram os melhores, menores e mais baratos aviões da sua época. Como sua intenção era popularizar a aviação com fabricação em larga escala, o inventor disponibilizou os planos em revistas técnicas para qualquer pessoa que se interessasse.
-
-O Demoiselle Framework	usa a mesma filosofia do “Pai da Aviação”, tendo sido disponibilizado como software livre em abril de 2009, sob a licença livre LGPL version 3.
