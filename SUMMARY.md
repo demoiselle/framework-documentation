@@ -6,5 +6,4 @@
 * Messages
 * Configuration
 * Security
-   * [JWT](security_jwt.md)
 
