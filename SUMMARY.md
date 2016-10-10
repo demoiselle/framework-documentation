@@ -8,4 +8,5 @@
 * [Security](security.md)
    * [JWT](jwt.md)
    * [Token](token.md)
+* Scripts
 
