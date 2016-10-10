@@ -1,2 +1,0 @@
-# Roteiro Rápido
-
