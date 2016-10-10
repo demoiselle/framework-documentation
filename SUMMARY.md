@@ -4,4 +4,5 @@
 * [Roteiro Rápido](roteiro_rapido.md)
 * Persistence
 * Messages
+* Configuration
 
