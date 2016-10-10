@@ -6,4 +6,5 @@
 * Messages
 * Configuration
 * Security
+   * JWT
 
