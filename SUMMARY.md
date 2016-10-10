@@ -1,5 +1,5 @@
 # Summary
 
-* Início
+* [Início](inicio.md)
 * Roteiro Rápido
 
