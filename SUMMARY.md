@@ -1,5 +1,5 @@
 # Summary
 
 * [Início](inicio.md)
-* Roteiro Rápido
+* [Roteiro Rápido](roteiro_rapido.md)
 
