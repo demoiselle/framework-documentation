@@ -3,7 +3,7 @@
 * [Introduction](README.md)
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Persistence](persistence.md)
-* [Messages](messages)
+* [Messages](messages.md)
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
