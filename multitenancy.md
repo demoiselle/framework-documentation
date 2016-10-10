@@ -1,2 +1,2 @@
-# Multitenancy (Multi-inquilino)
+# Multitenancy
 
