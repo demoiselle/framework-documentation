@@ -7,5 +7,5 @@
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
-   * Token
+   * [Token](token.md)
 
