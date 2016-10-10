@@ -6,5 +6,5 @@
 * Messages
 * Configuration
 * Security
-   * JWT
+   * [JWT](security_jwt.md)
 
