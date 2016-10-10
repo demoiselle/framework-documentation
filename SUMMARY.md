@@ -5,6 +5,6 @@
 * Persistence
 * Messages
 * Configuration
-* Security
+* [Security](security.md)
    * [JWT](jwt.md)
 
