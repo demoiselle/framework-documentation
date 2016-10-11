@@ -44,7 +44,7 @@ Para carregar todos os módulso padrões para REST e as configurações necessá
 
 ```
 
-> Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, acessando as opções do Maven e por fim clicando em "Update Project". Na tela que será aberta selecione o seu projeto e clique em **OK**.
+> Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, acessando as opções do Maven e por fim clicando em **Update Project**. Na tela que será aberta selecione o seu projeto e clique em **OK**.
 
 O resultado da criação deve ser algo parecido com a imagem abaixo.
 
