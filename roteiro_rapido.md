@@ -12,7 +12,7 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
 
 ## Criação do Servidor WildFly no Eclipe
 
-Texto.
+Em desenvolvimento.
 
 ## Criação do Projeto REST
 Com o Eclipse aberto acesse o menu **File > New > Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
