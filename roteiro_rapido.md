@@ -135,8 +135,26 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 	</persistence-unit>	
 </persistence>
 ```
-
 ## Criação dos Serviços REST
-Texto.
+Com a entidade de persistência criada podemos criar os serviços que irão manipular o objeto, para isso crie a seguinte classe que indicará a raíz dos serviços:
+
+![Criação da Classe AppREST](app-rest.png)
+
+Substitua o conteúdo da classe pelo seguinte conteúdo:
+
+```java
+package br.com.meubackend.sistema.service;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+
+@ApplicationPath("api")
+public class AppREST extends Application {
+
+}
+```
+
+Esta classe indica que a raíz dos serviços será `/api` no seu sistema.
+
 ## Testando o Back-end da Aplicação
 SWAGGER!!!
