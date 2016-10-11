@@ -127,7 +127,6 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 		</properties>
 	</persistence-unit>	
 </persistence>
-
 ```
 
 ## Criação dos Serviços REST
