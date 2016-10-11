@@ -9,8 +9,11 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
   * [Download no site da Oracle](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 * WildFly 10.1.0.Final
   * [Download no site do WildFly](http://wildfly.org/downloads/)
-## Criação do Projeto
-Com o Eclipse aberto acesse o menu 
+
+## Criação do Projeto REST
+Com o Eclipse aberto acesse o menu Arquivo > Novo > Outros (File > New > Others), na janela seguinte filtre por "Maven Project" como mostra a imagem abaixo:
+![Escolha do Tipo do Projeto](project-type.png)
+
 ## Módulos Demoiselle
 
 ## Testando o Backend da Aplicação
