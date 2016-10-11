@@ -19,9 +19,12 @@ Clique no botão **Next**, e na próxima tela selecione a opção "Create a simp
 
 ![Criação de projeto simples](simple.png)
 
-Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no Group Id e "sistema" no Artifact Id, sem as aspas como mostra a imagem abaixo.
+Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Group Id** e "sistema" no **Artifact Id**, sem as aspas e por fim escolha "war" no campo **Packaging** como mostra a imagem abaixo.
 
 ![Escolha dos IDs](id.png)
+
+Clique no botão **Finish** e o resultado da criação deve ser algo parecido com a imagem abaixo.
+
 
 ## Módulos Demoiselle
 
