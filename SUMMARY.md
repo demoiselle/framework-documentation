@@ -3,7 +3,6 @@
 * [Introdução](README.md)
 * [Roteiro Rápido](roteiro_rapido.md)
    * [Back-end](back-end.md)
-       * Pré Requisitos
    * [Front-end](front-end.md)
 * [Módulos](modulos.md)
 * [Persistence](persistence.md)
