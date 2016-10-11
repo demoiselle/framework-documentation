@@ -14,5 +14,5 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
-* Core
+* [Core](core.md)
 
