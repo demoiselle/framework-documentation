@@ -112,7 +112,7 @@ public class Noticia {
 
 A classe Notícia descreve por meio da anotação principal **@Entity** que é uma entidade que pode ser persistida e por padrão será criada uma tabela chamada noticia no banco de dados.
 
-As anotações **@Id** e **@GeneratedValue** são utilizadas para a criação da chave primária do registro da tabela e a anotação **@Column** descreve o comportamento da coluna da tabela.
+As anotações **@Id** e **@GeneratedValue** são utilizadas para a criação da chave primária do registro da tabela e a anotação **@Column** descreve os comportamentos da coluna da tabela.
 
 > Para facilitar o roteiro utilizaremos um banco de dados em memória que já vem embutido com o WildFly.
 
