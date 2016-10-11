@@ -4,8 +4,8 @@
 * [Roteiro Rápido](roteiro_rapido.md)
    * [Back-end](back-end.md)
        * Pré Requisitos
-       * Módulos
    * [Front-end](front-end.md)
+* Módulos
 * [Persistence](persistence.md)
 * [Messages](messages.md)
 * [Configuration](configuration.md)
