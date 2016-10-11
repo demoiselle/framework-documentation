@@ -14,7 +14,7 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
 Com o Eclipse aberto acesse o menu **File > New > Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 ![Escolha do Tipo do Projeto](project-type.png)
 Clique no botão **Next**, e na próxima tela selecione a opção "Create a simple project (skip archetype selection)" como mostra a imagem abaixo. Esta opção seleciona a criação de um projeto simples sem escolha de arquétipo Maven.
-
+![Criação de projeto simples](simple.png)
 Clique no botão **Next**.
 
 ## Módulos Demoiselle
