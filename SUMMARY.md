@@ -13,4 +13,5 @@
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
    * Persistence
+   * REST
 
