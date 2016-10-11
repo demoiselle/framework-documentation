@@ -109,7 +109,28 @@ A classe Notícia descrever por meio da anotação **@Entity** que é uma entida
 
 > Para facilitar o uso utilizaremos um banco de dados em memória que vem embutido com o WildFly.
 
+Para a configuração da persistência do projeto criaremos dentro da estrutura de pasta `src/main/resources/META-INF/` o arquivo `persistence.xml` com o seguinte conteúdo.
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="ExamplePU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+		<class>br.com.meubackend.sistema.entity.Noticia</class>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+		</properties>
+	</persistence-unit>
+	
+</persistence>
+
+```
 
 ## Criação dos Serviços REST
 Texto.
