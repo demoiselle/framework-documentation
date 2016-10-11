@@ -199,5 +199,7 @@ public class NoticiaREST {
 }
 ```
 
+Adicione o projeto ao servidor WildFly e inicie o servidor.
+
 ## Testando o Back-end da Aplicação
 SWAGGER!!!
