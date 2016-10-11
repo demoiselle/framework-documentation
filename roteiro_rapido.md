@@ -156,6 +156,44 @@ public class AppREST extends Application {
 
 Esta classe indica que a raíz dos serviços será `/api` no seu sistema.
 
+Agora criaremos os serviços que irão manipular o objeto da Notícia, para isso crie a seguinte classe:
+
+![Classe Notícia REST](noticia-rest.png)
+
+```java
+package br.com.meubackend.sistema.service;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+
+import br.com.meubackend.sistema.entity.Noticia;
+
+@Path("noticia")
+public class NoticiaREST {
+
+	@PersistenceContext
+	protected EntityManager entityManager;
+
+	@POST
+	public void create(Noticia noticia) {
+		entityManager.persist(noticia);
+	}
+
+	@GET
+	public List<Noticia> list() {
+		CriteriaQuery<Noticia> q = entityManager.getCriteriaBuilder().createQuery(Noticia.class);
+		q.select(q.from(Noticia.class));
+		return entityManager.createQuery(q).getResultList();
+	}
+
+}
+```
 
 ## Testando o Back-end da Aplicação
 SWAGGER!!!
