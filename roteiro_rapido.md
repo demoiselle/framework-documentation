@@ -107,7 +107,7 @@ public class Noticia {
 
 A classe Notícia descrever por meio da anotação **@Entity** que é uma entidade que pode ser persistida e por padrão será criada uma tabela chamada noticia no banco de dados.
 
-> Para facilitar o uso utilizaremos um banco de dados em memória que vem embutido com o WildFly.
+> Para facilitar o roteiro utilizaremos um banco de dados em memória que vem embutido com o WildFly.
 
 Para a configuração da persistência do projeto criaremos dentro da estrutura de pasta `src/main/resources/META-INF/` o arquivo `persistence.xml` com o seguinte conteúdo.
 
