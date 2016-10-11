@@ -48,8 +48,67 @@ O resultado da criação deve ser algo parecido com a imagem abaixo.
 
 ![Estrutura do projeto](project-structure.png)
 
+O `pom.xml` deve parecer com o seguinte:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.meubackendsistema</groupId>
+	<artifactId>sistema</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>org.demoiselle.jee</groupId>
+		<artifactId>demoiselle-parent-rest</artifactId>
+		<version>3.0.0-BETA1</version>
+	</parent>
+</project>
+```
+
 ## Criação das Entidades e Persistência
-Texto.
+Vamos começar criando a classe Notícia com as seguintes informações.
+
+![Criação da Classe Notícia](class-noticia.png)
+
+A classe da Notícia deverá se parecer com o seguinte após adicionarmos as anotações de persistência:
+
+```java
+package br.com.meubackend.sistema.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Noticia {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(nullable = false)
+	private Integer id;
+
+	@Column(nullable = false)
+	private String titulo;
+
+	@Column(nullable = true)
+	private String descricao;
+
+	public Noticia() {
+		
+	}
+    
+    // Getters and Setters
+}
+```
+
+A classe Notícia descrever por meio da anotação **@Entity** que é uma entidade que pode ser persistida e por padrão será criada uma tabela chamada noticia no banco de dados.
+
+> Para facilitar o uso utilizaremos um banco de dados em memória que vem embutido com o WildFly.
+
 ## Criação dos Serviços REST
 Texto.
 ## Testando o Back-end da Aplicação
