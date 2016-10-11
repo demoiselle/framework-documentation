@@ -1,7 +1,7 @@
 # Roteiro Rápido de Construção do Back-end
 O objetivo deste roteiro é iniciar um novo aplicativo utilizando o Framework Demoiselle 3.
 
-No começo será criada a aplicação que irá rodar no servidor, comumente conhecida como back-end, e posteriormente a parte do front-end.
+No começo será criada a aplicação que irá rodar no servidor, comumente conhecida como back-end.
 ## Pré Requisitos de Uso
 * Eclipse Neon
   * [32 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk.tar.gz) / [64 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk-x86_64.tar.gz)
