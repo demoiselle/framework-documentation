@@ -1,20 +1,18 @@
 # Módulos
-O objetivo principal da monularização do Demoiselle é permitir que partes do Framework possam ser usadas em outros projetos, sem necessariamente usar todas as funcionalidades.
-## Parent POM
-
-### Parent REST
-
-### Core (demoiselle-core)
+O objetivo principal da modularização do Demoiselle é permitir que partes do *Framework* possam ser usadas em outros projetos, sem necessariamente usar todas as funcionalidades.
+## Parent POM (demoiselle-parent-rest)
 Texto.
-### Configuration (demoiselle-configuration)
+## Core (demoiselle-core)
 Texto.
-### Persistência (demoiselle-persistence-jpa)
+## Configuration (demoiselle-configuration)
 Texto.
-### Serviços REST (demoiselle-rest)
+## Persistência (demoiselle-persistence-jpa)
 Texto.
-### Security (demoiselle-security)
+## Serviços REST (demoiselle-rest)
 Texto.
-#### JWT
+## Security (demoiselle-security)
 Texto.
-#### Token
+### JWT
+Texto.
+### Token
 Texto.
