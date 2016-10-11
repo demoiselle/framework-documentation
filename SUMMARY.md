@@ -2,7 +2,7 @@
 
 * [Introdução](README.md)
 * [Roteiro Rápido](roteiro_rapido.md)
-* [Módulos](modulos.md)
+* [Estrutura Módular](modulos.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
 * [Configuration](configuration.md)
