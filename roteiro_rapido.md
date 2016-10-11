@@ -39,9 +39,7 @@ Para carregar todos os módulso padrões para REST e as configurações necessá
     <groupId>org.demoiselle.jee</groupId>
     <artifactId>demoiselle-parent-rest</artifactId>
     <version>3.0.0-BETA1</version>
-    <relativePath>../demoiselle-parent-rest</relativePath>
 </parent>
-
 ```
 
 > Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, acessando as opções do Maven e por fim clicando em **Update Project**. Na tela que será aberta selecione o seu projeto e clique em **OK**.
