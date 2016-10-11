@@ -5,7 +5,7 @@
    * [Back-end](back-end.md)
        * Pré Requisitos
    * [Front-end](front-end.md)
-* Módulos
+* [Módulos](modulos.md)
 * [Persistence](persistence.md)
 * [Messages](messages.md)
 * [Configuration](configuration.md)
