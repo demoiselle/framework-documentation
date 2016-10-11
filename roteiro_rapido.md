@@ -116,7 +116,6 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 <persistence version="2.1"
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-
 	<persistence-unit name="ExamplePU" transaction-type="JTA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
@@ -126,8 +125,7 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 		</properties>
-	</persistence-unit>
-	
+	</persistence-unit>	
 </persistence>
 
 ```
