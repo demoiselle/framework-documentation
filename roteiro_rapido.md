@@ -109,6 +109,8 @@ A classe Notícia descrever por meio da anotação **@Entity** que é uma entida
 
 > Para facilitar o uso utilizaremos um banco de dados em memória que vem embutido com o WildFly.
 
+
+
 ## Criação dos Serviços REST
 Texto.
 ## Testando o Back-end da Aplicação
