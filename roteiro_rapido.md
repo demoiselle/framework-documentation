@@ -11,8 +11,11 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
   * [Download no site do WildFly](http://wildfly.org/downloads/)
 
 ## Criação do Projeto REST
-Com o Eclipse aberto acesse o menu Arquivo > Novo > Outros (File > New > Others), na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
+Com o Eclipse aberto acesse o menu File > New > Other, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 ![Escolha do Tipo do Projeto](project-type.png)
+Clique em Next, e na próxima tela selecione a opção "Create a simple project (skip archetype selection)" como mostra a imagem abaixo. Esta opção seleciona a criação de um projeto simples sem escolha de arquétipo Maven.
+![Criação de um projeto simples](simple.png)
+
 
 ## Módulos Demoiselle
 
