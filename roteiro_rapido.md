@@ -11,7 +11,7 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
   * [Download no site do WildFly](http://wildfly.org/downloads/)
 
 ## Criação do Projeto REST
-Com o Eclipse aberto acesse o menu Arquivo > Novo > Outros (File > New > Others), na janela seguinte filtre por "Maven Project" como mostra a imagem abaixo:
+Com o Eclipse aberto acesse o menu Arquivo > Novo > Outros (File > New > Others), na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 ![Escolha do Tipo do Projeto](project-type.png)
 
 ## Módulos Demoiselle
