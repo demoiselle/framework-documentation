@@ -7,7 +7,6 @@
 * [Módulos](modulos.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
-* [Messages](messages.md)
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
