@@ -7,9 +7,10 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
   * [32 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk.tar.gz) / [64 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk-x86_64.tar.gz)
 * JDK 1.8
   * [Download no site da Oracle](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
-
+* WildFly 10.1.0.Final
+  * [Download no site do WildFly](http://wildfly.org/downloads/)
 ## Criação do Projeto
-Texto.
+Com o Eclipse aberto acesse o menu 
 ## Módulos Demoiselle
 
 ## Testando o Backend da Aplicação
