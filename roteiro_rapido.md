@@ -208,5 +208,7 @@ public class NoticiaREST {
 
 Adicione o projeto ao servidor WildFly e inicie o servidor.
 
+Se o servidor WildFly iniciar corretamente acesso o endereço `http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia` e deverá aparecer apenas um Array vazio em formato JSON.
+
 ## Testando o Back-end da Aplicação
 SWAGGER!!!
