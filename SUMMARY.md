@@ -5,6 +5,7 @@
    * [Back-end](back-end.md)
    * [Front-end](front-end.md)
 * [Módulos](modulos.md)
+* [Core](core.md)
 * [Persistence](persistence.md)
 * [Messages](messages.md)
 * [Configuration](configuration.md)
@@ -14,5 +15,4 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
-* [Core](core.md)
 
