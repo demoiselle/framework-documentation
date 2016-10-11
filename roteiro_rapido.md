@@ -67,7 +67,7 @@ O `pom.xml` deve parecer com o seguinte:
 </project>
 ```
 
-Ao adicionar o Parent POM REST do Demoiselle os seguinte módulos serão carregados:
+Ao adicionar o **Parent POM REST** do Demoiselle os seguinte módulos serão carregados:
 * **Core** - demoiselle-core
 * **Security - JWT** - demoiselle-security-jwt
 * **Persistence JPA** - demoiselle-persistence-jpa
