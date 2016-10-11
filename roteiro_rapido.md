@@ -67,6 +67,11 @@ O `pom.xml` deve parecer com o seguinte:
 </project>
 ```
 
+Ao adicionar o Parent POM REST do Demoiselle os seguinte módulos serão carregados:
+* **Core** - demoiselle-core
+* **Security - JWT** - demoiselle-security-jwt
+* **Persistence JPA** - demoiselle-persistence-jpa
+
 ## Criação das Entidades e Persistência
 Vamos começar criando a classe Notícia com as seguintes informações.
 
