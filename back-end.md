@@ -6,19 +6,21 @@
   * [Download no site da Oracle](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ## Criação do Projeto
-
+Texto.
 ## Módulos Demoiselle
 Texto.
-### Adicionando Configuration
+### Parent POM
 Texto.
-### Adicionando Persistência
+### Configuration
 Texto.
-### Adicionando Mensagens
+### Persistência
 Texto.
-### Adicionando Serviços REST 
+### Mensagens
 Texto.
-### Adicionando o Swagger
+### Serviços REST 
 Texto.
-### Testando o Backend da Aplicação
+### Swagger
+Texto.
+## Testando o Backend da Aplicação
 Texto.
 
