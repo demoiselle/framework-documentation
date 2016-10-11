@@ -10,6 +10,10 @@ No começo será criada a aplicação que irá rodar no servidor, comumente conh
 * WildFly 10.1.0.Final
   * [Download no site do WildFly](http://wildfly.org/downloads/)
 
+## Criação do Servidor WildFly no Eclipe
+
+Texto.
+
 ## Criação do Projeto REST
 Com o Eclipse aberto acesse o menu **File > New > Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 
