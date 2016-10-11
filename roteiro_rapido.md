@@ -25,14 +25,14 @@ Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Gro
 
 Clique no botão **Finish**.
 
-## Erro do Web.xml
+### Erro do Web.xml
 Neste ponto da criação seu projeto deve estar com o seguinte erro:
 ```
 web.xml is missing and <failOnMissingWebXml> is set to true
 ```
 Para corrigir o problema clique sobre item "Deployment Description: sistema" do projeto e em seguida **Generate Deployment Descriptor Stub**.
 
-## Parent POM - Demoiselle REST
+### Parent POM - Demoiselle REST
 Para carregar todos os módulso padrões para REST e as configurações necessárias para a instalação em um container JEE 7 basta adicionar o seguinte trecho de código em seu `pom.xml`.
 ```xml
 <parent>
@@ -50,10 +50,9 @@ O resultado da criação deve ser algo parecido com a imagem abaixo.
 
 ![Estrutura do projeto](project-structure.png)
 
-
-
-
-## Módulos Demoiselle
-
-## Testando o Backend da Aplicação
+## Criação das Entidades e Persistência
 Texto.
+## Criação dos Serviços REST
+Texto.
+## Testando o Back-end da Aplicação
+SWAGGER!!!
