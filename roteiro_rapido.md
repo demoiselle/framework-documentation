@@ -23,7 +23,34 @@ Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Gro
 
 ![Escolha dos IDs](id.png)
 
-Clique no botão **Finish** e o resultado da criação deve ser algo parecido com a imagem abaixo.
+Clique no botão **Finish**.
+
+## Erro do Web.xml
+Neste ponto da criação seu projeto deve estar com o seguinte erro:
+```
+web.xml is missing and <failOnMissingWebXml> is set to true
+```
+Para corrigir o problema clique sobre item "Deployment Description: sistema" do projeto e em seguida **Generate Deployment Descriptor Stub**.
+
+## Parent POM - Demoiselle REST
+Para carregar todos os módulso padrões para REST e as configurações necessárias para a instalação em um container JEE 7 basta adicionar o seguinte trecho de código em seu `pom.xml`.
+```xml
+<parent>
+    <groupId>org.demoiselle.jee</groupId>
+    <artifactId>demoiselle-parent-rest</artifactId>
+    <version>3.0.0-BETA1</version>
+    <relativePath>../demoiselle-parent-rest</relativePath>
+</parent>
+
+```
+
+> Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, acessando as opções do Maven e por fim clicando em "Update Project". Na tela que será aberta selecione o seu projeto e clique em **OK**.
+
+O resultado da criação deve ser algo parecido com a imagem abaixo.
+
+![Estrutura do projeto](project-structure.png)
+
+
 
 
 ## Módulos Demoiselle
