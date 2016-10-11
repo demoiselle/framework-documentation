@@ -8,18 +8,24 @@
 ## Criação do Projeto
 Texto.
 ## Módulos Demoiselle
-Texto.
+O objetivo principal da monularização do Demoiselle é permitir que partes do Framework possam ser usadas em outros projetos, sem necessariamente usar todas as funcionalidades.
 ### Parent POM
+
+#### Parent REST
+
+### Core (demoiselle-core)
 Texto.
-### Configuration
+### Configuration (demoiselle-configuration)
 Texto.
-### Persistência
+### Persistência (demoiselle-persistence-jpa)
 Texto.
-### Mensagens
+### Serviços REST (demoiselle-rest)
 Texto.
-### Serviços REST 
+### Security (demoiselle-security)
 Texto.
-### Swagger
+#### JWT
+Texto.
+#### Token
 Texto.
 ## Testando o Backend da Aplicação
 Texto.
