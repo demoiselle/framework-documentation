@@ -1,6 +1,7 @@
 # Summary
 
 * [Introdução](README.md)
+* Sobre a Versão 3
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Estrutura Modular](estrutura-modular.md)
 * [Core](core.md)
@@ -17,5 +18,4 @@
 * [Multitenancy](multitenancy.md)
    * Persistence
    * REST
-* Sobre a Versão 3
 
