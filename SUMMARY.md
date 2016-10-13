@@ -7,6 +7,7 @@
 * [Persistence](persistence.md)
    * Configurações
    * Anotações
+   * Utilização
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
