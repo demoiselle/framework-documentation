@@ -5,7 +5,7 @@ Documentação das versões anteriores:
 * Versão 0.0.2 - XXXXXXX
 * Versão 0.0.1 - https://demoiselle.gitbooks.io/documentacao-jee/content/v/0.0.1/
 
-## O que é o Demoiselle? 
+## O que é o Demoiselle?
 O Demoiselle Framework implementa o conceito de framework integrador. Seu objetivo é facilitar a construção de aplicações minimizando tempo dedicado à escolha e integração de frameworks especialistas, o que resulta no aumento da produtividade e garante a manutenibilidade dos sistemas. Disponibiliza mecanismos reusáveis voltados as funcionalidades mais comuns de uma aplicação (arquitetura, segurança, transação, mensagem, configuração, tratamento de exceções, etc).
 
 O nome Demoiselle é uma homenagem à série de aeroplanos construídos por Santos Dummont entre 1907 e 1909. Também conhecido como Libellule, as Demoiselles foram os melhores, menores e mais baratos aviões da sua época. Como sua intenção era popularizar a aviação com fabricação em larga escala, o inventor disponibilizou os planos em revistas técnicas para qualquer pessoa que se interessasse.
