@@ -19,5 +19,5 @@
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
    * [Persistence](multitenancy-persistence.md)
-   * REST
+   * [REST](multitenancy-rest.md)
 
