@@ -2,7 +2,7 @@
 
 * [Introdução](README.md)
 * [Sobre a Versão 3](sobre_a_versao_3.md)
-   * Estrutura Modular
+   * [Estrutura Modular](estrutura-modular.md)
 * [Estrutura Modular](estrutura-modular.md)
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
