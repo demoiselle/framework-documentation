@@ -5,6 +5,7 @@
 * [Estrutura Modular](estrutura-modular.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
+   * Configurações
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
