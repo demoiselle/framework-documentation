@@ -1,9 +1,6 @@
 # Summary
 
 * [Introdução](README.md)
-* [Multitenancy](multitenancy.md)
-   * Persistence
-   * REST
 * Sobre a Versão 3
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Estrutura Modular](estrutura-modular.md)
@@ -17,5 +14,8 @@
    * [JWT](jwt.md)
    * [Token](token.md)
 * [Scripts](scripts.md)
+* [Multitenancy](multitenancy.md)
+   * Persistence
+   * REST
 * [CRUD](crud.md)
 
