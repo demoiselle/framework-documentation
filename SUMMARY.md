@@ -1,7 +1,7 @@
 # Summary
 
 * [Introdução](README.md)
-* Sobre a Versão 3
+* [Sobre a Versão 3](sobre_a_versao_3.md)
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Estrutura Modular](estrutura-modular.md)
 * [Core](core.md)
