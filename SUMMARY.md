@@ -18,6 +18,6 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
-   * Persistence
+   * [Persistence](multitenancy-persistence.md)
    * REST
 
