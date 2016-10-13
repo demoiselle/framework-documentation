@@ -6,7 +6,7 @@
 * [Core](core.md)
 * [Persistence](persistence.md)
    * [Configurações](persistence-configuracoes.md)
-   * Anotações
+   * [Anotações](persistence-anotacoes.md)
    * Utilização
 * [Configuration](configuration.md)
 * [Security](security.md)
