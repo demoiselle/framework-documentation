@@ -2,8 +2,8 @@
 
 * [Introdução](README.md)
 * [Sobre a Versão 3](sobre_a_versao_3.md)
-* [Roteiro Rápido](roteiro_rapido.md)
 * [Estrutura Modular](estrutura-modular.md)
+* [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
    * [Configurações](persistence-configuracoes.md)
