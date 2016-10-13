@@ -4,6 +4,7 @@
 * [Sobre a Versão 3](sobre_a_versao_3.md)
    * [Estrutura Modular](estrutura-modular.md)
    * APIs
+   * Arquitetura das Aplicações
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
