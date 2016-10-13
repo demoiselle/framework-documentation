@@ -12,7 +12,9 @@ Texto.
 Texto.
 ## Security (demoiselle-security)
 Texto.
-### JWT
+### JWT (demoiselle-security-jwt)
 Texto.
-### Token
+### Token (demoiselle-security-token)
+Texto.
+### Script (demoiselle-script)
 Texto.
