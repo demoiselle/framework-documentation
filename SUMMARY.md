@@ -5,7 +5,7 @@
 * [Estrutura Modular](estrutura-modular.md)
 * [Core](core.md)
 * [Persistence](persistence.md)
-   * Configurações
+   * [Configurações](persistence-configuracoes.md)
    * Anotações
    * Utilização
 * [Configuration](configuration.md)
