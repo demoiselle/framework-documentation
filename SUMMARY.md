@@ -3,7 +3,7 @@
 * [Introdução](README.md)
 * [Sobre a Versão 3](sobre_a_versao_3.md)
    * [Estrutura Modular](estrutura-modular.md)
-   * APIs
+   * [APIs](apis.md)
    * Arquitetura das Aplicações
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
