@@ -6,6 +6,7 @@
 * [Core](core.md)
 * [Persistence](persistence.md)
    * Configurações
+   * Anotações
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
