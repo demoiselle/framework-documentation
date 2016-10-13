@@ -14,8 +14,8 @@
    * [JWT](jwt.md)
    * [Token](token.md)
 * [Scripts](scripts.md)
+* [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
    * Persistence
    * REST
-* [CRUD](crud.md)
 
