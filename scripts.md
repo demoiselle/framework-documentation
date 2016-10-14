@@ -6,7 +6,7 @@ A implementação desse componente visa a utilização das facilidades providas 
 
 Utilizando as interfaces Compiled e Invocable da JSR-223 (implementadas nos engines) o gerenciador pode acessar os metodos de maneira genérica para compilar o codigo e guardar os bytecodes em cache.
 
-A execucao do script permite que seja passado um contexto com objetos que serão acessiveis ao codigo do script podendo ser manipuladas/alteradas pelo mesmo e disponibilizadas via esse mesmo contexto para o código chamador.
+A execucao do script permite que seja passado um contexto com objetos que serão acessiveis ao codigo do script podendo ser manipuladas/alteradas pelo mesmo e disponibilizadas via esse mesmo contexto para o código java chamador.
 
 -------------------------------------------------------------------------
 Exemplo de Utilização:
