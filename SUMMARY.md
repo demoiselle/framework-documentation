@@ -7,7 +7,7 @@
    * [Arquitetura das Aplicações](arquitetura_das_aplicacoes.md)
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
-   * Messages
+   * [Messages](core-messages.md)
 * [Persistence](persistence.md)
    * [Configurações](persistence-configuracoes.md)
    * [Anotações](persistence-anotacoes.md)
