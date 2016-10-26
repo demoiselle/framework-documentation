@@ -30,3 +30,15 @@ mensagem-de-teste=Mensagem a ser exibida ao usuário
 > É importante que o arquivo de properties seja cocado na mesma estrutura de pastas da classe, por exemplo, se a classe esta em `/src/main/java/meuprojeto/pacote/mensagens` o arquivo de propriedades com as mensagens deverá estar em `/src/main/resources/meuprojeto/pacote/mensagens`.
 
 ## Utilização de Parâmetros
+É possível parametrizar a utilização das mensagens por meio de parâmetros e marcadores. Abaixo um exemplo de método (Que deve estar dentro de uma classe anotada com @MessageBundle):
+
+```java
+@MessageTemplate("{mensagem-de-teste-com-parametro}")
+String mensagemDeTesteComParametro(String parametro1, String parametro2);
+```
+
+O arquivo de propriedades ficará da seguinte forma:
+
+```properties
+mensagem-de-teste-com-parametro=Mensagem ao usuário com parametro 1: %s e parametro 2 %s
+```
