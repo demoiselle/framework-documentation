@@ -16,7 +16,7 @@ Abaixo estão as desvantagens de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
 2. 
 
-*Com padrão no Framework Demoiselle foi utilizada a implementação de **URL**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
+*Como padrão no Framework Demoiselle foi utilizada a implementação de **URL**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
 
 ## Estratégias na Camada de Persistência
 Assim como na camada de serviços a camada de persistência possui pelo menos 3 estratégias de implementação de multitenancy, seguem elas:
@@ -27,4 +27,4 @@ Assim como na camada de serviços a camada de persistência possui pelo menos 3 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
 
-*Com padrão no Framework Demoiselle foi utilizada a implementação de **Schemas diferentes dentro de uma mesma instância**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
+*Como padrão no Framework Demoiselle foi utilizada a implementação de **Schemas diferentes dentro de uma mesma instância**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
