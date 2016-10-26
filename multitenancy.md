@@ -12,6 +12,6 @@ As 3 principais abordagens são:
 2. Utilização de **Metadados** - a utilização de meta dados basicamente utiliza algum dado do usuário para o direcionar para o inquilino correto, normalmente o direcionamento somente pode ser feito após a identificação do usuário que comumente é feito por meio de acesso ao sistema utilizando um e-mail e senha
 3. Utilização de **URL** - 
 
-Abaixo estão as desvantagens de cada abordagem:
+Abaixo estão as desvantagens de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
 2. 
