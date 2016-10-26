@@ -5,7 +5,7 @@ Isto é muito comum em soluções SaaS. Isolando informações (dados, personali
 
 O Framework Demoiselle fornece alguns facilitadores e a documentação necessária para que uma aplicação com as caracteristicas de Multitenancy seja desenvolvida.
 
-## Estratégias na Camada de Serviço
+## Estratégias na Camada de Serviço (REST)
 Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Framework Demoiselle versão 3 trata basicamente serviços REST.
 As 3 principais abordagens são:
 1. Utilização de **Subdomínio (DNS)** - nesta utilização cada inquilino se utiliza de um subdomínio próprio fornecido pelo servidor de DNS como por exemplo *cliente01.meudominio.com* e *cliente02.meudominio.com*. 
@@ -15,3 +15,7 @@ As 3 principais abordagens são:
 Abaixo estão as desvantagens de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
 2. 
+
+## Estratégias na Camada de Persistência
+https://msdn.microsoft.com/en-us/library/aa479086.aspx
+https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
