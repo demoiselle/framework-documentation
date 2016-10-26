@@ -1,6 +1,6 @@
 # Configurações
 ## Arquivo persistence.xml
- O Framework Demoiselle fornece um produtor padrão para contextos de persistência da JPA. Esse produtor lê o arquivo de configuração persistence.xml de seu projeto e toma as providências necessárias para fabricar uma instância da classe EntityManager que pode ser usada para gerenciar as entidades de sua aplicação. Além disso, instâncias de EntityManager produzidas pelo Framework Demoiselle participam automaticamente de transações abertas através da anotação @Transactional, conforme apresentado no capítulo sobre Transações.
+O Framework Demoiselle fornece um produtor padrão para contextos de persistência da JPA. Esse produtor lê o arquivo de configuração persistence.xml de seu projeto e toma as providências necessárias para fabricar uma instância da classe EntityManager que pode ser usada para gerenciar as entidades de sua aplicação. Além disso, instâncias de EntityManager produzidas pelo Framework Demoiselle participam automaticamente de transações abertas através da anotação @Transactional, conforme apresentado no capítulo sobre Transações.
 Dica
 
 Para acrescentar a dependência à extensão demoiselle-jpa, adicione esse código em seu arquivo pom.xml, na seção dependencies.
