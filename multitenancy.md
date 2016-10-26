@@ -18,9 +18,9 @@ Abaixo estão as desvantagens de cada uma das 3 abordagens:
 
 ## Estratégias na Camada de Persistência
 Assim como na camada de serviços a camada de persistência possui pelo menos 3 estratégias de implementação de multitenancy, seguem elas:
-1. Instâncias de banco de dados separadas - Each tenant’s data is kept in a physically separate database instance.
-2. Schemas diferentes dentro de uma mesma instância - Each tenant’s data is kept in a distinct database schema on a single database instance. 
-3. Mesma instância e schema para todos utilizando um discriminador - All data is kept in a single database schema. The data for each tenant is partitioned by the use of partition value or discriminator. 
+1. **Instâncias de banco de dados separadas** - Each tenant’s data is kept in a physically separate database instance.
+2. **Schemas diferentes dentro de uma mesma instância** - Each tenant’s data is kept in a distinct database schema on a single database instance. 
+3. **Mesma instância e schema para todos utilizando um discriminador** - All data is kept in a single database schema. The data for each tenant is partitioned by the use of partition value or discriminator. 
 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
