@@ -28,3 +28,5 @@ mensagem-de-teste=Mensagem a ser exibida ao usuário
 ```
 
 > É importante que o arquivo de properties seja cocado na mesma estrutura de pastas da classe, por exemplo, se a classe esta em `/src/main/java/meuprojeto/pacote/mensagens` o arquivo de propriedades com as mensagens deverá estar em `/src/main/resources/meuprojeto/pacote/mensagens`.
+
+## Utilização de Parâmetros
