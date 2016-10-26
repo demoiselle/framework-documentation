@@ -1,11 +1,13 @@
 # Messages
-Para as mensagens dos sistemas desenvolvidos com o Framework Demoiselle foi utilizada a biblioteca Delta Spike que é considerada uma extensão do CDI dentro do próprio ecosistema como pode ser visto na página da especificação do CDI ([http://cdi-spec.org](http://cdi-spec.org)).
+Para as mensagens dos sistemas desenvolvidos com o Framework Demoiselle foi utilizada a biblioteca DeltaSpike que é considerada uma extensão do CDI dentro do próprio ecosistema como pode ser visto na página da especificação do CDI ([http://cdi-spec.org](http://cdi-spec.org)).
+
+![DeltaSpike](deltaspike.png)
 
 Ele é descrito pela própria especificação do CDI como o seguinte:
 
 > O DeltaSpike consiste em um módulo core e módulos opcionais que fornecem funcionalidades adicionais a soluções corporativas
 
-Para saber mais informações sobre o Delta Spike acesse [https://deltaspike.apache.org](https://deltaspike.apache.org) e com relação a mensagens de sistema o link direto é o seguinte:
+Para saber mais informações sobre o DeltaSpike acesse [https://deltaspike.apache.org](https://deltaspike.apache.org) e com relação a mensagens de sistema o link direto é o seguinte:
 
 [https://deltaspike.apache.org/documentation/core.html#Messagesandi18n](https://deltaspike.apache.org/documentation/core.html#Messagesandi18n)
 
