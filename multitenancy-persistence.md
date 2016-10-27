@@ -1,7 +1,7 @@
 # Multitenancy - Persistence
 Como padrão no Framework Demoiselle foi utilizada a implementação de **URL**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.
 
-Classe MultiTenantProvider
+## Classe MultiTenantProvider
 
 ```java
 public class MultiTenantProvider implements MultiTenantConnectionProvider, ServiceRegistryAwareService {
@@ -23,7 +23,6 @@ public class MultiTenantProvider implements MultiTenantConnectionProvider, Servi
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean isUnwrappableAs(Class clazz) {
 		return false;
@@ -60,5 +59,24 @@ public class MultiTenantProvider implements MultiTenantConnectionProvider, Servi
 	public void releaseConnection(String tenantIdentifier, Connection connection) throws SQLException {
 		releaseAnyConnection(connection);
 	}
+}
+```
+
+## Classe SchemaResolver
+
+```java
+public class SchemaResolver implements CurrentTenantIdentifierResolver {
+
+	@Override
+	public String resolveCurrentTenantIdentifier() {
+		MultiTenantContext o = CDI.current().select(MultiTenantContext.class).get();
+		return o.getTenant().getName();
+	}
+
+	@Override
+	public boolean validateExistingCurrentSessions() {
+		return false;
+	}
+
 }
 ```
