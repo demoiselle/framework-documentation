@@ -138,5 +138,4 @@ public class SchemaResolver implements CurrentTenantIdentifierResolver {
 	</persistence-unit>
 	
 </persistence>
-
 ```
