@@ -19,7 +19,7 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
+   * [Persistence](multitenancy-persistence.md)
    * [REST](multitenancy-rest.md)
    * [MultitenantContext](multitenantcontext.md)
-   * [Persistence](multitenancy-persistence.md)
 
