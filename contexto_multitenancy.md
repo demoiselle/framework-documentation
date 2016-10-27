@@ -29,3 +29,20 @@ public class Tenant implements Serializable {
     
 }
 ```
+
+```java
+public class MeuBC {
+
+	@Inject
+	private MultiTenantContext multiTenancyContext;
+
+    public void metodo(Entity entity) {
+        // Utilização dos dados do Tenant
+        Tenant tenant = multiTenancyContext.getTenant();
+		
+
+		
+	}
+
+}
+```
