@@ -15,7 +15,7 @@ As 3 principais abordagens são:
 Abaixo estão as principais **desvantagens** de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
 2. A desvantagem do Metadado é que exige alguma forma de identificação prévia do usuário, dificultando a criação de serviços públicos
-3. 
+3. Em todas as requisições é necessário que seja feita a verificação da existência de um inquilino
 
 
 ## Estratégias de Armazenamento de Dados
