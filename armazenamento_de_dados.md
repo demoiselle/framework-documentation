@@ -126,8 +126,6 @@ public class SchemaResolver implements CurrentTenantIdentifierResolver {
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
-			<!-- <property name="javax.persistence.schema-generation.database.action" 
-				value="drop-and-create"/> -->
 			<property name="javax.persistence.schema-generation.scripts.action"
 				value="drop-and-create" />
 			<property name="javax.persistence.schema-generation.scripts.create-target"
