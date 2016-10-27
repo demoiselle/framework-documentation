@@ -8,6 +8,7 @@
 * [Roteiro Rápido](roteiro_rapido.md)
 * [Core](core.md)
    * [Messages](core-messages.md)
+* [Inicialização](inicializacao.md)
 * [Persistence](persistence.md)
    * [Configurações](persistence-configuracoes.md)
    * [Anotações](persistence-anotacoes.md)
@@ -16,7 +17,6 @@
 * [Security](security.md)
    * [JWT](jwt.md)
    * [Token](token.md)
-* [Inicialização](inicializacao.md)
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
    * Inicialização
