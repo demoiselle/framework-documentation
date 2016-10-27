@@ -26,5 +26,3 @@ Assim como na camada de serviços a camada de persistência possui pelo menos 3 
 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
-
-*Como padrão no Framework Demoiselle foi utilizada a implementação de **Schemas diferentes dentro de uma mesma instância**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
