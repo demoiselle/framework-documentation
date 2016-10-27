@@ -22,4 +22,5 @@
    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
    * [Persistence](multitenancy-persistence.md)
    * [MultitenantContext](multitenantcontext.md)
+   * Armazenamento de Dados
 
