@@ -12,7 +12,7 @@ As 3 principais abordagens são:
 2. Utilização de **Metadados** - a utilização de meta dados basicamente utiliza algum dado do usuário para o direcionar para o inquilino correto, normalmente o direcionamento somente pode ser feito após a identificação do usuário que comumente é feito por meio de acesso ao sistema utilizando um e-mail e senha
 3. Utilização de **URL** - nesta abordagem quem determinará o inquilino que será usado é a URL acessada, por exemplo *meudominio.com/cliente01/api/servico* e *meudominio.com/cliente02/api/servico*
 
-Abaixo estão as desvantagens de cada uma das 3 abordagens:
+Abaixo estão as principais **desvantagens** de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
 2. A desvantagem do Metadado é que exige alguma forma de identificaço prévia do usuário, dificultando a criação de serviços públicos
 3. 
@@ -26,3 +26,8 @@ Assim como na camada de serviços a camada de persistência possui pelo menos 3 
 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
+
+## Multitenancy no Framework Demoiselle
+É importante que antes iniciar o desenvolvimento da solução que usará o multitenancy sejam definidas as estratégias em cada camada com base nos requisitos, pois como já foi comentado cada solução é única e deve ser analisada individualmente.
+
+Nos próximos itens deste documento serão explicitadas algumas das soluções propostas pelo Framework Demoiselle e que podem ou não ser aplicadas ao projeto.
