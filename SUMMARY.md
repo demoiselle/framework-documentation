@@ -21,5 +21,5 @@
 * [Multitenancy](multitenancy.md)
    * [Persistence](multitenancy-persistence.md)
    * [REST](multitenancy-rest.md)
-   * MultitenancyContext
+   * MultitenantContext
 
