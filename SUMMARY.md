@@ -16,7 +16,7 @@
 * [Security](security.md)
    * [JWT](jwt.md)
    * [Token](token.md)
-* Inicialização
+* [Inicialização](inicializacao.md)
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
    * Inicialização
