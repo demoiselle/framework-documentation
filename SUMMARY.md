@@ -22,4 +22,5 @@
    * [REST](multitenancy-rest.md)
    * [Persistence](multitenancy-persistence.md)
    * [MultitenantContext](multitenantcontext.md)
+* Disponibilização dos Serviços
 
