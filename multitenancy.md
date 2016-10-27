@@ -21,8 +21,8 @@ Abaixo estão as principais **desvantagens** de cada uma das 3 abordagens:
 ## Estratégias na Camada de Persistência
 Assim como na camada de serviços a camada de persistência possui pelo menos 3 estratégias de implementação de multitenancy, seguem elas:
 1. **Instâncias de banco de dados separadas** - Cada inquilino tem seus dados mantidos em instâncias de banco de dados fisicamente separadas.
-2. **Schemas diferentes dentro de uma mesma instância** - Cada inquilino tem seus dados mantidos em um Schema separado, mas em uma única instância física. 
-3. **Mesma instância e schema para todos utilizando um discriminador** - Todos os dados são matidos em um punico Schema dentro de uma única instância física de banco de dados e a separação dos dados de cada inquilino é feita por meio de discriminadores, normalmente se utiliza uma chave estrageira nas tabelas para identificar o inquilino. 
+2. **Schemas diferentes dentro de uma mesma instância** - Cada inquilino tem seus dados mantidos em um *Schema* separado, mas em uma única instância física. 
+3. **Mesma instância e schema para todos utilizando um discriminador** - Todos os dados são matidos em um único *Schema* dentro de uma única instância física de banco de dados e a separação dos dados de cada inquilino é feita por meio de discriminadores, normalmente se utiliza uma chave estrageira nas tabelas para identificar o inquilino. 
 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
