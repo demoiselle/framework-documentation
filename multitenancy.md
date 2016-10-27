@@ -5,7 +5,7 @@ Isto é muito comum em soluções SaaS. Isolando informações (dados, personali
 
 O Framework Demoiselle fornece alguns facilitadores e a documentação necessária para que uma aplicação com as caracteristicas de Multitenancy seja desenvolvida.
 
-## Estratégias para Disponibilização de Serviço
+## Estratégias para Disponibilização dos Serviços
 Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Framework Demoiselle versão 3 trata basicamente serviços REST.
 As 3 principais abordagens são:
 1. Utilização de **Subdomínio (DNS)** - nesta utilização cada inquilino se utiliza de um subdomínio próprio fornecido pelo servidor de DNS como por exemplo *cliente01.meudominio.com* e *cliente02.meudominio.com*. 
