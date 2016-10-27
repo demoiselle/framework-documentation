@@ -20,13 +20,11 @@ public class TenantSelectorFilter implements ContainerRequestFilter {
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 
 		String tenantNameUrl = requestContext.getUriInfo().getPathSegments().get(0).toString();
 		Tenant tenant = null;
 
-		// Pega os tenants do banco de dados
 		Query query = entityManagerMaster.createQuery("select u from Tenant u where u.name = :value", Tenant.class);
 		query.setParameter("value", tenantNameUrl);
 		List<Tenant> list = query.getResultList();
