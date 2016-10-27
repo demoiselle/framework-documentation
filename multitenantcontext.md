@@ -1,2 +1,0 @@
-# MultitenantContext
-Classe MultiTenantContext
