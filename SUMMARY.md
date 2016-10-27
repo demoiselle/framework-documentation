@@ -19,7 +19,6 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
-   * [REST](multitenancy-rest.md)
    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
    * [Persistence](multitenancy-persistence.md)
    * [MultitenantContext](multitenantcontext.md)
