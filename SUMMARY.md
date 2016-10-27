@@ -19,7 +19,6 @@
    * [Token](token.md)
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
-   * Inicialização
 * [Multitenancy](multitenancy.md)
    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
    * [Armazenamento de Dados](armazenamento_de_dados.md)
