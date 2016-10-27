@@ -20,7 +20,7 @@
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
    * [REST](multitenancy-rest.md)
+   * Disponibilização dos Serviços
    * [Persistence](multitenancy-persistence.md)
    * [MultitenantContext](multitenantcontext.md)
-* Disponibilização dos Serviços
 
