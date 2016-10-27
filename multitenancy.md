@@ -10,12 +10,12 @@ Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Fram
 As 3 principais abordagens são:
 1. Utilização de **Subdomínio (DNS)** - nesta utilização cada inquilino se utiliza de um subdomínio próprio fornecido pelo servidor de DNS como por exemplo *cliente01.meudominio.com* e *cliente02.meudominio.com*. 
 2. Utilização de **Metadados** - a utilização de meta dados basicamente utiliza algum dado do usuário para o direcionar para o inquilino correto, normalmente o direcionamento somente pode ser feito após a identificação do usuário que comumente é feito por meio de acesso ao sistema utilizando um e-mail e senha
-3. Utilização de **URL** - 
+3. Utilização de **URL** - nesta abordagem quem determinará o inquilino que será usado é a URL acessada, por exemplo *meudominio.com/cliente01/api/servico* e *meudominio.com/cliente02/api/servico*
 
 Abaixo estão as desvantagens de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
-2. Texto
-3. Texto
+2. A desvantagem do Metadado é que exige alguma forma de identificaço prévia do usuário, dificultando a criação de serviços públicos
+3. 
 
 
 ## Estratégias na Camada de Persistência
