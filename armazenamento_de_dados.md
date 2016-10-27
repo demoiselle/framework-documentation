@@ -83,3 +83,60 @@ public class SchemaResolver implements CurrentTenantIdentifierResolver {
 
 }
 ```
+
+## Arquivo persistence.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+	<persistence-unit name="TenantsPU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/datasources/TenantsDS</jta-data-source>
+		<class>org.demoiselle.store.usuario.entity.Usuario</class>
+		<!-- <exclude-unlisted-classes>true</exclude-unlisted-classes> -->
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.multiTenancy" value="SCHEMA" />
+			<property name="hibernate.tenant_identifier_resolver"
+				value="org.demoiselle.store.usuario.dao.multitenancy.SchemaResolver" />
+			<property name="hibernate.multi_tenant_connection_provider"
+				value="org.demoiselle.store.usuario.dao.multitenancy.MultiTenantProvider" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="MasterPU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/datasources/MasterDS</jta-data-source>
+		<class>org.demoiselle.store.usuario.entity.Tenant</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="false" />		
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="ExportPU" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:jboss/datasources/TenantsDS</jta-data-source>
+		<class>org.demoiselle.store.usuario.entity.Usuario</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<!-- <property name="javax.persistence.schema-generation.database.action" 
+				value="drop-and-create"/> -->
+			<property name="javax.persistence.schema-generation.scripts.action"
+				value="drop-and-create" />
+			<property name="javax.persistence.schema-generation.scripts.create-target"
+				value="../standalone/tmp/demoiselleMultiTenantCreate.ddl" />
+			<property name="javax.persistence.schema-generation.scripts.drop-target"
+				value="../standalone/tmp/demoiselleMultiTenantDrop.ddl" />
+		</properties>
+	</persistence-unit>
+	
+</persistence>
+
+```
