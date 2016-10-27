@@ -14,9 +14,9 @@ As 3 principais abordagens são:
 
 Abaixo estão as desvantagens de cada uma das 3 abordagens:
 1. A principal desvantagem no caso de subdomínios é a necessidade de uma maior integração entre a aplicação e os serviços de rede da solução, pois a criação de novos nomes no serviço de DNS necessita de alguma integração
-2. 
+2. Texto
+3. Texto
 
-*Como padrão no Framework Demoiselle foi utilizada a implementação de **URL**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.*
 
 ## Estratégias na Camada de Persistência
 Assim como na camada de serviços a camada de persistência possui pelo menos 3 estratégias de implementação de multitenancy, seguem elas:
