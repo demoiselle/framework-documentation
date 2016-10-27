@@ -40,7 +40,7 @@ public class MeuBC {
         // Utilização dos dados do Tenant
         Tenant tenant = multiTenancyContext.getTenant();
 		
-
+        // Continuação
 		
 	}
 
