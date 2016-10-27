@@ -5,7 +5,7 @@ Isto é muito comum em soluções SaaS. Isolando informações (dados, personali
 
 O Framework Demoiselle fornece alguns facilitadores e a documentação necessária para que uma aplicação com as caracteristicas de Multitenancy seja desenvolvida.
 
-## Estratégias na Camada de Serviço (REST)
+## Estratégias para Disponibilização de Serviço
 Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Framework Demoiselle versão 3 trata basicamente serviços REST.
 As 3 principais abordagens são:
 1. Utilização de **Subdomínio (DNS)** - nesta utilização cada inquilino se utiliza de um subdomínio próprio fornecido pelo servidor de DNS como por exemplo *cliente01.meudominio.com* e *cliente02.meudominio.com*. 
@@ -18,7 +18,7 @@ Abaixo estão as principais **desvantagens** de cada uma das 3 abordagens:
 3. 
 
 
-## Estratégias na Camada de Persistência
+## Estratégias de Armazenamento de Dados
 Assim como na camada de serviços a camada de persistência possui pelo menos 3 estratégias de implementação de multitenancy, seguem elas:
 1. **Instâncias de banco de dados separadas** - Cada inquilino tem seus dados mantidos em instâncias de banco de dados fisicamente separadas.
 2. **Schemas diferentes dentro de uma mesma instância** - Cada inquilino tem seus dados mantidos em um *Schema* separado, mas em uma única instância física. 
@@ -26,6 +26,8 @@ Assim como na camada de serviços a camada de persistência possui pelo menos 3 
 
 https://msdn.microsoft.com/en-us/library/aa479086.aspx
 https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#multitenacy
+
+A escolha da estratégia do armazenamento 
 
 ## Multitenancy no Framework Demoiselle
 É importante que antes iniciar o desenvolvimento da solução que usará o multitenancy sejam definidas as estratégias em cada camada com base nos requisitos, pois como já foi comentado cada solução é única e deve ser analisada individualmente.
