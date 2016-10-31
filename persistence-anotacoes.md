@@ -1,4 +1,4 @@
-# Anotações
+# Anotações (Em desenvolvimento)
 ## @PersistenceContext
 Texto.
 ## @Transactional
