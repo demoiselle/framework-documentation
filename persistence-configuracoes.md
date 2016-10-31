@@ -19,15 +19,13 @@ Para acrescentar a dependência à extensão demoiselle-jpa, adicione esse códi
 Para injetar uma instância de EntityManager em sua aplicação, basta usar a anotação @Inject. 
 
 ```java
-public class BookmarkDAO extends JPACrud<Bookmark, Long> {
-
-    private static final long serialVersionUID = 1L;
+public class MeuDAO {
 
     @Inject
     private EntityManager entityManager;
 
-    public void persistBookmark(Bookmark bookmark){
-        entityManager.persist(bookmark);
+    public void salvar(MeuObjeto objeto){
+        entityManager.persist(objeto);
     }
 
 }
