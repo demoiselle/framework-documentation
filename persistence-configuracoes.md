@@ -24,9 +24,7 @@ Dica
 	</persistence-unit>
 
 </persistence>
-
 ```
-
 
 Para acrescentar a dependência à extensão demoiselle-jpa, adicione esse código em seu arquivo pom.xml, na seção dependencies.
 
@@ -43,7 +41,7 @@ Para injetar uma instância de EntityManager em sua aplicação, basta usar a an
 ```java
 public class MeuDAO {
 
-    @PersistenceContext(unitName = "MasterPU")
+    @PersistenceContext(unitName = "ExamplePU")
     private EntityManager entityManager;
 
     public void persist(MeuObjeto objeto){
