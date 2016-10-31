@@ -1,4 +1,4 @@
-# Configurações
+# Configurações (Em desenvolvimento)
 ## Arquivo persistence.xml
 
 O Framework Demoiselle utiliza como padrão a especificação JPA 
