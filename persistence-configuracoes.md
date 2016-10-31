@@ -24,7 +24,7 @@ public class MeuDAO {
     @Inject
     private EntityManager entityManager;
 
-    public void salvar(MeuObjeto objeto){
+    public void persist(MeuObjeto objeto){
         entityManager.persist(objeto);
     }
 
