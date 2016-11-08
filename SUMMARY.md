@@ -13,6 +13,7 @@
    * [Configurações](persistence-configuracoes.md)
    * [Anotações](persistence-anotacoes.md)
    * [Utilização](persistence-utilizacao.md)
+   * Entity Manager
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
