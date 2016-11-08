@@ -29,7 +29,7 @@ Para acrescentar a dependência à extensão **demoiselle-persistence-jpa**, adi
 <dependency>
   <groupId>org.demoiselle.jee</groupId>
   <artifactId>demoiselle-persistence-jpa</artifactId>
-  <version>3.X.X</version>
+  <version>3.x.x</version>
 </dependency>
 ```
 
