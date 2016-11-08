@@ -14,3 +14,4 @@ Na utilização do Servidor Aplicação **JBoss Wildfly** a implementação padr
 > * https://docs.jboss.org/author/display/WFLY10/JPA+Reference+Guide
 > * https://docs.jboss.org/hibernate/jpa/2.1/api/
 > * https://jcp.org/en/jsr/detail?id=338
+> * https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm
