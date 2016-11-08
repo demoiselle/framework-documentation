@@ -12,7 +12,6 @@
 * [Persistence](persistence.md)
    * [Conceitos](persistence-conceitos.md)
    * [Configurações](persistence-configuracoes.md)
-   * [Utilização](persistence-utilizacao.md)
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
