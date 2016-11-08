@@ -1,4 +1,4 @@
-# Configurações (Em desenvolvimento)
+# Configurações
 ## Arquivo persistence.xml
 
 O Framework Demoiselle utiliza como padrão a especificação JPA (Java Persistence API). A implementação lê o arquivo de configuração **persistence.xml** de seu projeto e toma as providências necessárias para fabricar uma instância da classe EntityManager que pode ser usada para gerenciar as entidades de sua aplicação. Além disso, instâncias de EntityManager participam automaticamente de transações abertas.
