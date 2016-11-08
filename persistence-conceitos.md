@@ -11,7 +11,9 @@ Toda vez que um novo acesso as funcionalidades é feito no provedor de persistê
 ## Persistence Context
 O Contexto de Persistência da JPA contém as Entities gerenciadas pelo provedor de persistência. O Contexto de Persistência atua como um cache de primeiro nível para as transações para interagir com o *datasource*. Entities carregadas são colocadas dentro do contexto antes de serem retornadas a aplicação. Mudanças nas Entities também devem ser colocadas dentro do contexto para que sejam salvas quando o *commit* da transação foi feito.
 ### Escopo de Transação com Persistence Context
+O Contexto de Persistência com escopo de transação trabalha junto com uma transação JTA (Java Transaction API) ativa. Quando uma transação é *commitada* o contexto de persistência é atualizado (*flushed*) no *datasource*. Todas as Entities alteradas que pretendem ser salvas no *datasource* devem ser realizadas durante a transação. Entities lidas fora do contexto de transação serão tratadas separadamente quando o processo foi concluído.
 
+Um Contexto de Persistência com escopo de transação:
 
 ```java
 @Stateful  // will use container managed transactions
