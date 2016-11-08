@@ -36,8 +36,7 @@ try {
   valueX = (Integer) context.get("X");    	     	 
   System.out.println("The value of X is " + valueX + " after script execution.");
   Assert.assertTrue(true);      	 	
-	    
 } catch (ScriptException e) {
-e.printStackTrace();
+  e.printStackTrace();
 }   
  ```
