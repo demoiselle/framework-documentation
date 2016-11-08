@@ -11,9 +11,9 @@
    * [Messages](core-messages.md)
 * [Persistence](persistence.md)
    * [Configurações](persistence-configuracoes.md)
+   * Entity Manager
    * [Anotações](persistence-anotacoes.md)
    * [Utilização](persistence-utilizacao.md)
-   * Entity Manager
 * [Configuration](configuration.md)
 * [Security](security.md)
    * [JWT](jwt.md)
