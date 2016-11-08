@@ -23,13 +23,13 @@ O Framework Demoiselle utiliza como padrão a especificação JPA (Java Persiste
 </persistence>
 ```
 
-Para acrescentar a dependência à extensão demoiselle-jpa, adicione esse código em seu arquivo pom.xml, na seção dependencies.
+Para acrescentar a dependência à extensão **demoiselle-persistence-jpa**, adicione esse código em seu arquivo pom.xml, na seção dependencies.
 
 ```xml
 <dependency>
-    <groupId></groupId>
-    <artifactId>demoiselle-persistence-jpa</artifactId>
-    <scope>compile</scope>
+  <groupId>org.demoiselle.jee</groupId>
+  <artifactId>demoiselle-persistence-jpa</artifactId>
+  <version>3.X.X</version>
 </dependency>
 ```
 
