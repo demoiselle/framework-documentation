@@ -11,7 +11,7 @@ A maioria dos servidores JEE possuem implementações para a especificação JPA
 Na utilização do Servidor Aplicação **JBoss Wildfly** a implementação padrão utilizada é o **Hibernate (Versão 5)**, sendo que durante a inicialização do servidor se for detectada a utilização do JPA por meio do arquivo *persistence.xml* ou anotações *@PersistenceContext/Unit* por exemplo, o Wildfly injeta as dependencias do Hibernate na instalação da aplicação, isso facilita o processo de instalaçõa de aplicação que utilizam JPA.
 
 > Fontes: 
+> * https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm
 > * https://docs.jboss.org/author/display/WFLY10/JPA+Reference+Guide
 > * https://docs.jboss.org/hibernate/jpa/2.1/api/
 > * https://jcp.org/en/jsr/detail?id=338
-> * https://docs.oracle.com/javaee/7/tutorial/persistence-intro.htm
