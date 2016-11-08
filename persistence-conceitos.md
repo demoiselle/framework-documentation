@@ -9,8 +9,7 @@ O Entity Manager do tipo Application Managed prove um acesso direto as funcional
 O tipo Container-managed faz a gestão do ciclo de vida automaticamente (auto-magically!). É possível usar contextos de persistência em escopo de transações ou extender outros contextos. 
 Toda vez que um novo acesso as funcionalidades é feito no provedor de persistência uma nova instância é criada junto com um contexto de persistência.
 ## Persistence Context
-
-
+O Contexto de Persistência da JPA contém as Entities gerenciadas pelo provedor de persistência. O Contexto de Persistência atua como um cache de primeiro nível para as transações para interagir com o *datasource*. Entities carregadas são colocadas dentro do contexto antes de serem retornadas a aplicação. Mudanças nas Entities também devem ser colocadas dentro do contexto para que sejam salvas quando o *commit* da transação foi feito.
 ### Escopo de Transação com Persistence Context
 
 
