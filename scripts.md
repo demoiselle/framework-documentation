@@ -13,31 +13,31 @@ The script allows execution is passed a context with objects that will be access
 
 -------------------------------------------------- -------------------------------------------------
 Example of use:
-```
- @Inject DynamicManager dm;
+```java
+@Inject DynamicManager dm;
  
- ...
+...
 try {    	    	    	    	  
-     String scriptSource = "int a = X; X= a + a;";  	  //sourcecode to be compiled .  
-     String scriptName = "test.groovy";				      //id to scriptCache
-     Integer valueX    = 1;								  //value to be passed to script
+  String scriptSource = "int a = X; X= a + a;";  	  //sourcecode to be compiled .  
+  String scriptName = "test.groovy";				      //id to scriptCache
+  Integer valueX    = 1;								  //value to be passed to script
 
-     if( dm.getScript(scriptName) == null )	{			  //verify if is a cached script
-        dm.loadEngine("groovy");						  //the name of JSR-223 engine to load.         
-        dm.loadScript ( "test.groovy", scriptSource);     //load the script into dynamicManager cache.    					
-     }
+  if( dm.getScript(scriptName) == null )	{			  //verify if is a cached script
+    dm.loadEngine("groovy");						  //the name of JSR-223 engine to load.         
+    dm.loadScript ( "test.groovy", scriptSource);     //load the script into dynamicManager cache.   
+  }
 
-     Bindings context = new SimpleBindings();  		      //create the context to script where 'X' is a key in script to a dynamic variable.     	 													    
-     context.put("X", valueX );							  //The value can be a class too.	
+  Bindings context = new SimpleBindings();  		      //create the context to script where 'X' is a key in script to a dynamic variable.     	 													    
+  context.put("X", valueX );							  //The value can be a class too.	
 
-     System.out.println("The value of X is " + valueX + " before script execution.");
-     System.out.println("Running script...");
-     dm.eval ( "test.groovy",context);					  //run the script.		
-     valueX = (Integer) context.get("X");    	     	 
-     System.out.println("The value of X is " + valueX + " after script execution.");  
-     Assert.assertTrue(true);      	 	
+  System.out.println("The value of X is " + valueX + " before script execution.");
+  System.out.println("Running script...");
+  dm.eval ( "test.groovy",context);					  //run the script.		
+  valueX = (Integer) context.get("X");    	     	 
+  System.out.println("The value of X is " + valueX + " after script execution.");  
+  Assert.assertTrue(true);      	 	
 	    
-	} catch (ScriptException e) {
-		e.printStackTrace();
-	}   
+} catch (ScriptException e) {
+e.printStackTrace();
+}   
  ```
