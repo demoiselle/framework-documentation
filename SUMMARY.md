@@ -12,7 +12,6 @@
 * [Persistence](persistence.md)
    * [Conceitos](persistence-conceitos.md)
    * [Configurações](persistence-configuracoes.md)
-   * [Anotações](persistence-anotacoes.md)
    * [Utilização](persistence-utilizacao.md)
 * [Configuration](configuration.md)
 * [Security](security.md)
