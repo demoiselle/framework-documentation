@@ -33,7 +33,7 @@ Para acrescentar a dependência à extensão **demoiselle-persistence-jpa**, adi
 </dependency>
 ```
 
-Para injetar uma instância de EntityManager em sua aplicação, basta usar a anotação @Inject. 
+Para injetar uma instância de EntityManager em sua aplicação, basta usar a anotação *@PersistenceContext*. 
 
 ```java
 public class MeuDAO {
