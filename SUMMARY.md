@@ -10,7 +10,7 @@
    * [Inicialização](inicializacao.md)
    * [Messages](core-messages.md)
 * [Persistence](persistence.md)
-   * [Conteitos](entity_manager.md)
+   * [Conteitos](persistence-conceitos.md)
    * [Configurações](persistence-configuracoes.md)
    * [Anotações](persistence-anotacoes.md)
    * [Utilização](persistence-utilizacao.md)
