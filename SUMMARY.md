@@ -9,10 +9,9 @@
 * [Core](core.md)
    * [Inicialização](inicializacao.md)
    * [Messages](core-messages.md)
-* Entity Manager
 * [Persistence](persistence.md)
-   * [Configurações](persistence-configuracoes.md)
    * Entity Manager
+   * [Configurações](persistence-configuracoes.md)
    * [Anotações](persistence-anotacoes.md)
    * [Utilização](persistence-utilizacao.md)
 * [Configuration](configuration.md)
