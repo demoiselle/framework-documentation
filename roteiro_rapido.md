@@ -209,6 +209,11 @@ public class NoticiaREST {
 Adicione o projeto ao servidor WildFly e inicie o servidor.
 
 Se o servidor WildFly iniciar corretamente acesso o endereço `http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia` e deverá aparecer apenas um Array vazio em formato JSON.
+## Erros Comuns
+
+###  Unsatisfied dependencies for type NewsBusiness with qualifiers @Default
+
+Este erro ocorre ao levantar o servidor de aplicação e para corrigir basta adicionar um arquivo chamado beans.xml na pasta META-INF, junto com o persistence.xml.
 
 ## Testando o Back-end da Aplicação
 A maneira mais simples de testar o funcionamento da API é usar a ferramenta cURL da seguinte maneira:
