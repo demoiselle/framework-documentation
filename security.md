@@ -40,7 +40,7 @@ O módulo de segurança funciona independente e em qualquer app JEE7.
 
 Para manter o usuário no contexto de segurança usamos a Classe DemoisellePrincipal.
 
-Exemplo de login:
+Exemplo de login com JWT:
 
 ```bash
 
@@ -50,14 +50,18 @@ Exemplo de login:
     @Inject
     private DemoisellePrincipal loggedUser;
 
-   @POST
-    public void login(Credentials credentials) {
-    //Você deve ter sua implementação de validação
-    // que pode estar no SGDB, LDAP, Outro servidor...
+    @POST
+    @Asynchronous
+    public void testeLogin(@Suspended final AsyncResponse asyncResponse, Credentials credentials) {
+        asyncResponse.resume(doLogin(credentials));
+    }
+
+    private Response doLogin(Credentials credentials) {
+    // sua implementação para verificar se o usuário e senha estão ok
         Usuario usu = dao.verifyEmail(credentials.getUsername(), credentials.getPassword());
-        // Aqui você carrega os dados do usuário e entrega ao 
-        // contexto de segurança que vai gerenciar seu ciclo de vida
         if (usu != null) {
+        // aqui é carregado o DemoisellePrincial e entregue ao 
+        // contexto de segurança para ser gerado um token novo
             loggedUser.setName(usu.getNome());
             loggedUser.setIdentity("" + usu.getId());
             loggedUser.addRole(usu.getPerfil());
@@ -70,12 +74,51 @@ Exemplo de login:
         }
         return Response.ok().entity("{\"token\":\"" + token.getKey() + "\"}").build();
     }
+
+    @GET
+    @LoggedIn
+    public void retoken(@Suspended final AsyncResponse asyncResponse) {
+        asyncResponse.resume(doRetoken());
+    }
+
+    private Response doRetoken() {
+    // Esse processo gera um novo token com o tempo limite novo
+    // em caso de revogação nesse ponto deve-se verificar se o 
+    // usuário renova o token ou é negado
+        loggedUser = securityContext.getUser();
+        securityContext.setUser(loggedUser);
+        return Response.ok().entity("{\"token\":\"" + token.getKey() + "\"}").build();
+    }
+
+    @GET
+    @Path("publicKey")
+    public Response getPublicKey() {
+    // disponibilizar a chave pública permite outros servidores
+    // poderem confiar nos tokens gerados nesse servidor
+    // é uma boa pratica expor a chave pública
+        return Response.ok().entity("{\"publicKey\":\"" + config.getPublicKey() + "\"}").build();
+    }
 ```
 
-Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com as seguintes configurações:
+CORS
+
+
+O módulo seguraça fornece uma solução para cors, onde existe uma configuração e duas anotações.
 
 ```bash
     # Habilita/Desabilita o cors por padrão 
     demoiselle.security.corsEnabled=true
 ```
+Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com as com essa configuração.
 
+```bash
+    # Habilita/Desabilita o cors por padrão 
+    @Cors
+    Habilita o cors no método anotado quando a configuração for
+    demoiselle.security.corsEnabled=false
+    @NoCors
+    Desabilita o cors no método anotado quando a configuração for
+    demoiselle.security.corsEnabled=true
+```
+
+As anotações servem para propiciar as exceções a regra registrada no demoiselle.properties (demoiselle.security.corsEnabled) que serve para toda app.
