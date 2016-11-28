@@ -12,7 +12,7 @@ Configuração (demoiselle.properties)
 ```
 Existem dois tipos de gestão do token, são eles:
 - master, nesse tipo o servidor tem ambas as chaves e tem a capacidade de assinar e validar os tokens.
-- slave, são os servidores onde só necessitam da chave pública para validar que foi realmente criado pelo servidor master gerando o ciclo de confiança sem a necessidade de qualquer tipo de conexão entre os servidores
+- slave, são os servidores onde só necessitam da chave pública para validar se foi realmente criado pelo servidor master, gerando com isso um ciclo de confiança sem a necessidade de qualquer tipo de conexão entre os servidores
 
 ```bash
     # Chave public
@@ -29,12 +29,15 @@ Existem dois tipos de gestão do token, são eles:
 
 Logo que você entrega o DemoisellePrincipal preenchido para o contexto de segurança é gerado um token com esse objeto, no seguinte formato que pode ser validado em (https://jwt.io/)
 
-São três hash separados por ponto(.) 
-O primeiro identifica o algoritimo e o tipo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoisellePrincipal. Na última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.
-A assinatura é gerada pela chave privada e validada pela chave pública
-
 ```bash
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
 eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
 TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 ```
+
+São três hash separados por ponto(.) 
+O primeiro identifica o tipo e o algoritimo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoisellePrincipal. Na terceira e última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.
+A assinatura é gerada pela chave privada e validada pela chave pública
+
+
+
