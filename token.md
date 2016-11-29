@@ -5,7 +5,7 @@ O componente gerencia um token UUID criado pelo servidor, nesta opção não per
 
 
 Exemplo de serviço de autenticação
-
+```bash
     @Inject
     private SecurityContext securityContext;
 
@@ -55,3 +55,6 @@ Exemplo de serviço de autenticação
         securityContext.removeUser(securityContext.getUser());
         return Response.ok().entity("Removido").build();
     }
+```
+
+Nesse modelo o usuário deve ter controle do ciclo de vida do seu token, deletando quando for preciso.
