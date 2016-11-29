@@ -39,5 +39,22 @@ São três hash separados por ponto(.)
 O primeiro identifica o tipo e o algoritimo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoisellePrincipal. Na terceira e última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.
 A assinatura é gerada pela chave privada e validada pela chave pública
 
+Exemplo de demoiselle.properties (Master)
 
+```bash
+    demoiselle.security.jwt.type=master
+    demoiselle.security.jwt.publicKey=-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09A11Zaqmp5ZBTOCxgJ8qqtHhb6b-----END PUBLIC KEY-----
+    demoiselle.security.jwt.privateKey=-----BEGIN PRIVATE KEY-----MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDT0DXVlqqanlkFM4LGAnyq7u+IcUizfs6OQTmTR3Xp6LryES/rLn0vwZKZIvo=-----END PRIVATE KEY-----
+    demoiselle.security.jwt.timetolive=5
+    demoiselle.security.jwt.issuer=STORE
+    demoiselle.security.jwt.audience=web
+```
+Exemplo de demoiselle.properties (Slave)
 
+```bash
+    demoiselle.security.jwt.type=slave
+    demoiselle.security.jwt.publicKey=-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09A11Zaqmp5ZBTOCxgJ8qqtHhb6b-----END PUBLIC KEY-----
+    demoiselle.security.jwt.timetolive=5
+    demoiselle.security.jwt.issuer=STORE
+    demoiselle.security.jwt.audience=web
+```
