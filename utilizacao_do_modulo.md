@@ -11,6 +11,8 @@ Add no pom.xml
 </dependency>
 ```
 
+> É importante fazer a ação de `maven update` no projeto após adicionar o novo módulo.
+
 Add no demoiselle.properties
 
 ```
