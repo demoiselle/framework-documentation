@@ -76,3 +76,57 @@ Add no persistence.xml
     </properties>
 </persistence-unit>
 ```
+Criação da classe de serviço TenantREST
+
+```java
+@Path("tenant")
+@Consumes({ MediaType.APPLICATION_JSON })
+@Produces({ MediaType.APPLICATION_JSON })
+public class TenantREST {
+
+	@Inject
+	private TenantManager tenantManager;
+
+	private Logger logger;
+
+	@GET
+	@Cors
+	public Result listAllTenants() throws Exception {
+		return tenantManager.find();
+	}
+
+	@DELETE
+	@Path("{id}")
+	@Cors
+	public Response deleteTenant(@PathParam("id") Long id) throws Exception {
+		try {
+			tenantManager.removeTenant(id);
+			return Response.ok().build();
+		} catch (final Exception e) {
+			logger.log(Level.SEVERE, "Error trying to DELETE Tenant", e);
+			return Response.serverError().build();
+		}
+	}
+
+	@GET
+	@Path("context")
+	@Cors
+	public Response multitenancyContext() throws Exception {
+		return Response.ok().entity(tenantManager.getTenantName()).build();
+	}
+
+	@POST
+	@Cors
+	@ValidatePayload
+	public Response createTenant(Tenant tenant) throws Exception {
+		try {
+			tenantManager.createTenant(tenant);
+			return Response.ok().build();
+		} catch (final Exception e) {
+			logger.log(Level.SEVERE, "Error trying to CREATE Tenant", e);
+			return Response.serverError().build();
+		}
+	}
+
+}
+```
