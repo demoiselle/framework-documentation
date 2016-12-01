@@ -76,6 +76,63 @@ Add no persistence.xml
     </properties>
 </persistence-unit>
 ```
+
+Alteração do Standalone.xml
+
+```xml
+<datasource jta="true" jndi-name="java:jboss/datasources/UserTenantsDS" pool-name="UserTenanciesDS" enabled="true" use-java-context="true">
+    <connection-url>jdbc:mysql://localhost</connection-url>
+    <driver>com.mysql</driver>
+    <security>
+        <user-name>root</user-name>
+        <password>root</password>
+    </security>
+    <validation>
+        <validate-on-match>false</validate-on-match>
+        <background-validation>false</background-validation>
+    </validation>
+    <statement>
+        <share-prepared-statements>false</share-prepared-statements>
+    </statement>
+</datasource>
+<datasource jta="true" jndi-name="java:jboss/datasources/UserMasterDS" pool-name="UserMasterDS" enabled="true" use-java-context="true">
+    <connection-url>jdbc:mysql://localhost/user_master</connection-url>
+    <driver>com.mysql</driver>
+    <security>
+        <user-name>root</user-name>
+        <password>root</password>
+    </security>
+    <validation>
+        <validate-on-match>false</validate-on-match>
+        <background-validation>false</background-validation>
+    </validation>
+    <statement>
+        <share-prepared-statements>false</share-prepared-statements>
+    </statement>
+</datasource>
+<drivers>
+    <driver name="com.mysql" module="com.mysql">
+        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+    </driver>
+</drivers>
+```
+
+
+Criação do Entity Manager
+
+```java
+public class EntityManagerMasterDAO implements EntityManagerMaster {
+
+	@PersistenceContext(unitName = "UserMasterPU")
+	protected EntityManager emEntity;
+
+	public EntityManager getEntityManager() {
+		return emEntity;
+	}
+
+}
+```
+
 Criação da classe de serviço TenantREST
 
 ```java
