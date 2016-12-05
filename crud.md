@@ -31,3 +31,26 @@ Ele já agrega o módulo Rest, não há necessidade de colocar a dependência.
   o padrão são 20.
 ```
 
+Seguem os exemplos de uso do CRUD
+
+```bash
+@Api("Usuario")
+@Path("usuario")
+public class UsuarioREST extends AbstractREST<Usuario, String> {
+
+}
+```
+
+```bash
+public class UsuarioBC extends AbstractBusiness<Usuario, String> {
+
+}
+```
+
+```bash
+public class UsuarioDAO extends AbstractDAO<Usuario, String> {
+
+}
+```
+
+
