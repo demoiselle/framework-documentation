@@ -1,8 +1,8 @@
 # Security
 
-O Componente de segurança tem duas implementações, uma baseada em JWT e a outra em um Token gerido pelo próprio backend, cada uma atende uma estratégia de uso de webapps e microservices.
+O Componente de segurança tem duas implementações, uma baseada em JWT e a outra em um Token gerido pelo próprio backend, cada uma atende uma estratégia de uso para webapps e/ou microservices.
 
-O módulo security é o gestor do contexto de segurança e suas implementações fazem a gestão do objeto de autorização, detalharemos a seguir como cada implementação funciona.
+O módulo security é o gestor do contexto de segurança, suas implementações fazem a gestão do objeto de autorização, detalharemos a seguir como cada implementação funciona.
 
 Para utilizar o módulo de segurança você deve importar a dependência 
 
@@ -52,7 +52,7 @@ Exemplo de login com JWT:
 
     @POST
     @Asynchronous
-    public void testeLogin(@Suspended final AsyncResponse asyncResponse, Credentials credentials) {
+    public void login(@Suspended final AsyncResponse asyncResponse, Credentials credentials) {
         asyncResponse.resume(doLogin(credentials));
     }
 
@@ -84,7 +84,7 @@ Exemplo de login com JWT:
     private Response doRetoken() {
     // Esse processo gera um novo token com o tempo limite novo
     // em caso de revogação nesse ponto deve-se verificar se o 
-    // usuário renova o token ou é negado
+    // usuário pode renovar o token ou é negado
         loggedUser = securityContext.getUser();
         securityContext.setUser(loggedUser);
         return Response.ok().entity("{\"token\":\"" + token.getKey() + "\"}").build();
@@ -109,7 +109,7 @@ O módulo seguraça fornece uma solução para cors, onde existe uma configuraç
     # Habilita/Desabilita o cors por padrão 
     demoiselle.security.corsEnabled=true
 ```
-Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com as com essa configuração.
+Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com essa configuração:
 
 ```bash
     # Habilita/Desabilita o cors por padrão 
@@ -121,4 +121,4 @@ Você tem que colocar um arquivo de propriedades chamado demoiselle.properties n
     demoiselle.security.corsEnabled=true
 ```
 
-As anotações servem para propiciar as exceções a regra registrada no demoiselle.properties (demoiselle.security.corsEnabled) que serve para toda app.
+As anotações servem para propiciar as exceções a regra registrada no demoiselle.properties (demoiselle.security.corsEnabled) refletindo em toda app.
