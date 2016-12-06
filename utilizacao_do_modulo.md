@@ -138,7 +138,9 @@ public class EntityManagerMasterDAO implements EntityManagerMaster {
 }
 ```
 
-Criação da classe de serviço TenantREST
+Por fim o módulo não fornece os serviços REST por acreditarmos que cada sistema deve implementar a sua maneira, contudo são fornecidos facilitadores que cuidam de boa parte do processo.
+
+Abaixo um exemplo de serviços REST que utiliza a classe TenantManager que permite que Tenants sejam criados e excluídos utilizando todas as regras de manipulação de banco.
 
 ```java
 @Path("tenant")
@@ -148,8 +150,6 @@ public class TenantREST {
 
 	@Inject
 	private TenantManager tenantManager;
-
-	private Logger logger;
 
 	@GET
 	@Cors
@@ -165,16 +165,8 @@ public class TenantREST {
 			tenantManager.removeTenant(id);
 			return Response.ok().build();
 		} catch (final Exception e) {
-			logger.log(Level.SEVERE, "Error trying to DELETE Tenant", e);
 			return Response.serverError().build();
 		}
-	}
-
-	@GET
-	@Path("context")
-	@Cors
-	public Response multitenancyContext() throws Exception {
-		return Response.ok().entity(tenantManager.getTenantName()).build();
 	}
 
 	@POST
@@ -185,10 +177,8 @@ public class TenantREST {
 			tenantManager.createTenant(tenant);
 			return Response.ok().build();
 		} catch (final Exception e) {
-			logger.log(Level.SEVERE, "Error trying to CREATE Tenant", e);
 			return Response.serverError().build();
 		}
 	}
-
 }
 ```
