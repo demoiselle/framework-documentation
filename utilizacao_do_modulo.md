@@ -130,14 +130,12 @@ Para que o módulo funcione corretamente é preciso que seja criado um Entity Ma
 
 ```java
 public class EntityManagerMasterDAO implements EntityManagerMaster {
-
 	@PersistenceContext(unitName = "UserMasterPU")
 	protected EntityManager emEntity;
 
 	public EntityManager getEntityManager() {
 		return emEntity;
 	}
-
 }
 ```
 
