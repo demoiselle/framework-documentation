@@ -41,4 +41,6 @@ Alguns pontos a serem levados em considerações são representados no gráfico 
 ## Multitenancy no Framework Demoiselle
 É importante que antes iniciar o desenvolvimento da solução que usará o multitenancy sejam definidas as estratégias em cada camada com base nos requisitos, pois como já foi comentado cada solução é única e deve ser analisada individualmente.
 
-Nos próximos itens deste documento serão explicitadas algumas das soluções propostas pelo Framework Demoiselle e que podem ou não ser aplicadas ao projeto.
+Nos próximos itens deste documento serão explicitadas 2 formas de implementar o multitenancy em seu projeto:
+1. Criando toda a estrutura necessária e todos os arquivos
+2. Utilizando o módulo do Demoiselle que já possui toda a funcionalidade e somente é necessário configurar
