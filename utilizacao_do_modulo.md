@@ -1,7 +1,6 @@
 # Multitenancy - Utilização do Módulo
 Nas páginas anteriores sobre Multitenancy foram detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
-
 O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto.
 ```xml
 <dependency>
