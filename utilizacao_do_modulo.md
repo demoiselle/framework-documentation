@@ -1,5 +1,5 @@
 # Utilização do Módulo
-Passos para utilizaçao do módulo...
+Nas páginas anteriores sobre Multitenancy foram detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
 
 Add no pom.xml
