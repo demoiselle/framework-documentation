@@ -19,9 +19,9 @@
 * [Scripts](scripts.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
+   * [Utilização do Módulo](utilizacao_do_modulo.md)
    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
    * [Armazenamento de Dados](armazenamento_de_dados.md)
    * [Contexto Multitenancy](contexto_multitenancy.md)
-   * [Utilização do Módulo](utilizacao_do_modulo.md)
 * [Rest](rest.md)
 
