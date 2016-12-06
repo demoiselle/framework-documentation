@@ -16,7 +16,7 @@ public class TenantSelectorFilter implements ContainerRequestFilter {
 
 	@PostConstruct
 	public void init() {
-		log.info("Demoiselle Module - MultiTenancy Ativado");
+		log.info("MultiTenancy Ativado");
 	}
 
 	@Override
