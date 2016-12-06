@@ -86,7 +86,7 @@ Segue abaixo um exemplo de `persistence.xml`.
 
 As Uniaddes de Persistência acima deverão estar apontadas para Fontes de Dados (Data Sources) que estarão no `standalone.xml` do servidor de aplicação.
 
-Abaixo um exemplo de arquivo contendo os data sources.
+Abaixo um exemplo de arquivo contendo os data sources para MySQL.
 
 ```xml
 <datasource jta="true" jndi-name="java:jboss/datasources/UserTenantsDS" pool-name="UserTenanciesDS" enabled="true" use-java-context="true">
