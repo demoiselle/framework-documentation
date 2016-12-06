@@ -2,8 +2,7 @@
 Nas páginas anteriores sobre Multitenancy foram detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
 
-Add no pom.xml
-
+O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto.
 ```xml
 <dependency>
     <groupId>org.demoiselle.jee</groupId>
@@ -13,7 +12,7 @@ Add no pom.xml
 
 > É importante fazer a ação de `maven update` no projeto após adicionar o novo módulo.
 
-Add no demoiselle.properties
+Adicione as seguintes configurações ao seu arquivo `demoiselle.properties`.
 
 ```
 # SQL
@@ -32,14 +31,20 @@ demoiselle.multiTenancyCreateDatabaseDDL=../standalone/tmp/demoiselleMultiTenant
 demoiselle.multiTenancyDropDatabaseDDL=../standalone/tmp/demoiselleMultiTenantDrop_User.ddl
 ```
 
-Add no persistence.xml
+> As configurações acima irão variar de acordo com o banco utilizado, pois as intruções de seleção, create e drop necessárias normalmente não são idênticas. O exemplo acima refere-se ao banco de dados MySQL.
+
+É necessário que existam 3 `persistence units` para a utilização do módulo:
+1. Unidade de persistência que acessa as bases dos Tenants, lembrando que na estratégia adotada cada Tenant terá um Schema separado
+2. Unidade de persistência que acessa a base de dados Master que contém os Tenants
+3. Unidade de persistência que gera os DDLs necessários para a criação do Tenant
+
+Segue abaixo um exemplo de `persistence.xml`.
 
 ```xml
 <persistence-unit name="UserTenantsPU" transaction-type="JTA">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <jta-data-source>java:jboss/datasources/UserTenantsDS</jta-data-source>
     <class>org.demoiselle.jee7.example.store.user.entity.User</class>
-    <!-- <exclude-unlisted-classes>true</exclude-unlisted-classes> -->
     <properties>
         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
         <property name="hibernate.multiTenancy" value="SCHEMA" />
