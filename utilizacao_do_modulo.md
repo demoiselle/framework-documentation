@@ -169,9 +169,9 @@ public class TenantREST {
 		}
 	}
 
-	@POST
-	@Cors
+	@POST	
 	@ValidatePayload
+    @Cors
 	public Response createTenant(Tenant tenant) throws Exception {
 		try {
 			tenantManager.createTenant(tenant);
