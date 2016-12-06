@@ -126,8 +126,7 @@ Abaixo um exemplo de arquivo contendo os data sources para MySQL.
 </drivers>
 ```
 
-
-Criação do Entity Manager
+Para que o módulo funcione corretamente é preciso que seja criado um Entity Manager que será injetado no módulo para ter acesso a base Master que contém os Tenants.
 
 ```java
 public class EntityManagerMasterDAO implements EntityManagerMaster {
