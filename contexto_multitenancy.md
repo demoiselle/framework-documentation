@@ -21,10 +21,6 @@ public class Tenant implements Serializable {
 	@NotNull
 	private String name;
 
-	
-	@Column
-	private String databaseAppVersion;
-
     ...
     
 }
