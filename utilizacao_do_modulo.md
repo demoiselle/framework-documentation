@@ -184,7 +184,7 @@ public class TenantREST {
 ```
 
 ## Últimas Considerações
-* O único schema que não será criado automaticamente (mas esta configurado para criar as tabelas) é a base master que nos exemplos acima é a user_master
+* O único schema que não será criado automaticamente (mas esta configurado para criar as tabelas na propriedade **hibernate.hbm2ddl.auto com** valor **update**) é a base master que nos exemplos acima é a user_master
 * O sistema deverá ter acesso ROOT ao banco de dados, ou algo que permita a criação e exclusão de schemas
 * Cada tenant terá um schema para os seus dados, não compartilhando tabelas
 * No caso de necessitar fazer update em todas as bases já criadas dos Tenants este processo deverá ser feito manualmente
