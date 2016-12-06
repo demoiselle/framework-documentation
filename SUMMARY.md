@@ -21,7 +21,7 @@
 * [Multitenancy](multitenancy.md)
    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
    * [Armazenamento de Dados](armazenamento_de_dados.md)
-   * [Utilização do Módulo](utilizacao_do_modulo.md)
    * [Contexto Multitenancy](contexto_multitenancy.md)
+   * [Utilização do Módulo](utilizacao_do_modulo.md)
 * [Rest](rest.md)
 
