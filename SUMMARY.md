@@ -25,5 +25,4 @@
    * [Contexto Multitenancy](contexto_multitenancy.md)
 * [Rest](rest.md)
 * [Build](build.md)
-   * license
 
