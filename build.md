@@ -11,7 +11,7 @@ Iniciamos as configurações com o arquivo _settings.xml_ utilizado no repositó
 
 Na pasta $home/.m2 crie ou edite o arquivo settings.xml.
 
-```php
+```xml
 <settings>
 	<servers>
 		<server>
