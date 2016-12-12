@@ -45,7 +45,7 @@ Lembrando que o profile pgp será utilizado para associar a sua chave gpg e o us
 
 Para gerar uma versão snapshot na Sonatype basta executar;
 
-```mvn -Prelease deploy```
+```mvn -Pdemoiselle deploy```
 
 A versão snapshot será publicada no seguinte [https://oss.sonatype.org/content/repositories/snapshots/org/demoiselle/jee/](https://oss.sonatype.org/content/repositories/snapshots/org/demoiselle/jee/)
 
@@ -53,19 +53,19 @@ A versão snapshot será publicada no seguinte [https://oss.sonatype.org/content
 
 Primeiramente devemos verificar se o build está funcionando sem problemas. 
 
-```mvn -Prelease clean install```
+```mvn -Pdemoiselle clean install```
 
 Prepare o release, usaremos o modo sem interação com o terminal, portanto informaremos previamente o nome da _tag_, a _versão da release_ e a _nova versão para desenvolvimento_.
 
-```mvn -Prelease -B -Dtag=3.0.0-BETA3 release:prepare -DreleaseVersion=3.0.0-BETA3 -DdevelopmentVersion=3.0.0-RC1-SNAPSHOT```
+```mvn -Pdemoiselle -B -Dtag=3.0.0-BETA3 release:prepare -DreleaseVersion=3.0.0-BETA3 -DdevelopmentVersion=3.0.0-RC1-SNAPSHOT```
 
 Se não houve erros na preparação executamos a release.
 
-```mvn -Prelease release:perform```
+```mvn -Pdemoiselle release:perform```
 
 Se houve erro na preparação é possível desfazer o processo.
 
-```mvn -Prelease release:rollback```
+```mvn -Pdemoiselle release:rollback```
 
 A release será publicada em [https://oss.sonatype.org/content/repositories/releases/org/demoiselle/jee/](https://oss.sonatype.org/content/repositories/releases/org/demoiselle/jee/)
 
@@ -73,9 +73,9 @@ A release será publicada em [https://oss.sonatype.org/content/repositories/rele
 
 Para verificar se os arquivos possuem licença em seus cabeçalhos basta chamar o comando:
 
-```mvn -Prelease license:check```
+```mvn -Pdemoiselle license:check```
 
 Caso alguma arquivo não apresente o cabeçalho é possível inclui-lo com o comando:
 
-```mvn -Prelease license:format```
+```mvn -Pdemoiselle license:format```
 
