@@ -13,7 +13,7 @@
     * [Conceitos](persistence-conceitos.md)
     * [Configurações](persistence-configuracoes.md)
 * [Configuration](configuration.md)
-    * [Configurações Gerais](configurações-gerais.md)
+    * [Configurações Gerais](configuration-general.md)
 * [Security](security.md)
     * [JWT](jwt.md)
     * [Token](token.md)
@@ -25,6 +25,6 @@
     * [Armazenamento de Dados](armazenamento_de_dados.md)
     * [Contexto Multitenancy](contexto_multitenancy.md)
 * [Rest](rest.md)
-    * [Propriedades](propriedades.md)
+    * [Propriedades](rest-properties.md)
 * [Build](build.md)
 

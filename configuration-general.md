@@ -1,6 +1,4 @@
 # Configurações Gerais
 
-## Demoiselle Rest
-
-
+[Demoiselle Rest](https://demoiselle.gitbooks.io/documentacao-jee/content/rest-properties.html)
 
