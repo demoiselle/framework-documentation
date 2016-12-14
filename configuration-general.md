@@ -1,4 +1,4 @@
 # Configurações Gerais
 
-[Demoiselle Rest](rest-properties.html)
+[Demoiselle Rest](rest-properties.md)
 
