@@ -1,5 +1,18 @@
 # Build
-Este Capítulo visa apresentar as atividades de build do framework bem como o seu release.
+Este Capítulo visa apresentar as ferramentas e  atividades relacionada a build do Framework Demoiselle bem como o seu processo de release.
+
+## Integração Contínua
+
+A integração contínua das builds do Framework Demoiselle são realizadas pela ferramenta Travis CI:
+[https://travis-ci.org/demoiselle](https://travis-ci.org/demoiselle)
+
+### Cobertura de Testes
+
+A cobertura dos testes unitários estão disponíveis na ferramenta Coveralls: [https://coveralls.io/github/demoiselle](https://coveralls.io/github/demoiselle)
+
+### Sonar
+
+As métricas de código são publicadas no Sonarqube: [https://sonarqube.com/dashboard?id=org.demoiselle.jee%3Ademoiselle-build](https://sonarqube.com/dashboard?id=org.demoiselle.jee%3Ademoiselle-build)
 
 ## Release Sonatype
 
