@@ -51,6 +51,8 @@ demoiselle.security.jwt.audience=web
 
 ```
 As propriedades Issuer e Audience, devem ser definidas por padrão no demoiselle.properties, mas podem ser alterados na geração do token. Caso sua app Master gere tokens para a mesma app uma única app Slave, é recomendado usar o que está definido nas propriedades, mas se sua app Master gera tokens para multiplas apps diferentes, algo parecido como o SSO(Single Sign On), você pode criar tokens para determinados seridores, alterando as propriedades Issuer e Audience, para serem validadas somente em servidores que conheçam essas propriedades.
+
+```jwt
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
 eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
 TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
