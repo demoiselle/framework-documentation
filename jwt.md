@@ -123,9 +123,9 @@ demoiselle.security.jwt.algorithmIdentifiers=RS256
 demoiselle.security.jwt.issuer=STORE
 demoiselle.security.jwt.audience=web
 ```
-Exemplo de demoiselle.properties (Slave)
+#####Exemplo de demoiselle.properties (Slave)
 
-```bash
+```properties
    # ===== Security =====
 demoiselle.security.corsEnabled=true
 demoiselle.security.jwt.type=slave
