@@ -7,7 +7,7 @@ O padrão proposto pelo JWT é o mais maduro encontrado hoje e sua documentaçã
  
 O funcionamento básico é baseado na validação de assinaturas com chaves simétricas e assimétricas. Optamos pelo uso das chaves assimétricas por possibilitar a validação dos tokens de forma distribuída sem a necessidade de conexão entre servidores.
 
-####Configuração (demoiselle.properties)
+#####Configuração (demoiselle.properties)
 
 ```properties
     # Define se a app é master/slave 
