@@ -28,6 +28,7 @@ Existem dois tipos de gestão do token, são eles:
 Aqui estão as chaves, existem várias formas de criação de chaves publicas, nós colocamos uma solução para criação das chaves automaticamente ao subir o servidor e não houver as duas propriedades no demoiselle.properties. Será escrito no log do servidor que deve ser copiado e colocado no demoiselle.properties. Caso você opte por gerar manualmente seguem os comandos linux:
 
 ```linux
+Linux
 $> openssl genrsa -out private.pem 2048
 $> openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 ```
@@ -40,18 +41,16 @@ Temos mais umas propriedades que definem o uso da especificação
 # 300000 milisegundos são equivalentes a 5 minutos
 demoiselle.security.jwt.timetoLiveMilliseconds=300000 
 
+# Escolha o algoritmo da assinatura, RS256, RS384 e RS512 (pode afetar o tamanho do token)
+demoiselle.security.jwt.algorithmIdentifiers=RS256
+
 # Identificação de quem criou o token
 demoiselle.security.jwt.issuer=STORE
 # Identificação de quem pode utilizar o token
 demoiselle.security.jwt.audience=web
 
 ```
-As propriedades Issuer e Audience, devem ser definidos por padrão e podem ser alterados na geração do token. Caso sua app Server gere tokens para uma única app Slave, é recomendado usar o padrão  tenha apenas um utilizador
-
-
-Logo que você entrega o DemoisellePrincipal preenchido para o contexto de segurança é gerado um token com esse objeto, no seguinte formato que pode ser validado em (https://jwt.io/)
-
-```bash
+As propriedades Issuer e Audience, devem ser definidas por padrão no demoiselle.properties, mas podem ser alterados na geração do token. Caso sua app Master gere tokens para a mesma app uma única app Slave, é recomendado usar o que está definido nas propriedades, mas se sua app Master gera tokens para multiplas apps diferentes, algo parecido como o SSO(Single Sign On), você pode criar tokens para determinados seridores, alterando as propriedades Issuer e Audience, para serem validadas somente em servidores que conheçam essas propriedades.
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
 eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
 TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
