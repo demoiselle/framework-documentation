@@ -1,31 +1,53 @@
 # Security - JWT
 
-Esse componente usa o padrão JWT que é uma especificação do projeto JOSE(http://jose.readthedocs.io/en/latest/) e está definido na RFC7519(https://tools.ietf.org/html/rfc7519) e é apresentado no (https://jwt.io/)
+"Os JWTs são uma seqüência segura, compacta e autônoma com informações significativas que normalmente são assinadas ou criptografadas digitalmente. Eles estão se tornando rapidamente um padrão de fato para implementações de tokens na web". -(Micah Silverman | August 13, 2015)
 
-Basicamente tem seu funcionamento baseado na validação de assinaturas com chaves simétricas e assimétricas. Optamos pelo uso das chaves assimétricas por possibilitar a validação dos tokens de forma distribuída sem a necessidade de conexão entre servidores.
+O padrão proposto pelo JWT é o mais maduro encontrado hoje e sua documentação de referência RFC7519(https://tools.ietf.org/html/rfc7519) explora e soluciona as principais questões de funcionamento desse modelo tão bem sucedido. Você pode encontrar implementações em várias linguagens no link (https://jwt.io/).
+ O JWT que é uma das especificações do projeto JOSE(http://jose.readthedocs.io/en/latest/) 
+ 
+O funcionamento básico é baseado na validação de assinaturas com chaves simétricas e assimétricas. Optamos pelo uso das chaves assimétricas por possibilitar a validação dos tokens de forma distribuída sem a necessidade de conexão entre servidores.
 
-Configuração (demoiselle.properties)
+####Configuração (demoiselle.properties)
 
-```bash
-    # Diz se a app é master/slave 
+```properties
+    # Define se a app é master/slave 
     demoiselle.security.jwt.type=master
 ```
 Existem dois tipos de gestão do token, são eles:
-- master, nesse tipo o servidor tem ambas as chaves e tem a capacidade de assinar e validar os tokens.
+- master, nesse tipo de abordagem o servidor tem ambas as chaves e tem a capacidade de assinar e validar tokens.
 - slave, são os servidores onde só necessitam da chave pública para validar se foi realmente criado pelo servidor master, gerando com isso um ciclo de confiança sem a necessidade de qualquer tipo de conexão entre os servidores
 
-```bash
+```properties
     # Chave public
     demoiselle.security.jwt.publicKey=-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09A11Zaqmp5ZBTOCxgJ8qqtHhb6b-----END PUBLIC KEY-----
     # Chave privada
     demoiselle.security.jwt.privateKey=-----BEGIN PRIVATE KEY-----MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDT0DXVlqqanlkFM4LGAnyq7u+IcUizfs6OQTmTR3Xp6LryES/rLn0vwZKZIvo=-----END PRIVATE KEY-----
-    # Tempo de vida do token em minutos, após esse tempo ele será considerado inválido
-    demoiselle.security.jwt.timetolive=5
-    # Identificação de quem criou o token 
-    demoiselle.security.jwt.issuer=STORE
-    # Identificação de quem pode utilizar o token
-    demoiselle.security.jwt.audience=web
+   
 ```
+
+Aqui estão as chaves, existem várias formas de criação de chaves publicas, nós colocamos uma solução para criação das chaves automaticamente ao subir o servidor e não houver as duas propriedades no demoiselle.properties. Será escrito no log do servidor que deve ser copiado e colocado no demoiselle.properties. Caso você opte por gerar manualmente seguem os comandos linux:
+
+```linux
+$> openssl genrsa -out private.pem 2048
+$> openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+```
+Agora copie o conteúdo do private.pem e do public.pem para o properties.demoiselle
+
+Temos mais umas propriedades que definem o uso da especificação
+
+```properties
+# Tempo de vida do token em millisegundos, após esse tempo ele será considerado inválido
+# 300000 milisegundos são equivalentes a 5 minutos
+demoiselle.security.jwt.timetoLiveMilliseconds=300000 
+
+# Identificação de quem criou o token
+demoiselle.security.jwt.issuer=STORE
+# Identificação de quem pode utilizar o token
+demoiselle.security.jwt.audience=web
+
+```
+As propriedades Issuer e Audience, devem ser definidos por padrão e podem ser alterados na geração do token. Caso sua app Server gere tokens para uma única app Slave, é recomendado usar o padrão  tenha apenas um utilizador
+
 
 Logo que você entrega o DemoisellePrincipal preenchido para o contexto de segurança é gerado um token com esse objeto, no seguinte formato que pode ser validado em (https://jwt.io/)
 
