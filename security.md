@@ -1,4 +1,4 @@
-# Security
+## Security
 
 O Componente de segurança tem duas implementações, uma baseada em JWT e a outra em um Token gerido pelo próprio backend, cada uma atende uma estratégia de uso para webapps e/ou microservices.
 
