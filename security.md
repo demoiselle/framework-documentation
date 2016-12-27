@@ -6,7 +6,7 @@ O módulo security é o gestor do contexto de segurança, suas implementações 
 
 Para utilizar o módulo de segurança você deve importar a dependência 
 
-```bash
+```xml
 <dependency>
    <groupId>org.demoiselle.jee</groupId>
    <artifactId>demoiselle-security-jwt</artifactId>
