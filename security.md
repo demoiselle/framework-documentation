@@ -105,13 +105,13 @@ CORS
 
 O módulo seguraça fornece uma solução para cors, onde existe uma configuração e duas anotações.
 
-```bash
+```properties
     # Habilita/Desabilita o cors por padrão 
     demoiselle.security.corsEnabled=true
 ```
 Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com essa configuração:
 
-```bash
+```annotation
     # Habilita/Desabilita o cors por padrão 
     @Cors
     Habilita o cors no método anotado quando a configuração for
