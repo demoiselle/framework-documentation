@@ -27,7 +27,7 @@ Dependendo da estratégia escolhida.
 
 Caso você crie sua app a partir de um parent
 
-```bash
+```xml
     <parent>
         <groupId>org.demoiselle.jee</groupId>
         <artifactId>demoiselle-parent</artifactId>
