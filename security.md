@@ -42,7 +42,7 @@ Para manter o usuário no contexto de segurança usamos a Classe DemoisellePrinc
 
 Exemplo de login com JWT:
 
-```bash
+```java
 
     @Inject
     private SecurityContext securityContext;
