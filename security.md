@@ -15,7 +15,7 @@ Para utilizar o módulo de segurança você deve importar a dependência
 ```        
 ou
 
-```bash
+```xml
 <dependency>
    <groupId>org.demoiselle.jee</groupId>
    <artifactId>demoiselle-security-token</artifactId>
