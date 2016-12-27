@@ -111,7 +111,7 @@ O módulo seguraça fornece uma solução para cors, onde existe uma configuraç
 ```
 Você tem que colocar um arquivo de propriedades chamado demoiselle.properties na sua app com essa configuração:
 
-```annotation
+```annotations
     # Habilita/Desabilita o cors por padrão 
     @Cors
     Habilita o cors no método anotado quando a configuração for
