@@ -1,7 +1,9 @@
 # Multitenancy - Utilização do Módulo
+
 Nas páginas anteriores sobre Multitenancy foram detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
 O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto.
+
 ```xml
 <dependency>
     <groupId>org.demoiselle.jee</groupId>
@@ -32,9 +34,9 @@ demoiselle.multiTenancyDropDatabaseDDL=../standalone/tmp/demoiselleMultiTenantDr
 
 > As configurações acima irão variar de acordo com o banco utilizado, pois as intruções de seleção, create e drop necessárias normalmente não são idênticas. O exemplo acima refere-se ao banco de dados MySQL.
 
-É necessário que existam 3 `persistence units` para a utilização do módulo:
-1. Unidade de persistência que acessa as bases dos Tenants, lembrando que na estratégia adotada cada Tenant terá um Schema separado
-2. Unidade de persistência que acessa a base de dados Master que contém os Tenants
+É necessário que existam 3 `persistence units` para a utilização do módulo:  
+1. Unidade de persistência que acessa as bases dos Tenants, lembrando que na estratégia adotada cada Tenant terá um Schema separado  
+2. Unidade de persistência que acessa a base de dados Master que contém os Tenants  
 3. Unidade de persistência que gera os DDLs necessários para a criação do Tenant
 
 Segue abaixo um exemplo de `persistence.xml`.
@@ -62,7 +64,7 @@ Segue abaixo um exemplo de `persistence.xml`.
     <properties>
         <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
         <property name="hibernate.hbm2ddl.auto" value="update" />
-        <property name="hibernate.show_sql" value="false" />		
+        <property name="hibernate.show_sql" value="false" />        
     </properties>
 </persistence-unit>
 
@@ -83,7 +85,7 @@ Segue abaixo um exemplo de `persistence.xml`.
 </persistence-unit>
 ```
 
-As Uniaddes de Persistência acima deverão estar apontadas para Fontes de Dados (Data Sources) que estarão no `standalone.xml` do servidor de aplicação.
+As Uniaddes de Persistência acima deverão estar apontadas para Fontes de Dados \(Data Sources\) que estarão no `standalone.xml` do servidor de aplicação.
 
 Abaixo um exemplo de arquivo contendo os data sources para MySQL.
 
@@ -129,12 +131,12 @@ Para que o módulo funcione corretamente é preciso que seja criado um Entity Ma
 
 ```java
 public class EntityManagerMasterDAO implements EntityManagerMaster {
-	@PersistenceContext(unitName = "UserMasterPU")
-	protected EntityManager emEntity;
+    @PersistenceContext(unitName = "UserMasterPU")
+    protected EntityManager emEntity;
 
-	public EntityManager getEntityManager() {
-		return emEntity;
-	}
+    public EntityManager getEntityManager() {
+        return emEntity;
+    }
 }
 ```
 
@@ -148,44 +150,47 @@ Abaixo um exemplo de serviços REST que utiliza a classe TenantManager que permi
 @Produces({ MediaType.APPLICATION_JSON })
 public class TenantREST {
 
-	@Inject
-	private TenantManager tenantManager;
+    @Inject
+    private TenantManager tenantManager;
 
-	@GET
-	@Cors
-	public Result listAllTenants() throws Exception {
-		return tenantManager.find();
-	}
-
-	@DELETE
-	@Path("{id}")
-	@Cors
-	public Response deleteTenant(@PathParam("id") Long id) throws Exception {
-		try {
-			tenantManager.removeTenant(id);
-			return Response.ok().build();
-		} catch (final Exception e) {
-			return Response.serverError().build();
-		}
-	}
-
-	@POST	
-	@ValidatePayload
+    @GET
     @Cors
-	public Response createTenant(Tenant tenant) throws Exception {
-		try {
-			tenantManager.createTenant(tenant);
-			return Response.ok().build();
-		} catch (final Exception e) {
-			return Response.serverError().build();
-		}
-	}
+    public Result listAllTenants() throws Exception {
+        return tenantManager.find();
+    }
+
+    @DELETE
+    @Path("{id}")
+    @Cors
+    public Response deleteTenant(@PathParam("id") Long id) throws Exception {
+        try {
+            tenantManager.removeTenant(id);
+            return Response.ok().build();
+        } catch (final Exception e) {
+            return Response.serverError().build();
+        }
+    }
+
+    @POST    
+    @ValidatePayload
+    @Cors
+    public Response createTenant(Tenant tenant) throws Exception {
+        try {
+            tenantManager.createTenant(tenant);
+            return Response.ok().build();
+        } catch (final Exception e) {
+            return Response.serverError().build();
+        }
+    }
 }
 ```
 
 ## Últimas Considerações
-* O único schema que não será criado automaticamente (mas esta configurado para criar as tabelas na propriedade **hibernate.hbm2ddl.auto com** valor **update**) é a base master que nos exemplos acima é a user_master
+
+* O único schema que não será criado automaticamente \(mas esta configurado para criar as tabelas na propriedade **hibernate.hbm2ddl.auto com** valor **update**\) é a base master que nos exemplos acima é a user\_master
 * O sistema deverá ter acesso ROOT ao banco de dados, ou algo que permita a criação e exclusão de schemas
 * Cada tenant terá um schema para os seus dados, não compartilhando tabelas
 * No caso de necessitar fazer update em todas as bases já criadas dos Tenants este processo deverá ser feito manualmente
+
+
 
