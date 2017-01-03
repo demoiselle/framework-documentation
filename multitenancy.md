@@ -8,8 +8,7 @@ O Framework Demoiselle fornece alguns facilitadores e a documentação necessár
 
 ## Estratégias para Disponibilização dos Serviços
 
-Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Framework Demoiselle versão 3 trata basicamente serviços REST.  
-As 3 principais abordagens são:
+Existem pelo menos 3 estratégias para a camada de serviço, que no caso do Framework Demoiselle versão 3 trata basicamente serviços REST. As 3 principais abordagens são:
 
 1. Utilização de **Subdomínio \(DNS\)** - nesta utilização cada inquilino se utiliza de um subdomínio próprio fornecido pelo servidor de DNS como por exemplo _cliente01.meudominio.com_ e _cliente02.meudominio.com_.
 2. Utilização de **Metadados** - a utilização de meta dados basicamente utiliza algum dado do usuário para o direcionar para o inquilino correto, normalmente o direcionamento somente pode ser feito após a identificação do usuário que comumente é feito por meio de acesso ao sistema utilizando um e-mail e senha
