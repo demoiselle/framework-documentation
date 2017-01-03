@@ -1,8 +1,8 @@
 # Multitenancy - Utilização do Módulo
 
-Nas páginas anteriores sobre Multitenancy foram detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
+Nos próximos capítulos sobre Multitenancy serão detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
-O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto.
+O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto no arquivo `pom.xml`.
 
 ```xml
 <dependency>
@@ -15,7 +15,7 @@ O primeiro passo é adicionar o módulo de Multitenancy ao seu projeto.
 
 Adicione as seguintes configurações ao seu arquivo `demoiselle.properties`.
 
-```
+```properties
 # SQL
 demoiselle.multiTenancyMasterDatabase=user_master
 demoiselle.multiTenancySetDatabaseSQL=USE
@@ -32,7 +32,7 @@ demoiselle.multiTenancyCreateDatabaseDDL=../standalone/tmp/demoiselleMultiTenant
 demoiselle.multiTenancyDropDatabaseDDL=../standalone/tmp/demoiselleMultiTenantDrop_User.ddl
 ```
 
-> As configurações acima irão variar de acordo com o banco utilizado, pois as intruções de seleção, create e drop necessárias normalmente não são idênticas. O exemplo acima refere-se ao banco de dados MySQL.
+> As configurações acima irão variar de acordo com o banco utilizado, pois as intruções de seleção, create e drop necessárias normalmente não são idênticas. O exemplo acima refere-se ao banco de dados **MySQL**.
 
 É necessário que existam 3 `persistence units` para a utilização do módulo:  
 1. Unidade de persistência que acessa as bases dos Tenants, lembrando que na estratégia adotada cada Tenant terá um Schema separado  
