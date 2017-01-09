@@ -21,3 +21,9 @@ Explicar como funciona o JSON de retorno de erro e os código HTTP de erros.
 
 
 
+## Referências
+
+* https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception\_handling.html
+
+
+
