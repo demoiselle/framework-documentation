@@ -26,6 +26,5 @@
     * [Contexto Multitenancy](contexto_multitenancy.md)
 * [Rest](rest.md)
     * [Propriedades](rest-properties.md)
-* [Build](build.md)
 * [Tratamento de Erros](tratamento-de-erros.md)
 
