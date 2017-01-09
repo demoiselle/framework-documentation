@@ -15,3 +15,9 @@ Texto.
 
 Explicar o funcionamento dos Mappers.
 
+## Padrões de Retorno
+
+Explicar como funciona o JSON de retorno de erro e os código HTTP de erros.
+
+
+
