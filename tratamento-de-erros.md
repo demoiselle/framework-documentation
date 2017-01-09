@@ -4,9 +4,9 @@
 
 Texto.
 
-O ideal é que no log de inicilização do servidor de aplicação somente existam as seguintes classes de mapeamento:
+O ideal é que no log de inicialização do servidor de aplicação somente existam as seguintes classes de mapeamento:
 
-1. org.demoiselle.jee.rest.exception.mapper.**ValidationExceptionMapper**: sobre-escreve o mapeamento de Exception do Beans Validation \(CONFERIR\)
+1. org.demoiselle.jee.rest.exception.mapper.**ValidationExceptionMapper**: sobrescreve o mapeamento de Exception do Beans Validation \(CONFERIR\)
 2. org.demoiselle.jee.rest.exception.mapper.**AnyOtherExceptionMapper**: captura todas as outras Exceptions do sistema
 
 ## Exception Mappers
@@ -18,6 +18,12 @@ Explicar o funcionamento dos Mappers.
 ## Padrões de Retorno
 
 Explicar como funciona o JSON de retorno de erro e os código HTTP de erros.
+
+## Configurações
+
+isShowErrorDetails
+
+## Sobrescrita do Formato Padrão
 
 ## Referências
 
