@@ -25,6 +25,12 @@ isShowErrorDetails
 
 ## Sobrescrita do Formato Padrão
 
+main/webapp/WEB-INF/beans.xml
+
+Alternative
+
+
+
 ## Referências
 
 * [https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception\\_handling.html](https://dennis-xlc.gitbooks.io/restful-java-with-jax-rs-2-0-2rd-edition/content/en/part1/chapter7/exception\_handling.html)
