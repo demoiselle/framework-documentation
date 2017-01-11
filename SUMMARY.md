@@ -19,14 +19,15 @@
   * [Token](token.md)
 * [Scripts](scripts.md)
 * [REST](rest.md)
- *  [Propriedades](rest-properties.md)
- * [Tratamento de Erros](tratamento-de-erros.md)
+  * [Propriedades](rest-properties.md)
+  * [Tratamento de Erros](tratamento-de-erros.md)
 * [CRUD](crud.md)
-* * [Multitenancy](multitenancy.md)
+  * [Multitenancy](multitenancy.md)
   * [Utilização do Módulo](utilizacao_do_modulo.md)
+  * [Contexto Multitenancy](contexto_multitenancy.md)
   * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
   * [Armazenamento de Dados](armazenamento_de_dados.md)
-  * [Contexto Multitenancy](contexto_multitenancy.md)
+* [Build e Release](/build.md) 
 
 
 
