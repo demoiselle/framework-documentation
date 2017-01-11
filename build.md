@@ -87,12 +87,12 @@ Ao término da build é apresentado o ID de repositório temporário no qual é 
 
 Para fazer a release desse repositório, deve-se acessar o site [https://oss.sonatype.org](https://oss.sonatype.org) com seu usuário proceder as seguintes ações:
 
-1. Acessar o menu [Staging Repositories](https://oss.sonatype.org/#stagingRepositories)
-2. Pesquisar pelo repositório temporário, no exemplo seria "orgdemoiselle-1014"
-3. Selecionar o repositório procuradi
-4. Acionar o botão Release
-5. Informar a descrição a build. Exemplo: "Release for Demoiselle JEE 3.X.X"
-6. Confirmar
+1. Acessar o menu [Staging Repositories](https://oss.sonatype.org/#stagingRepositories);
+2. Pesquisar pelo repositório temporário, no exemplo seria "orgdemoiselle-1014";
+3. Selecionar o repositório procurado;
+4. Acionar o botão Release;
+5. Informar a descrição da release. Exemplo: "Release for Demoiselle JEE 3.X.X";
+6. Confirmar.
 
 ![](/assets/release_repository.png)
 
