@@ -47,13 +47,13 @@ Para corrigir o problema na visão **"Project Exporer"** do Eclipse clique sobre
 
 ### Parent POM - Demoiselle REST
 
-Para carregar todos os módulso padrões para REST e as configurações necessárias para a instalação em um container JEE 7 basta adicionar o seguinte trecho de código em seu `pom.xml`.
+Para carregar todos os módulos padrões para REST e as configurações necessárias para a instalação em um container JEE 7 basta adicionar o seguinte trecho de código em seu`pom.xml`.
 
 ```xml
 <parent>
     <groupId>org.demoiselle.jee</groupId>
     <artifactId>demoiselle-parent-rest</artifactId>
-    <version>3.0.0-BETA1</version>
+    <version>3.0.0-RC1</version>
 </parent>
 ```
 
