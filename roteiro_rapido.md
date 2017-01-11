@@ -53,7 +53,7 @@ Para carregar todos os módulso padrões para REST e as configurações necessá
 <parent>
     <groupId>org.demoiselle.jee</groupId>
     <artifactId>demoiselle-parent-rest</artifactId>
-    <version>3.0.0-BETA1</version>
+    <version>3.0.0-RC1</version>
 </parent>
 ```
 
@@ -77,7 +77,7 @@ O `pom.xml` deve parecer com o seguinte:
     <parent>
         <groupId>org.demoiselle.jee</groupId>
         <artifactId>demoiselle-parent-rest</artifactId>
-        <version>3.0.0-BETA1</version>
+        <version>3.0.0-RC1</version>
     </parent>
 </project>
 ```
@@ -108,37 +108,37 @@ import javax.persistence.Id;
 @Entity
 public class Noticia {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable = false)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Integer id;
 
-	@Column(nullable = false)
-	private String titulo;
+    @Column(nullable = false)
+    private String titulo;
 
-	@Column(nullable = true)
-	private String descricao;
+    @Column(nullable = true)
+    private String descricao;
 
-	public Noticia() {
-	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getTitulo() {
-		return titulo;
-	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	public String getDescricao() {
-		return descricao
-	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+    public Noticia() {
+    }
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public String getDescricao() {
+        return descricao
+    }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 }
 ```
 
