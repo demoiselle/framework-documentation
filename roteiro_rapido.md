@@ -1,8 +1,11 @@
 # Roteiro Rápido de Construção do Back-end
+
 O objetivo deste roteiro é iniciar um novo aplicativo utilizando o Framework Demoiselle 3.
 
 A aplicação criada irá rodar no servidor, comumente conhecida como back-end.
+
 ## Pré Requisitos de Uso
+
 * Eclipse Neon
   * [32 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk.tar.gz) / [64 bits](http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/neon/1/eclipse-jee-neon-1-linux-gtk-x86_64.tar.gz)
 * JDK 1.8
@@ -15,11 +18,12 @@ A aplicação criada irá rodar no servidor, comumente conhecida como back-end.
 Em desenvolvimento.
 
 ## Criação do Projeto REST
-Com o Eclipse aberto acesse o menu **File > New > Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
+
+Com o Eclipse aberto acesse o menu **File &gt; New &gt; Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 
 ![Escolha do Tipo do Projeto](project-type.png)
 
-Clique no botão **Next**, e na próxima tela selecione a opção "Create a simple project (skip archetype selection)" como mostra a imagem abaixo. Esta opção seleciona a criação de um projeto simples sem escolha de arquétipo Maven.
+Clique no botão **Next**, e na próxima tela selecione a opção "Create a simple project \(skip archetype selection\)" como mostra a imagem abaixo. Esta opção seleciona a criação de um projeto simples sem escolha de arquétipo Maven.
 
 ![Criação de projeto simples](simple.png)
 
@@ -30,14 +34,21 @@ Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Gro
 Clique no botão **Finish**.
 
 ### Erro do Web.xml
+
 Neste ponto da criação seu projeto deve estar com o seguinte erro:
+
 ```
 web.xml is missing and <failOnMissingWebXml> is set to true
 ```
-Para corrigir o problema clique sobre item "Deployment Description: sistema" do projeto e em seguida **Generate Deployment Descriptor Stub**.
+
+Para corrigir o problema na visão **"Project Exporer"** do Eclipse clique sobre item "Deployment Description: sistema" do projeto e em seguida **Generate Deployment Descriptor Stub**.
+
+![](/assets/generate-deployment-descriptor.jpg)
 
 ### Parent POM - Demoiselle REST
+
 Para carregar todos os módulso padrões para REST e as configurações necessárias para a instalação em um container JEE 7 basta adicionar o seguinte trecho de código em seu `pom.xml`.
+
 ```xml
 <parent>
     <groupId>org.demoiselle.jee</groupId>
@@ -56,27 +67,29 @@ O `pom.xml` deve parecer com o seguinte:
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.meubackendsistema</groupId>
-	<artifactId>sistema</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.com.meubackendsistema</groupId>
+    <artifactId>sistema</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
 
-	<parent>
-		<groupId>org.demoiselle.jee</groupId>
-		<artifactId>demoiselle-parent-rest</artifactId>
-		<version>3.0.0-BETA1</version>
-	</parent>
+    <parent>
+        <groupId>org.demoiselle.jee</groupId>
+        <artifactId>demoiselle-parent-rest</artifactId>
+        <version>3.0.0-BETA1</version>
+    </parent>
 </project>
 ```
 
 Ao adicionar o **Parent POM REST** do Demoiselle os seguinte módulos serão carregados:
+
 * **Core** - demoiselle-core
 * **Security - JWT** - demoiselle-security-jwt
 * **Persistence JPA** - demoiselle-persistence-jpa
 
 ## Criação das Entidades e Persistência
+
 Vamos começar criando a classe Notícia com as seguintes informações.
 
 ![Criação da Classe Notícia](class-noticia.png)
@@ -95,21 +108,21 @@ import javax.persistence.Id;
 @Entity
 public class Noticia {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(nullable = false)
-	private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Integer id;
 
-	@Column(nullable = false)
-	private String titulo;
+    @Column(nullable = false)
+    private String titulo;
 
-	@Column(nullable = true)
-	private String descricao;
+    @Column(nullable = true)
+    private String descricao;
 
-	public Noticia() {
-		
-	}
-    
+    public Noticia() {
+
+    }
+
     // Getters and Setters
 }
 ```
@@ -125,21 +138,23 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.1"
-	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-	<persistence-unit name="ExamplePU" transaction-type="JTA">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
-		<class>br.com.meubackend.sistema.entity.Noticia</class>
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
-		</properties>
-	</persistence-unit>	
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="ExamplePU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+        <class>br.com.meubackend.sistema.entity.Noticia</class>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+        </properties>
+    </persistence-unit>    
 </persistence>
 ```
+
 ## Criação dos Serviços REST
+
 Com a entidade de persistência criada podemos criar os serviços que irão manipular o objeto, para isso crie a seguinte classe que indicará a raíz dos serviços:
 
 ![Criação da Classe AppREST](app-rest.png)
@@ -187,21 +202,21 @@ import br.com.meubackend.sistema.entity.Noticia;
 @Consumes(MediaType.APPLICATION_JSON)
 public class NoticiaREST {
 
-	@PersistenceContext
-	protected EntityManager entityManager;
+    @PersistenceContext
+    protected EntityManager entityManager;
 
-	@POST
-	@Transactional
-	public void create(Noticia noticia) {
-		entityManager.persist(noticia);
-	}
+    @POST
+    @Transactional
+    public void create(Noticia noticia) {
+        entityManager.persist(noticia);
+    }
 
-	@GET
-	public List<Noticia> list() {
-		CriteriaQuery<Noticia> q = entityManager.getCriteriaBuilder().createQuery(Noticia.class);
-		q.select(q.from(Noticia.class));
-		return entityManager.createQuery(q).getResultList();
-	}
+    @GET
+    public List<Noticia> list() {
+        CriteriaQuery<Noticia> q = entityManager.getCriteriaBuilder().createQuery(Noticia.class);
+        q.select(q.from(Noticia.class));
+        return entityManager.createQuery(q).getResultList();
+    }
 
 }
 ```
@@ -209,6 +224,7 @@ public class NoticiaREST {
 Adicione o projeto ao servidor WildFly e inicie o servidor.
 
 Se o servidor WildFly iniciar corretamente acesso o endereço `http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia` e deverá aparecer apenas um Array vazio em formato JSON.
+
 ## Erros Comuns
 
 ### Unsatisfied dependencies for type MinhaClasse with qualifiers @Default
@@ -216,16 +232,19 @@ Se o servidor WildFly iniciar corretamente acesso o endereço `http://localhost:
 Este erro ocorre ao levantar o servidor de aplicação e para corrigir basta adicionar um arquivo chamado beans.xml na pasta META-INF, junto com o persistence.xml.
 
 ## Testando o Back-end da Aplicação
+
 A maneira mais simples de testar o funcionamento da API é usar a ferramenta cURL da seguinte maneira:
 
 ```sh
 curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d '{
-	"titulo": "Titulo",
-	"descricao" : "Descricao da noticia"
+    "titulo": "Titulo",
+    "descricao" : "Descricao da noticia"
 }' "http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia"
 ```
-
 
 ```sh
 curl -X GET -H "Content-Type: application/json" -H "Cache-Control: no-cache" "http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia"
 ```
+
+
+
