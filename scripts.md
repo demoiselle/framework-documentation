@@ -2,23 +2,19 @@
 
 ---
 
-Responsible for Managing Scripts, its compilation and execution.
+Responsável pela Gestão de Scripts dinâmicos, sua compilação e execução. Este  componente  torna disponivel as facilidades fornecidas pelo Java Scripting API para rodar engines de scripts que implementam interfaces compatíveis com a JSR-223.
 
-The implementation of this component is for the use of the facilities provided by the Java Scripting AP
+Usando as  interfaces compilable e invocable da ​​JSR-223 \(que necessitam ser implementadas pelo engine\) o manager pode acessar os métodos genéricos de cada engine para compilar o código e salvar no cache o bytecode respectivo do script.
 
-I to build dynamic and scripting languages ​​in which implement compatible engine with JSR-223.
+O script permite na sua execução ,  passar um contexto de variavéis \(com objetos que serão acessíveis pelo  código do script\) sendo que este pode ser manipulado /alterado e disponibilizado pelo script e retornado para o código java de chamada.
 
-Using Compiled and Invocable interfaces JSR-223 \(implemented in engines\) the manager can access the generically methods to compile the code and save the bytecode cache.
-
-The script allows execution is passed a context with objects that will be accessible to the script code can be manipulated / altered by the same and made available via the same context for the calling code.
-
-* To add a specific engine add the reference to the jar in the pom.xml  in your aplication.  The discover mechanism locates and register the engine to use. 
+* O motor 'nashorn' que é um engine javascript já vem embutido nas jvm mais novas por padrão. Porém para adicionar um engine de uma outra linguagem específica, adicione a referência ao jar no pom.xml na sua aplicação. O mecanismo de descoberta localiza e registra o motor a ser utilizado.
 
 
 
 ---
 
-Example of use:
+Exemplo de uso:
 
 ```java
 //in the pom.xml :
