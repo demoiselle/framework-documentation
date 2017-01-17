@@ -25,6 +25,5 @@
 * [Multitenancy](multitenancy.md)
     * [Utilização](utilizacao_do_modulo.md)
     * [Contexto Multitenancy](contexto_multitenancy.md)
-    * [Disponibilização dos Serviços](disponibilizacao_dos_servicos.md)
 * [Build e Release](build.md)
 

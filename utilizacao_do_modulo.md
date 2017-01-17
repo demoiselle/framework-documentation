@@ -1,14 +1,14 @@
 # Multitenancy - Utilização
 
-Neste capítulo do Multitenancy serão dadas as instruções para a configuração de um projeto multitenancy utilizando as estratégias de URL (http://dominio.com/cliente01/) e segregação de bancos de dados por Schema em uma única instância de banco de dados.
+Neste capítulo do Multitenancy serão dadas as instruções para a configuração de um projeto multitenancy utilizando as estratégias de URL \([http://dominio.com/cliente01/](http://dominio.com/cliente01/)\) e segregação de bancos de dados por Schema em uma única instância de banco de dados.
 
 O primeiro passo é adicionar o projeto de Multitenancy ao seu projeto no arquivo `pom.xml`.
 
 ```xml
 <dependency>
-	<groupId>org.demoiselle.tenant</groupId>
-	<artifactId>tenant-hibernate</artifactId>
-	<version>1.0.0-RC1-SNAPSHOT</version>
+    <groupId>org.demoiselle.tenant</groupId>
+    <artifactId>tenant-hibernate</artifactId>
+    <version>1.0.0-RC1-SNAPSHOT</version>
 </dependency>
 ```
 
