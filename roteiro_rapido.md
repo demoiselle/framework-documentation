@@ -21,15 +21,15 @@ Em desenvolvimento.
 
 Com o Eclipse aberto acesse o menu **File &gt; New &gt; Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
 
-![Escolha do Tipo do Projeto](project-type.png)
+![Escolha do Tipo do Projeto](assets/project-type.png)
 
 Clique no botão **Next**, e na próxima tela selecione a opção "Create a simple project \(skip archetype selection\)" como mostra a imagem abaixo. Esta opção seleciona a criação de um projeto simples sem escolha de arquétipo Maven.
 
-![Criação de projeto simples](simple.png)
+![Criação de projeto simples](assets/simple.png)
 
 Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Group Id** e "sistema" no **Artifact Id**, sem as aspas e por fim escolha "war" no campo **Packaging** como mostra a imagem abaixo.
 
-![Escolha dos IDs](id.png)
+![Escolha dos IDs](assets/id.png)
 
 Clique no botão **Finish**.
 
@@ -61,7 +61,7 @@ Para carregar todos os módulos padrões para REST e as configurações necessá
 
 O resultado da criação deve ser algo parecido com a imagem abaixo.
 
-![Estrutura do projeto](project-structure.png)
+![Estrutura do projeto](assets/project-structure.png)
 
 O `pom.xml` deve parecer com o seguinte:
 
@@ -92,7 +92,7 @@ Ao adicionar o **Parent POM REST** do Demoiselle os seguinte módulos serão car
 
 Vamos começar criando a classe Notícia com as seguintes informações.
 
-![Criação da Classe Notícia](class-noticia.png)
+![Criação da Classe Notícia](assets/class-noticia.png)
 
 A classe da Notícia deverá se parecer com o seguinte após adicionarmos as anotações de persistência:
 
@@ -172,7 +172,7 @@ Para a configuração da persistência do projeto criaremos dentro da estrutura 
 
 Com a entidade de persistência criada podemos criar os serviços que irão manipular o objeto, para isso crie a seguinte classe que indicará a raíz dos serviços:
 
-![Criação da Classe AppREST](app-rest.png)
+![Criação da Classe AppREST](assets/app-rest.png)
 
 Substitua o conteúdo da classe pelo seguinte conteúdo:
 
@@ -192,7 +192,7 @@ Esta classe indica que a raíz dos serviços será `/api` no seu sistema.
 
 Agora criaremos os serviços que irão manipular o objeto da Notícia, para isso crie a seguinte classe:
 
-![Classe Notícia REST](noticia-rest.png)
+![Classe Notícia REST](assets/noticia-rest.png)
 
 ```java
 package br.com.meubackend.sistema.service;
