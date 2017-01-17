@@ -39,7 +39,7 @@ _É importante que o arquivo de properties seja cocado na mesma estrutura de pas
 
 ## Utilização de Parâmetros
 
-É possível parametrizar a utilização das mensagens por meio de parâmetros de métodos e marcadores nas mensagens do arquivo de propriedades.   
+É possível parametrizar a utilização das mensagens por meio de parâmetros de métodos e marcadores nas mensagens do arquivo de propriedades.  
 Abaixo um exemplo de método \(Que deve estar dentro de uma classe anotada com @MessageBundle\):
 
 ```java
@@ -55,7 +55,11 @@ mensagem-de-teste-com-parametro=Mensagem ao usuário com parametro 1: %s e param
 
 ## Sobre escrita de Mensagens dos Módulos
 
-Texto.
+Para sobreescrever as mensagens dos módulos do Framework basta criar na pasta `\src\main\resources\` utilizando o mesmo caminho do pacote do arquivo de mensagens. Por exemplo, para sobrescrever o arquivo de mensagens do core basta criar as pastas `/src/main/resources/org/demoiselle/jee/core/message/` e o arquivo `DemoiselleMessage.properties`.
+
+> Cada arquivo de properties representa uma classe Java que contém os métodos equivalentes, portanto para saber outros arquivos de mensagens do Framework e sua estrutura de pastas basta fazer uma busca dentro do projeto por qualquer arquivo que tenha no nome o texto Message, para facilitar utilize o próprio GitHub a funcionalidade Find File \([https://github.com/demoiselle/framework/find/master](https://github.com/demoiselle/framework/find/master)\) e busque por Message.
+>
+> **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário fazer para todas as mensagens**
 
 
 
