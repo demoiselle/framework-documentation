@@ -57,9 +57,8 @@ mensagem-de-teste-com-parametro=Mensagem ao usuário com parametro 1: %s e param
 
 Para sobreescrever as mensagens dos módulos do Framework crie a mesma estrutura de pastas do arquivo properties que deseja sobrescrever, sendo que o caminho inicial padrão para estes arquivos é  `/src/main/resources/`). Por exemplo, para sobrescrever o arquivo de mensagens do core basta criar a estrutura de pastas `/src/main/resources/org/demoiselle/jee/core/message/` e o arquivo `DemoiselleMessage.properties` dentro. A interface que representa este arquivo pode ser encontrada [aqui]( https://github.com/demoiselle/framework/blob/master/demoiselle-core/src/main/java/org/demoiselle/jee/core/message/DemoiselleMessage.java) e o arquivo com os valores iniciais [aqui](https://github.com/demoiselle/framework/blob/master/demoiselle-core/src/main/resources/org/demoiselle/jee/core/message/DemoiselleMessage.properties).
 
+Cada arquivo de properties representa uma classe Java que contém os métodos equivalentes, portanto para saber outros arquivos de mensagens do Framework e sua estrutura de pastas basta fazer uma busca dentro do projeto por qualquer arquivo que tenha no nome o texto Message, para facilitar utilize o próprio GitHub a funcionalidade Find File \([https://github.com/demoiselle/framework/find/master](https://github.com/demoiselle/framework/find/master)\) e busque por Message.
 
-> Cada arquivo de properties representa uma classe Java que contém os métodos equivalentes, portanto para saber outros arquivos de mensagens do Framework e sua estrutura de pastas basta fazer uma busca dentro do projeto por qualquer arquivo que tenha no nome o texto Message, para facilitar utilize o próprio GitHub a funcionalidade Find File \([https://github.com/demoiselle/framework/find/master](https://github.com/demoiselle/framework/find/master)\) e busque por Message.
->
 > **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário sobrescrever todas as mensagens**
 
 ## Internacionalização das Mensagens
