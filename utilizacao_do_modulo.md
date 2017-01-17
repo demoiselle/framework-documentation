@@ -1,4 +1,4 @@
-# Multitenancy - Utilização do Módulo
+# Multitenancy - Utilização
 
 Nos próximos capítulos sobre Multitenancy serão detalhados os passos para a criação da estrutura necessária para a funcionalidade, contudo o Demoiselle fornece um módulo especifico que permite com algumas configurações ter as mesmas funcionalidades.
 
