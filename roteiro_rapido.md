@@ -13,10 +13,6 @@ A aplicação criada irá rodar no servidor, comumente conhecida como back-end.
 * WildFly 10.1.0.Final
   * [Download no site do WildFly](http://wildfly.org/downloads/)
 
-## Criação do Servidor WildFly no Eclipe
-
-Em desenvolvimento.
-
 ## Criação do Projeto REST
 
 Com o Eclipse aberto acesse o menu **File &gt; New &gt; Other**, na janela seguinte filtre por "maven project" como mostra a imagem abaixo:
