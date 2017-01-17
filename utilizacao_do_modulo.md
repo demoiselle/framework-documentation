@@ -16,7 +16,7 @@ O primeiro passo é adicionar o projeto de Multitenancy ao seu projeto no arquiv
 
 Adicione as seguintes configurações ao seu arquivo `demoiselle.properties`.
 
-```prop
+```propertie
 # SQL
 demoiselle.multiTenancyMasterDatabase=user_master
 demoiselle.multiTenancySetDatabaseSQL=USE
