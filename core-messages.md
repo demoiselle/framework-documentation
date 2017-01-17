@@ -61,5 +61,9 @@ Para sobreescrever as mensagens dos módulos do Framework basta criar na pasta `
 >
 > **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário sobrescrever todas as mensagens**
 
+## Internacionalização das Mensagens
+
+ 
+
 
 
