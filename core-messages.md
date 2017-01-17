@@ -61,9 +61,4 @@ Cada arquivo de properties representa uma classe Java que contém os métodos eq
 
 > **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário sobrescrever todas as mensagens**
 
-## Internacionalização das Mensagens
-
-Texto.
-
-
 
