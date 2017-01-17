@@ -2,7 +2,7 @@
 
 Para as mensagens dos sistemas desenvolvidos com o Framework Demoiselle foi utilizada a biblioteca DeltaSpike que é considerada uma extensão do CDI dentro do próprio ecosistema como pode ser visto na página da especificação do CDI \([http://cdi-spec.org](http://cdi-spec.org)\).
 
-![DeltaSpike](deltaspike.png)
+![DeltaSpike](assets/deltaspike.png)
 
 Ele é descrito pela própria especificação do CDI como o seguinte:
 
