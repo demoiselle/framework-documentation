@@ -4,7 +4,7 @@ O termo multitenancy ou multi-inquilino em português, em geral, é aplicado ao 
 
 Isto é muito comum em soluções SaaS. Isolando informações \(dados, personalizações, etc.\) referentes aos vários inquilinos é um desafio especial nestes sistemas. Isto inclui os dados de propriedade de cada inquilino armazenados no banco de dados.
 
-O Framework Demoiselle fornece alguns facilitadores e a documentação necessária para que uma aplicação com as caracteristicas de Multitenancy seja desenvolvida.
+O Framework Demoiselle fornece alguns facilitadores e a documentação necessária para que uma aplicação com as características de Multitenancy seja desenvolvida.
 
 ## Estratégias para Disponibilização dos Serviços
 
@@ -46,10 +46,6 @@ Alguns pontos a serem levados em considerações são representados no gráfico 
 
 É importante que antes iniciar o desenvolvimento da solução que usará o multitenancy sejam definidas as estratégias em cada camada com base nos requisitos, pois como já foi comentado cada solução é única e deve ser analisada individualmente.
 
-Nos próximos itens deste documento serão explicitadas 2 formas de implementar o multitenancy em seu projeto:
-
-1. Utilizando o módulo do Demoiselle que já possui toda a implementação bastando configurar
-2. Criando toda a estrutura necessária e todos os arquivos
-
+Nos próximos capítulos deste documento serão dadas as instruções para utilização do projeto de Multitenancy do Framework Demoiselle que pode ser encontrado no endereço https://github.com/demoiselle/tenant.
 
 
