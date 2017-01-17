@@ -34,13 +34,13 @@ Um dos principais pontos que deve ser levado em consideração na escolha da est
 
 Abaixo um gráfico que exemplifica a questão do isolamento e as possíveis estratégias usadas.
 
-![Isolamento2](multitenancy-isolated-vs-shared-02.gif)
+![Isolamento2](assets/multitenancy-isolated-vs-shared-02.gif)
 
 A principal ideia é de que quando mais isolado e independente os dados forem, e portanto possibilitando um maior controle, mais recomendada é a estratégia de Instâncias de banco de dados separadas. Por outro lado se existem requisitos que permitam compartilhamento de dados e um Schema único o ideal é a utilização da estratégia de um único Schema em uma única instância de banco de dados e por fim a estratégia que fica entre as 2 soluções que permite um isolamento por Schema mas que não compatilha dados entre inquilinos.
 
 Alguns pontos a serem levados em considerações são representados no gráfico baixo.
 
-![Isolamento](multitenancy-isolated-vs-shared-01.gif)
+![Isolamento](assets/multitenancy-isolated-vs-shared-01.gif)
 
 ## Multitenancy no Framework Demoiselle
 
