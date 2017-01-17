@@ -1,5 +1,7 @@
 # Multitenancy - Disponibilização dos Serviços
 
+O projeto de multitenancy do Framework Demoiselle não disponibiliza pronto os serviços REST necessários para a criação dos inquilinos, pois existem diversas estratégias de criação.
+
 Como padrão no Framework Demoiselle foi utilizada a implementação de **URL**, mas isso não significa que todas as aplicações devam utilizar esta estratégias, pois a estratégia usada deve ser avaliada caso a caso.
 
 ## Classe TenantSelectorFilter
