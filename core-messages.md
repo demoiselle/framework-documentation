@@ -59,7 +59,7 @@ Para sobreescrever as mensagens dos módulos do Framework basta criar na pasta `
 
 > Cada arquivo de properties representa uma classe Java que contém os métodos equivalentes, portanto para saber outros arquivos de mensagens do Framework e sua estrutura de pastas basta fazer uma busca dentro do projeto por qualquer arquivo que tenha no nome o texto Message, para facilitar utilize o próprio GitHub a funcionalidade Find File \([https://github.com/demoiselle/framework/find/master](https://github.com/demoiselle/framework/find/master)\) e busque por Message.
 >
-> **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário fazer para todas as mensagens**
+> **É importante saber que não é possível sobrescrever apenas uma mensagem, portanto ao sobrescrever um arquivo é necessário sobrescrever todas as mensagens**
 
 
 
