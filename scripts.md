@@ -14,7 +14,7 @@ O script permite na sua execução ,  passar um contexto de variavéis \(com obj
 
 Exemplo de uso:
 
-Add to the pom.xml
+Adicione ao pom.xml
 
 ```java
 <dependency>
@@ -24,7 +24,8 @@ Add to the pom.xml
 </dependency>
 
 ```
-In the source code:
+E dentro do codigo java
+
 ```java
 @Inject DynamicManager dm;
 
