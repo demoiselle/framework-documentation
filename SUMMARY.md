@@ -20,7 +20,7 @@
 * [Scripts](scripts.md)
 * [REST](rest.md)
     * [Propriedades](rest-properties.md)
-    * [Tratamento de Exceções](tratamento-de-erros.md)
+    * [Tratamento de Exceções](tratamento-de-excecoes.md)
 * [CRUD](crud.md)
 * [Multitenancy](multitenancy.md)
     * [Utilização](utilizacao_do_modulo.md)
