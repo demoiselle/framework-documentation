@@ -28,5 +28,20 @@ public class MinhaClasseBC {
 
 ## Camada de Acesso a Dados
 
+A camada de acesso a dados da funcionalidade de multitenancy é baseada totalmente na implementação do Hibernate e tem como principais pontos as 2 classes que são informadas no persistence.xml:
 
+### **hibernate.tenant_identifier_resolver:** org.demoiselle.jee.multitenancy.hibernate.dao.SchemaResolver
 
+Esta classe tem como principal objetivo retornar ao hibernate qual é o tenant atualmente selecionado, abaixo o trecho de código que faz exatamente esta função:
+
+```java
+@Override
+public String resolveCurrentTenantIdentifier() {
+	MultiTenantContext o = CDI.current().select(MultiTenantContext.class).get();
+	return o.getTenant().getName();
+}
+```
+
+### **hibernate.multi_tenant_connection_provider:** org.demoiselle.jee.multitenancy.hibernate.dao.MultiTenantProvider
+
+A classe MultiTenantProvider tem como função principal fazer a seleção do schema que será usado por meio de uma instrução SQL que será executada no banco de dados antes de qualquer outra instrução que seja feita.
