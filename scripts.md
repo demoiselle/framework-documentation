@@ -16,14 +16,14 @@ Exemplo de uso:
 
 Adicione ao pom.xml
 
-```java
+```js
 <dependency>
      <groupId>org.codehaus.groovy</groupId>
      <artifactId>groovy-all</artifactId>
      <version>2.4.7</version>
 </dependency>
-
 ```
+
 E dentro do codigo java
 
 ```java
