@@ -4,19 +4,19 @@
 
 A ideia principal do Framework é que todas as Exceções que sobem para serem mostradas para o usuário final sejam tratadas por um único ponto e que ele possa ser sobrescrito pelo desenvolvedor de acordo com as suas necessidades.
 
-O primeiro passo foi definir a estrutura a ser utilizada no retorno padrão dos erros do framework, e para isso pegamos como inspiração a **RFC 6749** que define o **OAuth 2.0**, pois dentro dela existe um padrão definido no item **5.2 \(Error Response\) **que basicamente descreve o seguinte formato:
+O primeiro passo foi definir a estrutura a ser utilizada no retorno padrão dos erros do Framework Demoiselle, e para isso pegamos como inspiração a **RFC 6749** que define o **OAuth 2.0**, pois dentro dela existe um padrão definido no item **5.2 \(Error Response\)** que descreve o seguinte formato:
 
 ```json
 [
   {
     "error": "descrição_curta",
     "error_description": "descrição longa, legível por humanos",
-    "error_uri": "URI que leva a uma descrição detalhada do erro no portal do desenvolvedor"
+    "error_uri": "URI que leva a uma descrição detalhada do erro"
   },
   {
     "error": "descrição_curta",
     "error_description": "descrição longa, legível por humanos",
-    "error_uri": "URI que leva a uma descrição detalhada do erro no portal do desenvolvedor"
+    "error_uri": "URI que leva a uma descrição detalhada do erro"
   }
 ]
 ```
