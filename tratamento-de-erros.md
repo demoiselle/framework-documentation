@@ -39,6 +39,14 @@ O ideal é que no log de inicialização do servidor de aplicação somente exis
 
 Explicar o funcionamento dos Mappers.
 
+Os Mappers padrões do Framework tratam as seguintes Exceções:
+
+* ConstraintViolationException: PRECONDITION_FAILED(412, "Precondition Failed"),
+* SQLException: INTERNAL_SERVER_ERROR(500, "Internal Server Error"),
+* DemoiselleRestException: PRECONDITION_FAILED(412, "Precondition Failed") ou o Status Code informado pelo desenvolvedor
+* InvalidFormatException: BAD_REQUEST(400, "Bad Request"),
+* ClientErrorException: Status code da Exception
+
 ## Padrões de Retorno
 
 Explicar como funciona o JSON de retorno de erro e os código HTTP de erros.
