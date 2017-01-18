@@ -14,6 +14,12 @@ O primeiro passo é adicionar o projeto de Multitenancy ao seu projeto no arquiv
 
 > É importante fazer a ação de `maven update` no projeto após adicionar o novo projeto.
 
+Para cada serviço que irá possuir a funcionalidade de Multitenancy são necessários 2 datasources:
+1. Datasource que apontará para a raiz do banco de dados, permitindo que seja feita a concatenação do nome do Schema do Tenant
+2. Datasource que apontará para o schema que será o master e conterá a informação de todos os Tenants cadatrados
+
+> Nos exemplos abaixo serão utilizados 2 datasources com nomes `UserTenantsDS` e `UserMasterDS`.
+
 Adicione as seguintes configurações ao seu arquivo `demoiselle.properties`.
 
 ```property
@@ -40,7 +46,7 @@ demoiselle.multiTenancyDropDatabaseDDL=../standalone/tmp/demoiselleMultiTenantDr
 2. Unidade de persistência que acessa a base de dados Master que contém os Tenants  
 3. Unidade de persistência que gera os DDLs necessários para a criação do Tenant
 
-Segue abaixo um exemplo de `persistence.xml`.
+Segue abaixo um exemplo de `persistence.xml` utilizando os nomes de exemplo de unidade de persistência `UserTenantsPU`, `UserMasterPU` e `UserExportPU`.
 
 ```xml
 <persistence-unit name="UserTenantsPU" transaction-type="JTA">
@@ -86,7 +92,7 @@ Segue abaixo um exemplo de `persistence.xml`.
 </persistence-unit>
 ```
 
-As Uniaddes de Persistência acima deverão estar apontadas para Fontes de Dados \(Data Sources\) que estarão no `standalone.xml` do servidor de aplicação.
+As Unidades de Persistência acima deverão estar apontadas para Fontes de Dados \(Data Sources\) que estarão no `standalone.xml` do servidor de aplicação.
 
 Abaixo um exemplo de arquivo contendo os data sources para MySQL.
 
