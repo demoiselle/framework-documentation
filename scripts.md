@@ -11,12 +11,11 @@ O script permite na sua execução ,  passar um contexto de variavéis \(com obj
 * O motor 'nashorn' que é um engine javascript já vem embutido nas jvm mais novas por padrão. Porém para adicionar um engine de uma outra linguagem específica, adicione a referência ao jar no pom.xml na sua aplicação. O mecanismo de descoberta localiza e registra o motor a ser utilizado.
 
 
-
 Exemplo de uso:
 
 Adicione ao pom.xml
 
-```java
+```xml
 <dependency>
      <groupId>org.codehaus.groovy</groupId>
      <artifactId>groovy-all</artifactId>
@@ -27,6 +26,7 @@ Adicione ao pom.xml
 E dentro do codigo java
 
 ```java
+
 @Inject DynamicManager dm;
 
 ...
