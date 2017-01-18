@@ -1,6 +1,6 @@
 # Scripts - DynamicManager
 
----
+
 
 Responsável pela Gestão de Scripts dinâmicos, sua compilação e execução. Este  componente  torna disponivel as facilidades fornecidas pelo Java Scripting API para rodar engines de scripts que implementam interfaces compatíveis com a JSR-223.
 
