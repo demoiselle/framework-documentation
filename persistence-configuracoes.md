@@ -23,16 +23,6 @@ O arquivo persistence.xml deve ficar no caminho **src/main/resources/META-INF/**
 </persistence>
 ```
 
-Para acrescentar a dependência à extensão **demoiselle-persistence-jpa**, adicione esse código em seu arquivo pom.xml, na seção dependencies.
-
-```xml
-<dependency>
-  <groupId>org.demoiselle.jee</groupId>
-  <artifactId>demoiselle-persistence-jpa</artifactId>
-  <version>3.x.x</version>
-</dependency>
-```
-
 Para injetar uma instância de EntityManager em sua aplicação, basta usar a anotação *@PersistenceContext*. 
 
 ```java
