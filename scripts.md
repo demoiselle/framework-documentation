@@ -16,7 +16,7 @@ Exemplo de uso:
 
 Adicione ao pom.xml
 
-```
+```java
 <dependency>
      <groupId>org.codehaus.groovy</groupId>
      <artifactId>groovy-all</artifactId>
@@ -26,7 +26,7 @@ Adicione ao pom.xml
 ```
 E dentro do codigo java
 
-```
+```java
 @Inject DynamicManager dm;
 
 ...
