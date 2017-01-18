@@ -26,7 +26,6 @@ Adicione ao pom.xml
 E dentro do codigo java
 
 ```java
-
 @Inject DynamicManager dm;
 
 ...
