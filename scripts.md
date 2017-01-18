@@ -28,7 +28,6 @@ E dentro do codigo java
 ```java
 @Inject DynamicManager dm;
 
-...
 try {                                  
   String scriptSource = "int a = X; X= a + a;"; //sourcecode to be compiled .  
   String scriptName = "test.groovy"; //id to scriptCache
