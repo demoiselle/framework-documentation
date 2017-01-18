@@ -6,7 +6,7 @@ Texto.
 Texto.
 ## Configuration (demoiselle-configuration)
 Texto.
-## Persistência (demoiselle-persistence-jpa)
+## Persistência (demoiselle-crud)
 Texto.
 ## Serviços REST (demoiselle-rest)
 Texto.
