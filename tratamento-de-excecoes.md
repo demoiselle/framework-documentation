@@ -44,8 +44,8 @@ Os Mappers padrões do Framework tratam as seguintes Exceções:
 * ConstraintViolationException: Código de erro 412 (Precondition Failed)
 * SQLException: Código de erro 500 (Internal Server Error)
 * DemoiselleRestException: Código de erro 412 (Precondition Failed) ou o Status Code informado pelo desenvolvedor
-* InvalidFormatException: BAD_REQUEST(400, "Bad Request"),
-* ClientErrorException: Status code da Exception
+* InvalidFormatException: Código de erro 400 (Bad Request)
+* ClientErrorException: Código de erro da Exception
 
 Para todas as outras que não estão tratadas ele irá retornar o código de erro 500 (Internal Server Error).
 
