@@ -92,7 +92,7 @@ Para sobrescrever a classe que faz o tratamento das Exceções que ocorrem na ap
 
 > É importante notar que caso existam outros ExceptionMappers encontrados no Classpath do Java é possível que nem todas as Exceções sejam tratadas por este método.
 
-```
+```java
 ...
 import org.demoiselle.jee.rest.exception.treatment.ExceptionTreatmentImpl;
 
