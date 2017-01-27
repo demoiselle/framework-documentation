@@ -4,7 +4,7 @@ O Componente de segurança tem duas implementações, uma baseada em JWT e a out
 
 O módulo security é o gestor do contexto de segurança, suas implementações fazem a gestão do objeto de autorização, detalharemos a seguir como cada implementação funciona.
 
-Para utilizar o módulo de segurança você deve importar a dependência 
+Para utilizar o módulo de segurança você deve importar a dependência
 
 ```xml
 <dependency>
@@ -12,7 +12,8 @@ Para utilizar o módulo de segurança você deve importar a dependência
    <artifactId>demoiselle-security-jwt</artifactId>
    <version>3.0.0</version>
 </dependency>
-```        
+```
+
 ou
 
 ```xml
@@ -21,7 +22,7 @@ ou
    <artifactId>demoiselle-security-token</artifactId>
    <version>3.0.0</version>
 </dependency>
-```    
+```
 
 Dependendo da estratégia escolhida.
 
@@ -34,6 +35,7 @@ Caso você crie sua app a partir de um parent
         <version>3.0.0</version>
     </parent>
 ```
+
 Ele já agrega o módulo JWT, não há necessidade de colocar a dependência.
 
 O módulo de segurança funciona independente e em qualquer app JEE7.
@@ -43,7 +45,6 @@ Para manter o usuário no contexto de segurança usamos a Classe DemoisellePrinc
 Exemplo de login com JWT:
 
 ```java
-
     @Inject
     private SecurityContext securityContext;
 
@@ -100,43 +101,7 @@ Exemplo de login com JWT:
     }
 ```
 
-### CORS
+### 
 
-Por motivos de segurança os navegadores HTTP impedem que solicitações
-realizadas por execuções de instruções Javascript das APIS  XMLHttpRequest
-ou Fetch que solicitem conteúdo em outros domínios que não aquele que foi utilizado para o carregamento
-da página.
+Para maiores informações visite [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access\_control\_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 
-Navegadores modernos implementam funcionalidades para contornar esta limitação
-utilizando uma solução denominada cross-origin HTTP request (CORS). CORS consiste
-em uma estratégia onde o servidor solicitado fornece informações extras no cabeçalho
-da resposta de uma solicitação informando quais os domínios tem permissão
-de acesso por aplicações que fazem a requisição APIS XMLHttpRequest ou Fetch.
-
-O módulo seguraça fornece uma solução para a utilização de CORS por meio de
-manipulação do parâmetro demoiselle.security.corsEnabled do arquivo de configuração
-demoiselle.properties que fica na pasta raiz da aplicação. Esta configuração afeta
-o comportamento padrão de toda aplicação, ou seja seja caso seja definido com
-o valor false nenhuma requisição poderá ser feita a outro domínio
-
-```properties
-    # Habilita/Desabilita o cors por padrão 
-    demoiselle.security.corsEnabled=true
-```
-O arquivo demoiselle.properties fica na pasta resources do projeto.
-
-É possível alterar o comportamento de CORS definido pelo arquivo de configuração
-em métodos onde comportamento diferente do padrão seja desejado, bastando para isso inserir
-as anotações @Cors e @NoCors, conforme apresentado no seguinte fragmento de código:
-
-```java
-    # Habilita/Desabilita o cors por padrão 
-    @Cors
-    Habilita o cors no método anotado quando a configuração for
-    demoiselle.security.corsEnabled=false
-    @NoCors
-    Desabilita o cors no método anotado quando a configuração for
-    demoiselle.security.corsEnabled=true
-```
-
-Para maiores informações visite https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
