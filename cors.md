@@ -20,9 +20,10 @@ o valor false nenhuma requisição poderá ser feita a outro domínio
 ```properties
     # Habilita/Desabilita o cors por padrão 
     demoiselle.security.corsEnabled=true
-    
+
 # Propriedades do cors que serão enviadas no head  
-# Tem que ser colocado no demoiselle.properties de cada app  
+# cada app deve colocar as suas, essas são nossas sugestões
+
 demoiselle.security.paramsHeaderCors.Access-Control-Allow-Headers=origin, content-type, accept, Authorization
 demoiselle.security.paramsHeaderCors.Access-Control-Allow-Credentials=true
 demoiselle.security.paramsHeaderCors.Access-Control-Allow-Origin=*
