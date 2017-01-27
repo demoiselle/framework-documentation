@@ -102,12 +102,13 @@ Exemplo de login com JWT:
 ```
 
 ```properties
-
-# Informações de segurança que serão colocadas na head da app
+# Propriedades de segurança que serão enviadas no head  
 # cada app deve colocar as suas, essas são nossas sugestões
 demoiselle.security.paramsHeaderSecuriry.x-content-type-options=nosniff
 demoiselle.security.paramsHeaderSecuriry.x-frame-options=SAMEORIGIN
 demoiselle.security.paramsHeaderSecuriry.x-xss-protection=1; mode=block
+
+# visite https://securityheaders.io 
 ```
 
 Para maiores informações visite [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access\_control\_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
