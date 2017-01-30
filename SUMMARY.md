@@ -16,7 +16,7 @@
   * [Configurações Gerais](configuration-general.md)
 * [Security](security.md)
   * [JWT](jwt.md)
-  * [cors](cors.md)
+  * [Cors](cors.md)
   * [Token](token.md)
 * [Scripts](scripts.md)
 * [REST](rest.md)
@@ -26,5 +26,5 @@
 * [Multitenancy](multitenancy.md)
   * [Utilização](utilizacao_do_modulo.md)
   * [Funcionamento](multitenancy-funcionamento.md)
-* cors
+* [cors](cors.md)
 
