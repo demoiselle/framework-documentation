@@ -138,7 +138,7 @@ Por sua vez, as configurações do tipo String tem funcionalidade bastante simil
 
 #### Class
 
-A partir da versão 2.4.0 é possível ter atributos do tipo Class como parâmetro. O atributo pode ou não ser tipado, e no arquivo o valor atribuído à chave deve corresponder ao nome \( Canonical Name\) de uma classe existente. Abaixo temos um exemplo de uma classe de configuração com dois atributos do tipo Class, um tipado e outro não tipado:
+O atributo pode ou não ser tipado, e no arquivo o valor atribuído à chave deve corresponder ao nome \( Canonical Name\) de uma classe existente. Abaixo temos um exemplo de uma classe de configuração com dois atributos do tipo Class, um tipado e outro não tipado:
 
 ```java
 @Configuration
@@ -260,17 +260,17 @@ O valor definido no arquivo de configuração para atributos do tipo Enum deve s
 
 Caso o valor definido no arquivo de configuração não case com nenhuma constante definida no Enum, uma exceção de tipo ConfigurationException de causa ConversionException será lançada. Já se à propriedade for atribuido um valor vazio, o atributo do tipo Enum receberá o valor null.
 
-### Alterando o nome da da chave com @Name
+### Alterando o nome da da chave com @ConfigurationName
 
-É possível alterar o nome padrão da chave a ser utilizada com a anotação **@Name** como o exemplo abaixo:
+É possível alterar o nome padrão da chave a ser utilizada com a anotação **@ConfigurationName** como o exemplo abaixo:
 
 ```java
-import org.demoiselle.jee.core.annotation.Name;
+import org.demoiselle.jee.configuration.annotation.ConfigurationName;
 
 @Configuration(resource = "app", type = ConfigurationType.PROPERTIES, prefix = "")
 public class MyConfig {
 
-    @Name("my-config-string-with-name")
+    @ConfigurationName("my-config-string-with-name")
     private String configStringWithName;
 
     public String getConfigStringWithName() {
@@ -287,26 +287,26 @@ No exemplo acima a fonte de dados encontra-se no arquivo chamado _app.properties
 my-config-string-with-name=Minha string com novo identificador
 ```
 
-### Ignorando um campo com @Ignore
+### Ignorando um campo com @ConfigurationIgnore
 
-Caso você tenha a necessidade de manter um campo em uma classe de configuração mais não deseja que ela receba nenhum valor de nenhum tipo de fonte você pode utilizar a notação **@Ignore** para o campo desejado. 
+Caso você tenha a necessidade de manter um campo em uma classe de configuração mais não deseja que ela receba nenhum valor de nenhum tipo de fonte você pode utilizar a notação **@ConfigurationIgnore** para o campo desejado.
 
 ```java
-import org.demoiselle.jee.core.annotation.Ignore;
-import org.demoiselle.jee.core.annotation.Name;
+import org.demoiselle.jee.configuration.annotation.ConfigurationIgnore;
+
 
 @Configuration(resource = "app", type = ConfigurationType.PROPERTIES, prefix = "")
 public class ConfigModel {
 
     private ConfigEnum configEnum;
 
-    @Ignore
+    @ConfigurationIgnore
     private String configFieldWithIgnore; // Não será preenchido pelo mecanismo de configuração e nem impresso na saída padrão da aplicação
-    
+
     public ConfigEnum getConfigEnum() {
         return configEnum;
     }
-    
+
     public String getConfigFieldWithIgnore() {
         return configFieldWithIgnore;
     }
@@ -332,18 +332,18 @@ Quando não houver definição de valor em um campo \(seja por arquivo,  variáv
 
 A configuração será impressa uma única vez na primera chamada da classe anotada com **@Configuration**.
 
-Caso seu campo utilize a anotação **@Name** alterando o valor da chave a ser utilizada a impressão irá respeitar o que foi definido pela anotação **@Name**
+Caso seu campo utilize a anotação **@ConfigurationName** alterando o valor da chave a ser utilizada a impressão irá respeitar o que foi definido pela anotação **@ConfigurationName**
 
 ### Suprimindo a impressão de valores
 
-Pensando que nem todos os valores de configurações podem ser expostos por diversos fatores como segurança, criamos uma anotação chamada **@SuppressConfigurationLogger** que pode ser utilizada no nível de Classe ou de Campo.
+Pensando que nem todos os valores de configurações podem ser expostos por diversos fatores como segurança, criamos uma anotação chamada **@ConfigurationSuppressLogger** que pode ser utilizada no nível de Classe ou de Campo.
 
 Exemplo:
 
 ```java
 import java.io.Serializable;
 import org.demoiselle.jee.configuration.annotation.Configuration;
-import org.demoiselle.jee.configuration.annotation.SuppressConfigurationLogger;
+import org.demoiselle.jee.configuration.annotation.ConfigurationSuppressLogger;
 
 @Configuration(prefix = "demoiselle.security.jwt")
 public class DemoiselleSecurityJWTConfig implements Serializable {
@@ -352,7 +352,7 @@ public class DemoiselleSecurityJWTConfig implements Serializable {
 
     private String type;
 
-    @SuppressConfigurationLogger
+    @ConfigurationSuppressLogger
     private String privateKey;
 
     private String publicKey;
@@ -366,7 +366,7 @@ Observe na imressão abaixo que o valor do chave **demoiselle.security.jwt.priva
 *******************************************************
 Carregando a classe de configuração org.demoiselle.jee.security.jwt.impl.DemoiselleSecurityJWTConfig
 -> demoiselle.security.jwt.type = master
--> demoiselle.security.jwt.privateKey = [valor suprimido pela anotação @SuppressConfigurationLogger]
+-> demoiselle.security.jwt.privateKey = [valor suprimido pela anotação @ConfigurationSuppressLogger]
 -> demoiselle.security.jwt.publicKey = -----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09A11Zaqmp5ZBTOCxgJ8qqtHhb6b+eO9C8gAX3DXFIlfcl0FU7FVwfQtHWuN3KU83c1sSj9wPMuviGvZeSV7oUp2DXML76EsEKf9r+6JNZRdnTCkXZklQSEmeuftSxnMtAwo7k+eIgPpOIrYpMJv5GzVju0zbyucnwbQnDvoGv08pMrbWaGOxcnHXCazsrRTI7UKQ+jvMDB3bsUcII0XS+92ZLQkiMkKH85HSSlm4AFKuUljRh59RlpJrCDc+TUZWQuOC6Li/H9/78tAW8kJIHfASJhkKgkcdGixBJNggp+K+0hMWvxLt5fi1BXvWiy/Ma3QNHtxOCorRa+4NBB+KwIDAQAB-----END PUBLIC KEY-----
 -> demoiselle.security.jwt.timetoLiveMilliseconds = 86400000
 -> demoiselle.security.jwt.issuer = STORE
@@ -376,7 +376,7 @@ Carregando a classe de configuração org.demoiselle.jee.security.jwt.impl.Demoi
 
 ## Criando seu próprio Extrator
 
-Você precisa de parâmetros de um tipo que ainda não é suportado pelo Demoiselle? Você pode implementar sua própria classe extratora ou substituir alguma já criada pelo Demoiselle. A partir da versão 2.4.0 as aplicações podem implementar a interface **ConfigurationValueExtractor**, e ter um extrator de configurações para atributos de qualquer tipo. Essa interface obriga a classe a implementar os métodos:
+Você precisa de parâmetros de um tipo que ainda não é suportado pelo Demoiselle? Você pode implementar sua própria classe extratora ou substituir alguma já criada pelo Demoiselle. A aplicação pode implementar a interface **ConfigurationValueExtractor**, e ter um extrator de configurações para atributos de qualquer tipo. Essa interface obriga a classe a implementar os métodos:
 
 ```java
 boolean isSupported(Field field); // retorna true caso a classe seja extratora daquele tipo de campo
