@@ -26,5 +26,5 @@
 * [Multitenancy](multitenancy.md)
   * [Utilização](utilizacao_do_modulo.md)
   * [Funcionamento](multitenancy-funcionamento.md)
-* [cors](cors.md)
+* [Build](build.md)
 
