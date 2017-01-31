@@ -104,9 +104,24 @@ Exemplo de login com JWT:
 ```properties
 # Propriedades de segurança que serão enviadas no head  
 # cada app deve colocar as suas, essas são nossas sugestões
+
 demoiselle.security.paramsHeaderSecuriry.x-content-type-options=nosniff
+#https://scotthelme.co.uk/hardening-your-http-response-headers/#x-content-type-options
+
 demoiselle.security.paramsHeaderSecuriry.x-frame-options=SAMEORIGIN
+#https://scotthelme.co.uk/hardening-your-http-response-headers/#x-frame-options
+
 demoiselle.security.paramsHeaderSecuriry.x-xss-protection=1; mode=block
+#https://scotthelme.co.uk/hardening-your-http-response-headers/#x-xss-protection
+
+demoiselle.security.paramsHeaderSecuriry.Strict-Transport-Security=strict-transport-security: max-age=31536000; includeSubDomains
+#https://scotthelme.co.uk/hsts-the-missing-link-in-tls/
+
+demoiselle.security.paramsHeaderSecuriry.Content-Security-Policy=script-src 'self'
+#https://scotthelme.co.uk/content-security-policy-an-introduction/
+
+#demoiselle.security.paramsHeaderSecuriry.Public-Key-Pins=
+#https://scotthelme.co.uk/hpkp-http-public-key-pinning/
 
 # visite https://securityheaders.io 
 ```
