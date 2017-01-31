@@ -123,6 +123,10 @@ demoiselle.security.paramsHeaderSecuriry.Content-Security-Policy=script-src 'sel
 #demoiselle.security.paramsHeaderSecuriry.Public-Key-Pins=
 #https://scotthelme.co.uk/hpkp-http-public-key-pinning/
 
+#https://tools.ietf.org/html/rfc6797
+#https://tools.ietf.org/html/rfc7762
+#https://tools.ietf.org/html/rfc7469
+
 # visite https://securityheaders.io 
 ```
 
