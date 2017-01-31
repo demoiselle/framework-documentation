@@ -52,12 +52,7 @@ Exemplo de login com JWT:
     private DemoisellePrincipal loggedUser;
 
     @POST
-    @Asynchronous
-    public void login(@Suspended final AsyncResponse asyncResponse, Credentials credentials) {
-        asyncResponse.resume(doLogin(credentials));
-    }
-
-    private Response doLogin(Credentials credentials) {
+    public Response login(Credentials credentials) {
     // sua implementação para verificar se o usuário e senha estão ok
         Usuario usu = dao.verifyEmail(credentials.getUsername(), credentials.getPassword());
         if (usu != null) {
@@ -77,12 +72,8 @@ Exemplo de login com JWT:
     }
 
     @GET
-    @LoggedIn
-    public void retoken(@Suspended final AsyncResponse asyncResponse) {
-        asyncResponse.resume(doRetoken());
-    }
-
-    private Response doRetoken() {
+    @Autenticated
+    public Response retoken() {
     // Esse processo gera um novo token com o tempo limite novo
     // em caso de revogação nesse ponto deve-se verificar se o 
     // usuário pode renovar o token ou é negado
