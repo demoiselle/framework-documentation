@@ -68,7 +68,7 @@ Exemplo de login com JWT:
         } else {
             throw new DemoiselleSecurityException(bundle.invalidCredentials(), Response.Status.UNAUTHORIZED.getStatusCode());
         }
-        return Response.ok().entity("{\"token\":\"" + token.getKey() + "\"}").build();
+        return Response.ok().entity(token.getKey().toString()).build();
     }
 
     @GET
@@ -79,7 +79,7 @@ Exemplo de login com JWT:
     // usuário pode renovar o token ou é negado
         loggedUser = securityContext.getUser();
         securityContext.setUser(loggedUser);
-        return Response.ok().entity("{\"token\":\"" + token.getKey() + "\"}").build();
+        return Response.ok().entity(token.getKey().toString()).build();
     }
 
     @GET
