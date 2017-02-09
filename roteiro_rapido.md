@@ -23,7 +23,7 @@ Clique no botão **Next**, e na próxima tela selecione a opção "Create a simp
 
 ![Criação de projeto simples](assets/simple.png)
 
-Clique no botão **Next** e na próxima tela digite "br.com.meubackend" no **Group Id** e "sistema" no **Artifact Id**, sem as aspas e por fim escolha "war" no campo **Packaging** como mostra a imagem abaixo.
+Clique no botão **Next** e na próxima tela digite a qual grupo de pacotes seu projeto pertence, como por exemplo: "br.com.meubackend", no **Group Id** e o nome que será utilizado para identificação da sua aplicação, que pode ser algo como "sistema", no **Artifact Id**, escolha "war" (tipo de pacote utilizado para aplicações web) no campo **Packaging** e, se for o caso, altere a versão para um identificador mais significativo conforme apresentado na imagem abaixo.
 
 ![Escolha dos IDs](assets/id.png)
 
@@ -53,7 +53,9 @@ Para carregar todos os módulos padrões para REST e as configurações necessá
 </parent>
 ```
 
-> Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, acessando as opções do Maven e por fim clicando em **Update Project**. Na tela que será aberta selecione o seu projeto e clique em **OK**.
+> Após adicionar é importante atualizar as configurações do Maven clicando sobre o projeto com o botão direito do mouse, 
+acessando as opções do Maven e clicando em **Update Project**. Na tela que será aberta selecione o seu projeto e clique em **OK**.
+Também é possível atualizar o projeto clicando sobre ele na árvore e pressionando a tecla F5.
 
 O resultado da criação deve ser algo parecido com a imagem abaixo.
 
@@ -80,17 +82,26 @@ O `pom.xml` deve parecer com o seguinte:
 
 Ao adicionar o **Parent POM REST** do Demoiselle os seguinte módulos serão carregados:
 
-* **Core** - demoiselle-core
-* **Security - JWT** - demoiselle-security-jwt
-* **Persistence JPA** - demoiselle-persistence-jpa
+* [**Core**](core.md) - demoiselle-core
+* [**Security](security.md) - JWT** - demoiselle-security-jwt
+* [**Persistence JPA**](persistence.md) - demoiselle-persistence-jpa
+
+### Lembre-se de atualizar o projeto:
+
+![Atualização do Prjeto](assets/update-project.png)
 
 ## Criação das Entidades e Persistência
+
+Este tipo de entidade é responsável pela realização do mapeamento objeto-relacional, ou seja a representação de tabelas do banco de dados 
+por meio da classes. Esta abordagem permite que o desenvolvedor da aplicação concentre esforços na linguagem de programação, delegando 
+as atividades complexas relativas a persistência de dados para um framework especialista em banco de dados. O Demoiselle utiliza o Hibernate como 
+framework para este mapeamento por meio da estratégia de anotações.
 
 Vamos começar criando a classe Notícia com as seguintes informações.
 
 ![Criação da Classe Notícia](assets/class-noticia.png)
 
-A classe da Notícia deverá se parecer com o seguinte após adicionarmos as anotações de persistência:
+A classe da Notícia deverá se parecer com o seguinte fragmento de código após adicionarmos as anotações de persistência:
 
 ```java
 package br.com.meubackend.sistema.entity;
@@ -138,7 +149,7 @@ public class Noticia {
 }
 ```
 
-A classe Notícia descreve por meio da anotação principal **@Entity** que é uma entidade que pode ser persistida e por padrão será criada uma tabela chamada noticia no banco de dados.
+A anotação **@Entity** define que a entidade será capaz de realizar operações de persistência de dados em uma tabela com o mesmo nome da classe (anotar com @Table permite utilizar outro nome de tabela no SGBD). Caso o Hibernate não localize esta tabela no SGBD está será criada, na inicialização da aplicação.
 
 As anotações **@Id** e **@GeneratedValue** são utilizadas para a criação da chave primária do registro da tabela e a anotação **@Column** descreve os comportamentos da coluna da tabela.
 
@@ -256,6 +267,3 @@ curl -X POST -H "Content-Type: application/json" -H "Cache-Control: no-cache" -d
 ```sh
 curl -X GET -H "Content-Type: application/json" -H "Cache-Control: no-cache" "http://localhost:8080/sistema-0.0.1-SNAPSHOT/api/noticia"
 ```
-
-
-
