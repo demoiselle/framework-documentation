@@ -64,7 +64,7 @@ EV8L1OEFVMsuCgVSz3gyM2mJIEHczhHBvxSjTFGslHGKItlFtM32BUrzbzA9QECzSUkk-ITnUEtmm-ER
 
 Exemplo de token gerado pelo Demoiselle que pode ser validado em \([https://jwt.io/](https://jwt.io/)\)
 
-São três hash separados por ponto\(.\)   
+São três hash separados por ponto\(.\)  
 O primeiro identifica o tipo e o algoritimo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoiselleUser. Na terceira e última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.  
 A assinatura é gerada pela chave privada e validada pela chave pública
 
