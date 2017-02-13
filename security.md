@@ -40,7 +40,7 @@ Ele já agrega o módulo JWT, não há necessidade de colocar a dependência.
 
 O módulo de segurança funciona independente e em qualquer app JEE7.
 
-Para manter o usuário no contexto de segurança usamos a Classe DemoisellePrincipal.
+Para manter o usuário no contexto de segurança usamos a Classe DemoiselleUser.
 
 Exemplo de login com JWT:
 
@@ -49,7 +49,7 @@ Exemplo de login com JWT:
     private SecurityContext securityContext;
 
     @Inject
-    private DemoisellePrincipal loggedUser;
+    private DemoiselleUser loggedUser;
 
     @POST
     public Response login(Credentials credentials) {
