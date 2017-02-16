@@ -1,28 +1,29 @@
 # Security - JWT
 
-"Os JWTs são uma seqüência segura, compacta e autônoma com informações significativas que normalmente são assinadas ou criptografadas digitalmente. Eles estão se tornando rapidamente um padrão de fato para implementações de tokens na web". -(Micah Silverman | August 13, 2015)
+"Os JWTs são uma seqüência segura, compacta e autônoma com informações significativas que normalmente são assinadas ou criptografadas digitalmente. Eles estão se tornando rapidamente um padrão de fato para implementações de tokens na web". -\(Micah Silverman \| August 13, 2015\)
 
-O padrão proposto pelo JWT é o mais maduro encontrado hoje e sua documentação de referência RFC7519(https://tools.ietf.org/html/rfc7519) explora e soluciona as principais questões de funcionamento desse modelo tão bem sucedido. Você pode encontrar implementações em várias linguagens no link (https://jwt.io/).
- O JWT que é uma das especificações do projeto JOSE(http://jose.readthedocs.io/en/latest/) 
- 
+O padrão proposto pelo JWT é o mais maduro encontrado hoje e sua documentação de referência RFC7519\([https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)\) explora e soluciona as principais questões de funcionamento desse modelo tão bem sucedido. Você pode encontrar implementações em várias linguagens no link \([https://jwt.io/](https://jwt.io/)\).  
+ O JWT que é uma das especificações do projeto JOSE\([http://jose.readthedocs.io/en/latest/](http://jose.readthedocs.io/en/latest/)\)
+
 O funcionamento básico é baseado na validação de assinaturas com chaves simétricas e assimétricas. Optamos pelo uso das chaves assimétricas por possibilitar a validação dos tokens de forma distribuída sem a necessidade de conexão entre servidores.
 
-#####Configuração (demoiselle.properties)
+##### Configuração \(demoiselle.properties\)
 
 ```properties
     # Define se a app é master/slave 
     demoiselle.security.jwt.type=master
 ```
+
 Existem dois tipos de gestão do token, são eles:
-- master, nesse tipo de abordagem o servidor tem ambas as chaves e tem a capacidade de assinar e validar tokens.
-- slave, são os servidores onde só necessitam da chave pública para validar se foi realmente criado pelo servidor master, gerando com isso um ciclo de confiança sem a necessidade de qualquer tipo de conexão entre os servidores
+
+* master, nesse tipo de abordagem o servidor tem ambas as chaves e tem a capacidade de assinar e validar tokens.
+* slave, são os servidores onde só necessitam da chave pública para validar se foi realmente criado pelo servidor master, gerando com isso um ciclo de confiança sem a necessidade de qualquer tipo de conexão entre os servidores
 
 ```properties
     # Chave public
     demoiselle.security.jwt.publicKey=-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09A11Zaqmp5ZBTOCxgJ8qqtHhb6b-----END PUBLIC KEY-----
     # Chave privada
     demoiselle.security.jwt.privateKey=-----BEGIN PRIVATE KEY-----MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDT0DXVlqqanlkFM4LGAnyq7u+IcUizfs6OQTmTR3Xp6LryES/rLn0vwZKZIvo=-----END PRIVATE KEY-----
-   
 ```
 
 Aqui estão as chaves, existem várias formas de criação de chaves publicas, nós colocamos uma solução para criação das chaves automaticamente ao subir o servidor e não houver as duas propriedades no demoiselle.properties. Será escrito no log do servidor que deve ser copiado e colocado no demoiselle.properties. Caso você opte por gerar manualmente seguem os comandos linux:
@@ -32,6 +33,9 @@ Linux
 $> openssl genrsa -out private.pem 2048
 $> openssl rsa -in private.pem -outform PEM -pubout -out public.pem
 ```
+
+* Os cabeçalhos das chaves devem seguir o padrão -----BEGIN PUBLIC KEY-----, em alguns casos são gerados o tipo da chave como RSA no cabeçalho, isso deve ser removido. 
+
 Agora copie o conteúdo do private.pem e do public.pem para o properties.demoiselle
 
 Temos mais umas propriedades que definem o uso da especificação
@@ -48,9 +52,9 @@ demoiselle.security.jwt.algorithmIdentifiers=RS256
 demoiselle.security.jwt.issuer=STORE
 # Identificação de quem pode utilizar o token
 demoiselle.security.jwt.audience=web
-
 ```
-As propriedades Issuer e Audience, devem ser definidas por padrão no demoiselle.properties, mas podem ser alterados na geração do token. Caso sua app Master gere tokens para a mesma app uma única app Slave, é recomendado usar o que está definido nas propriedades, mas se sua app Master gera tokens para multiplas apps diferentes, algo parecido como o SSO(Single Sign On), você pode criar tokens para determinados seridores, alterando as propriedades Issuer e Audience, para serem validadas somente em servidores que conheçam essas propriedades.
+
+As propriedades Issuer e Audience, devem ser definidas por padrão no demoiselle.properties, mas podem ser alterados na geração do token. Caso sua app Master gere tokens para a mesma app uma única app Slave, é recomendado usar o que está definido nas propriedades, mas se sua app Master gera tokens para multiplas apps diferentes, algo parecido como o SSO\(Single Sign On\), você pode criar tokens para determinados seridores, alterando as propriedades Issuer e Audience, para serem validadas somente em servidores que conheçam essas propriedades.
 
 ```jwt
 eyJraWQiOiJkZW1vaXNlbGxlLXNlY3VyaXR5LWp3dCIsImFsZyI6IlJTMjU2In0.
@@ -58,10 +62,10 @@ eyJpc3MiOiJTVE9SRSIsImV4cCI6MTAwMTQ4MjQ5NTI3MCwiYXVkIjoid2ViIiwianRpIjoiTmxvU0NF
 EV8L1OEFVMsuCgVSz3gyM2mJIEHczhHBvxSjTFGslHGKItlFtM32BUrzbzA9QECzSUkk-ITnUEtmm-ERTH529clymKX1-LGcboPSQlNAHv4SNRD5i8eJxjlCz_cMSTIdSZRSYOSJZHJHYf0kWEvo1vTthLGWcH_D--b9K_WYDR9hrVmljof46Dd4THXv5_VY9RJlYVHJ1bpIl69f0UDtVzDqfxNSTsBCm6tZXS40f9dh_qjEWATZeMJmjd_t2ZRzXDSLHHbJpLnNOGd2yOdp9H4tmGCxViguRa4Jck6C7cpMM6QIFB7ta67XzS4nl0NTqY64rNseKcyQS-TdAbPxAA
 ```
 
-Exemplo de token gerado pelo Demoiselle que pode ser validado em (https://jwt.io/)
+Exemplo de token gerado pelo Demoiselle que pode ser validado em \([https://jwt.io/](https://jwt.io/)\)
 
-São três hash separados por ponto(.) 
-O primeiro identifica o tipo e o algoritimo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoiselleUser. Na terceira e última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.
+São três hash separados por ponto\(.\)  
+O primeiro identifica o tipo e o algoritimo usado para assinar a segunda parte que é um base64 de um json que contem informações usadas pela implementação do JWT e os dados do DemoiselleUser. Na terceira e última parte é a assinatura do segundo hash, garantindo a inviolabilidade da informação.  
 A assinatura é gerada pela chave privada e validada pela chave pública
 
 ```json
@@ -96,7 +100,8 @@ A assinatura é gerada pela chave privada e validada pela chave pública
   }
 }
 ```
-* https://tools.ietf.org/html/rfc7519
+
+* [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)
 
 Vou especificar as informações que estão vindo do DemoiselleUser:
 
@@ -106,11 +111,11 @@ Vou especificar as informações que estão vindo do DemoiselleUser:
 
 * roles : Array simples contendo os perfis do usuário
 
-* params : Map com chave/valor com informações complementares do usuário (Opcional)
+* params : Map com chave/valor com informações complementares do usuário \(Opcional\)
 
 * permissions : Map com chave/Array onde estão as funcionalidades e suas permissões
 
-#####Exemplo de demoiselle.properties (Master)
+##### Exemplo de demoiselle.properties \(Master\)
 
 ```properties
    # ===== Security =====
@@ -123,7 +128,8 @@ demoiselle.security.jwt.algorithmIdentifiers=RS256
 demoiselle.security.jwt.issuer=STORE
 demoiselle.security.jwt.audience=web
 ```
-#####Exemplo de demoiselle.properties (Slave)
+
+##### Exemplo de demoiselle.properties \(Slave\)
 
 ```properties
    # ===== Security =====
@@ -135,3 +141,6 @@ demoiselle.security.jwt.algorithmIdentifiers=RS256
 demoiselle.security.jwt.issuer=STORE
 demoiselle.security.jwt.audience=web
 ```
+
+
+
