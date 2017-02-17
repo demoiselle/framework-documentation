@@ -85,6 +85,15 @@ Agora com a propriedade **demoiselle.rest.showErrorDetails** com valor **false**
   }
 ]
 ```
+## Usando mensagens de erro customizadas para erros de banco
+
+Utilizando  a propriedade demoiselle.rest.sqlError.'code' = 'mensagem' é possível mapear e customizar as mensagens para os erros provenientes do banco de dados utilizado (Mysql, Postgres, etc...). Para isso acontecer é necessário somente adicionar as mensagens (de acordo com o codigo de erro do banco ) no demoiselle.properties da aplicação:
+
+```xml
+demoiselle.rest.sqlError.1062=Entidade já existe no banco
+demoiselle.rest.sqlError.1063=....
+```
+*Verificar número dos codigos de erros que podem ser diferentes de acordo com o fornecedor do banco de dados.
 
 ## Sobrescrita do Formato Padrão
 
