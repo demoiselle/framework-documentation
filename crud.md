@@ -27,21 +27,21 @@ Ele já agrega o módulo Rest, não há necessidade de colocar a dependência.
 Exemplos de uso do CRUD
 
 ```bash
-@Api("Usuario")
-@Path("usuario")
-public class UsuarioREST extends AbstractREST<Usuario, String> {
+@Api("User")
+@Path("users")
+public class UserREST extends AbstractREST<User, String> {
 
 }
 ```
 
 ```bash
-public class UsuarioBC extends AbstractBusiness<Usuario, String> {
+public class UserBC extends AbstractBusiness<User, String> {
 
 }
 ```
 
 ```bash
-public class UsuarioDAO extends AbstractDAO<Usuario, String> {
+public class UserDAO extends AbstractDAO<User, String> {
 
 }
 ```
