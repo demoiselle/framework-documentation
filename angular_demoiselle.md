@@ -16,16 +16,181 @@ realizadas pelo servidor (backend) e as interfaces (frontend).
 
 O uso simultâneo destes frameworks oferece a possibilidade de criação de aplicações quer sejam simples serviços que demandem de
 acesso a recursos de servidor ou grandes sistemas capazes de realizarem tarefas que demandem significativos 
-recursos computacionais em ambientes distribuidos além do oferecer funcionalidades que implementam maior segurança,
+recursos computacionais em ambientes distribuídos além do oferecer funcionalidades que implementam maior segurança,
 integração e interoperabilidade.
 
+
+## Typescript básico
+
+
+A linguagem de programação TypeScript foi criada com o objetivo de oferecer um super conjunto de instruções 
+JavasScript objetivando oferecer uma sintaxe mais adequada a programadores acostumados ao
+paradigma da Orientação a Objetos. É possível implementar aplicações Angular 2 utilizando apenas a linguagem
+JavaScript mas grande parte da documentação é baseada em TypeScript e a implementação do framework Demoiselle
+optou por esta linguagem de programação come referência para o desenvolvimento de aplicações.
+
+Este tutorial de Typescript é adequado a desenvolvedores de aplicação com conhecimentos em Javascript mas sem a necessidade
+de conhecimentos avançados na linguagem. Serão apresentados
+alguns conceitos básicos e exemplos de aplicações transpiladas para serem executadas em navegadores
+html.
+
+O sufixo padrão para arquivos TypeScript é .ts e este será adotado neste tutorial.
+
+Para este tutorial será necessário o uso da ferramenta tsc que pode ser instalada com o comando 
+
+```bash
+npm install -g typescript
+```
+
+Para executar o código é necessário realizar a transpilação do código com o comando 
+
+```bash
+tsc nome_do_arquivo.ts
+```
+
+O resultado deste comando, caso não exista nenhum erro no código, é um arquivo do tipo JavaScript com o mesmo nome do
+arquivo .ts mas com o sufixo .js. Para executar a aplicação é possível utilizar um navegador web acessando uma página
+html que deve importar o arquivo que contém o código Javascript.
+
+```html
+<html>
+    <head><title>TypeScript Exemplos</title></head>
+    <body>
+        <script src="nome_do_arquivo.js"></script>
+    </body>
+</html>
+```
+
+Opcionalmente, no caso de algumas funcionalidades, é possível utilizar o comando 
+
+```bash
+node nome_do_arquivo.js
+```
+
+
+### Tipos em Typscript
+Uma das grandes diferenças entre Javascript e Typescript é a possibilidade de tipagem de variáveis. Esta é uma característica
+útil para o ambiente de desenvolvimento mas que não tem nenhuma funcionalidade no código transpilado sendo necessário criar
+funções específicas no caso de necessidade da implementação de funcionalidades adequadas a verificação quando houver necessidade
+de validação de tipos. Variáveis devem ser declaradas explicitamente como tais utilizando as palavras reservadas let e var. 
+Não existe, no entanto, a necessidade de definir o tipo para uma variável mas quando está recebe algum valor
+não é possível tentar carrega-lá com outro tipo de dado como por exemplo:
+
+```javascript
+let teste = 1;
+teste = "Um";
+```
+
+**Os tipos primitivos em Typescript são**
+
+boolean valores lógicos true e false (não são aceitos os valores 0 ou 1)
+number valores numéricos inteiros ou decimais
+string caracteres ou cadeia de caracteres, delimitados por aspas ou apostrofe;
+
+
+**Listas**
+
+Listas podem ser tipadas ou não, dependendo da forma com a mesma é instanciada:
+
+```javascript
+var listaGenerica=['a', 1, false];
+var listaNumerica:number[]=[1, 2, 2.5];
+let listaArrayNumerico: Array<number>=[0,1,2,2.5];//Mesmo efeito da listaNumerica
+```
+
+**É possível utilizar tipo complexos nas variáveis definindo a mesma baseada em uma interface ou classe**
+
+```javascript
+interface Pessoa{
+    nome:string;
+    idade:number;
+    juridica:boolean;
+}
+
+let pessoa : Pessoa;
+```
+
+Em Typescript é possível referenciar um objeto instanciado a partir de uma interface utilizando a notação
+de objetos javascript como por exemplo:
+
+```javascript
+var p:Pessoa = {firstName:"Fulano", lastName:"Beltano"}
+```
+
+### Funções
+
+A implementação de funções também permite a tipagem de retorno podendo ser construídas utilizando diversas sintaxes.
+O exemplo a seguir apresenta várias formas de representar uma função que calcule o quadrado de um número.
+
+```javascript
+var pow21 = function(i: number): number { return i * i; }
+var pow22 = function(i: number) { return i * i; }
+var pow23 = (i: number): number => { return i * i; }
+var pow24 = (i: number) => { return i * i; }
+var pow25 = (i: number) =>  i * i;
+
+console.log(pow21(2)+" "+pow22(2)+" "+" "+pow23(2)+" "+pow25(2)+" "+pow25(2));
+```
+
+A linguagem permite o uso de parâmetros opcionais utilizando o simbolo "?" junto ao nome da variável. 
+
+### Módulos Externos e Namespace
+
+Módulos e namespaces são utilizados para agrupar fragmentos de código como classes, interfaces e funções em uma unidade que
+pode ser exportada para outro módulos. No passado utilizava-se o conceito de módulos internos ao invés de namespace mas
+este tipo de uso é considerado obsoleto. Módulos permitem uma maior organização do código é geralmente são construído 
+em um arquivo para cadas módulo ou namespace.
+
+
+
+
+
+### Classes
+
+Este trabalho se limitará a apresentação de implementação dos conceitos
+de uso de classes se se alongar nas questões teóricas da orientação a objetos. Em TypeScript uma classe é definida
+pelo uso da palavra reservada class. A instanciação de um objeto é feito por meio da palavra reservada new seguida
+pelo nome da classe.
+
+
+```javascript
+class Classe{
+    umaPropriedade:string;
+    umMetodo(umParametro:string){
+        return umParametro;
+    }
+}
+```
+
+A sintaxe da definição de classes permite o uso de construtores por meio da palavra reservada **constructor**;
+
+```javascript
+class Classe{
+    constructor (parametroDoConstrutor: string){
+        console.log("Hello classe");
+    }
+    umaPropriedade:string;
+    umMetodo(umParametro:string){
+        return umParametro;
+    }
+}
+```
+
+Para instanciar uma classe 
+
+```javascript
+let minhaClasse:Classe = new Classe("Hello Classe");
+
+console.log(minhaClasse.umMetodo("Hello metodo"));
+
+```
 
 ## Configurando o ambiente
 
 Um aspecto importante no desenvolvimento de aplicações Angular 2 e pouco explorado nos tutoriais e treinamentos no
 framework está relacionado a construção e configuração do ambiente para a execução da aplicação. Em geral os 
 projetos são iniciados a partir de download das configurações básicas contendo as dependências necessárias
-a execução da aplicação. Nesta sessão prentende-se oferecer ao leitor uma compreenção sobre a arquitetura
+a execução da aplicação. Nesta sessão pretende-se oferecer ao leitor uma compreensão sobre a arquitetura
 utilizada pelo framework buscando oferecer conhecimentos importantes para a construção de produtos de 
 melhor qualidade além de favorecer o entendimento dos mecanismos utilizados.
 
@@ -37,7 +202,7 @@ mkdir -p exemplo/src/app
 cd exemplo
 ```
 
-Criar o arquivo de configuração da aplicação com o nome **package.json**, que fornece as informações de 
+Criar o arquivo de configuração da aplicação com o nome package.json, que fornece as informações de 
 dependências do projeto além de scripts de execução do npm, com o comando 
 
 
@@ -59,7 +224,7 @@ desenvolvimento no arquivo package.json com o comando
 npm install typescript typings --save-dev
 ```
 
-Para garantir a validação de tipos em modulos desenvolvidos em Javascript é necessário o uso de uma ferramenta para
+Para garantir a validação de tipos em módulos desenvolvidos em Javascript é necessário o uso de uma ferramenta para
 evitar problemas com o compilador typescript, para isso e necessário o uso da ferramenta typings.
 
 Para o uso no ambiente de desenvolvimento é recomendada a adoção de um servidor http capaz de processar os programas em
@@ -75,28 +240,25 @@ de arquivos utilizados em eplicações web
 
 ```bash
 npm install angular2-template-loader awesome-typescript-loader css-loader file-loader html-loader null-loader raw-loader style-loader to-string-loader --save-dev
-```
 
 Existem também plugins para o Webpack que fornecem funcionalidades que simplificam o processo de execução de aplicações
 web em ambinete de desenvolvimento que podem ser instalados com o comando
 
 ```bash
 npm install html-webpack-plugin webpack-merge extract-text-webpack-plugin --save-dev
-```
 
 Apenas para facilitar o processo de exclusão de arquivos também será instaldo o módulo rimraf
 
 ```bash
 npm install rimraf --save-dev
-```
 
 
 Para uma organização padronizada dos arquivos de projetos Angular 2, este trabalho propõe a criação da seguinte estrutura de pastas
 - src
-   - app
-      - assets
-         - css
-         - images
+-- app
+--- assets
+---- css
+---- images
 
 Para o uso da linguagem Typescript em conjunto com Javascript é necessário realizar algumas configurações que agregam 
 funcionalidades a ferramenta de transpilação. Uma maneira de realizar esta configuração é por meio dos seguintes comandos
@@ -106,7 +268,7 @@ typings install dt~core-js --save --global
 typings install dt~node --save --global
 ```
 
-Após suas execuções será criado o arquivo **typings.json** na pasta onde os comandos foram executados.
+Após suas execuções será criado o arquivo typings.json na pasta onde os comandos foram executados.
 
 Para instalar os pacotes execute o comando 
 
@@ -133,7 +295,7 @@ import 'rxjs';
 
 
 Para garantir compatibilidade das funcionalidades HTML5 em navegadores que não possuam a implementação de alguns marcadores
-ou estas estejam fora dos padrões é recomendado o uso de código Polyfill. Crie o arquivo **polyfills.ts** na pasta src com o 
+ou estas estejam fora dos padrões é recomendado o uso de código Polyfill. Crie o arquivo polyfills.ts na pasta src com o 
 seguinte conteúdo
 
 ```javascript
@@ -150,13 +312,13 @@ if (process.env.ENV === 'production') {
 ```
 
 
-Para as configurações flexiveis do Webpack crie na pasta raiz o arquivo **webpack.config.js**, com o seguinte conteúdo
+Para as configurações flexiveis do Webpack crie na pasta raiz o arquivo webpack.config.js, com o seguinte conteúdo
 
 ```javascript
 module.exports = require('./config/webpack.dev.js');
 ```
 
-em seguida deve ser criado o diretório config onde serão mantidos os arquivos **webpack.dev.js** e webpack.common.js que 
+em seguida deve ser criado o diretório config onde serão mantidos os arquivos webpack.dev.js e webpack.common.js que 
 definirão o comportamento do servidor http.
 
 Em webpack.common.js 
@@ -212,7 +374,7 @@ module: {
 ```
 
 
-Em **webpack.dev.js**:
+Em webpack.dev.js:
 
 ```javascript
 var webpackMerge = require('webpack-merge');
@@ -248,7 +410,7 @@ output: {
 
 ## Construindo uma aplicação básica
 
-Crie o arquivo **main.ts** na pasta src
+Crie o arquivo main.ts na pasta src
 
 ```javascript
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -257,7 +419,7 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
 
-Este arquivo faz referência ao **app.module.ts** que deve ser criado na pasta app 
+Este arquivo faz referência ao app.module.ts que deve ser criado na pasta app 
 
 ```javascript
 import { NgModule } from '@angular/core';
@@ -276,7 +438,7 @@ export class AppModule { }
 ```
 
 
-O aquivo que contém as funcionalidades do componente, **app.component.ts** também fica na pasta app
+O aquivo que contém as funcionalidades do componente, app.component.ts também fica na pasta app
 
 ```javascript
 import { Component } from '@angular/core';
@@ -295,7 +457,7 @@ export class AppComponent { }
 Nele são apresentadas as dependencias de um arquivo html e outro css que contém o seguinte
 conteúdo
 
-Em **app.component.html**:
+Em app.component.html
 
 ```html
 <main>
@@ -303,7 +465,7 @@ Em **app.component.html**:
 </main>
 ```
 
-e **app.component.css**:
+e app.component.css
 
 ```css
 main {
@@ -316,7 +478,7 @@ main {
 ```
 
 
-Finalmente o arquivo html de inicio da aplicação **index.html** que deve ser criado na pasta src
+Finalmente o arquivo html de inicio da aplicação index.html que deve ser criado na pasta src
 
 ```html
 <!DOCTYPE html>
@@ -336,7 +498,7 @@ Finalmente o arquivo html de inicio da aplicação **index.html** que deve ser c
 
 
 ```javascript
-Insira os scripts para a execução do servidor no arquivo **package.json**
+Insira os scripts para a execução do servidor no arquivo package.json
 
 "scripts": {
     "start": "webpack-dev-server --inline --progress --port 8080",
@@ -346,7 +508,7 @@ Insira os scripts para a execução do servidor no arquivo **package.json**
 
 
 Para a traspilação é necessário realizar a configuração de alguns parâmetros que pode ser feito por meio da
-criação e edição do arquivo **tsconfig.json** com o seguinte conteúdo
+criação e edição do arquivo tsconfig.json com o seguinte conteúdo
 
 ```javascript
 {
@@ -370,11 +532,7 @@ Para testar a aplicação use o comando
 npm start
 ```
 
-No endereço local da sua máquina na porta 8080, *http://localhost:8080*, estará disponível a aplicação criada.
-
-
-## Testando
-
+No endereço local da sua máquina na porta 8080, http://localhost:8080, estará disponível a aplicação criada.
 
 ## Gerando os arquivos de produção
 
