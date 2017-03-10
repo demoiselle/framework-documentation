@@ -4,7 +4,7 @@ Uma requisição utilizando o método GET do protocolo HTTP contra um recurso qu
 
 Um exemplo para esclarecer:
 
-Temos uma aplicação com um recurso chamado **User** e uma classe chamada **UserREST** que estende de **AbstractREST**. Na base de dados temos 100 usuários cadastrados.
+Temos uma aplicação com um recurso chamado **User** e uma classe chamada **UserREST** que estende de **AbstractREST**.
 
 User.java
 ``` java
@@ -176,7 +176,7 @@ $ curl -XGET http://localhost:8080/api/users/other
 ]
 ```
 
-É possível utilizar a Query String na requisição para restringir os campos de retorno.
+Também é possível utilizar a Query String na requisição para restringir os campos de retorno no 2º nível.
 
 ```bash
 $ curl -XGET http://localhost:8080/api/users/other?fields=name,profile(username)
