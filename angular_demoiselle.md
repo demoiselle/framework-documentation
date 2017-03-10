@@ -22,12 +22,13 @@ integração e interoperabilidade.
 
 ## Typescript básico
 
+Ao completar esta sessão o leitor terá compreendido a sintaxe básica da linguagem e o uso de ferramentas 
+necessárias ao desenvolvimento de aplicação em TypeScript.
 
-A linguagem de programação TypeScript foi criada com o objetivo de oferecer um super conjunto de instruções 
-JavasScript objetivando oferecer uma sintaxe mais adequada a programadores acostumados ao
-paradigma da Orientação a Objetos. É possível implementar aplicações Angular 2 utilizando apenas a linguagem
-JavaScript mas grande parte da documentação é baseada em TypeScript e a implementação do framework Demoiselle
-optou por esta linguagem de programação come referência para o desenvolvimento de aplicações.
+A linguagem de programação TypeScript foi criada com o objetivo de oferecer uma opção a linguagem
+JavasScript poe meio de uma sintaxe mais adequada a programadores acostumados ao
+paradigma da Orientação a Objetos. 
+
 
 Este tutorial de Typescript é adequado a desenvolvedores de aplicação com conhecimentos em Javascript mas sem a necessidade
 de conhecimentos avançados na linguagem. Serão apresentados
@@ -196,12 +197,19 @@ console.log(minhaClasse.umMetodo("Hello metodo"));
 
 ## Criando uma aplicação web Angular 2
 
+Ao concluir esta sessão o leitor estará apto a construir e executar uma aplicação básica 
+utilizando o framework Angular 2.
+
 O framework Angular 2 foi concebido como uma ferramenta para oferecer maior qualidade e agilidade
 no desenvolvimento de aplicações web. Uma aplicação Angular 2 é baseada em componente que 
 correspondem à uma combinação de modelos em HTML e classes que controlam partes da tela. Apesar
 de ser possível o desenvolvimento de todas as funcionalidades proporcionadas pelo Angular 2
 em JavaScript grande parte do esforço de desenvolvimento da solução está fundamentado no uso
 da linguagem TypeScript:
+
+É possível implementar aplicações Angular 2 utilizando apenas
+JavaScript mas grande parte da documentação é baseada em TypeScript e a implementação do framework Demoiselle
+optou por esta linguagem de programação come referência para o desenvolvimento de aplicações.
 
 Nesta sessão serão explorados conceitos básicos para a criação e execução de uma aplicação capaz de ser
 executada por um navegador HTTP. Apesar da simplicidade da transpilação de arquivos escritos em 
@@ -358,6 +366,9 @@ Acesse a aplicação pelo navegador.
 
 
 ## Configurando o ambiente com webpack
+
+Ao concluir esta sessão o leitor estará apto a contruir um ambiente mais adequado ao desenvolvimento de 
+aplicações Angular 2 utilizando as facilidades oferecidas pela ferramenta Webpack
 
 Um aspecto importante no desenvolvimento de aplicações Angular 2 e pouco explorado nos tutoriais e treinamentos no
 framework está relacionado a construção e configuração do ambiente para a execução da aplicação. Em geral os 
@@ -706,11 +717,23 @@ npm start
 
 No endereço local da sua máquina na porta 8080, http://localhost:8080, estará disponível a aplicação criada.
 
-## Gerando os arquivos de produção
+## Adicionando vários módulos em aplicações Angular 2
 
+## Trabalhando com formulários
 
-## Construindo uma aplicação mais
-para compilar com tst npm install @types/core-js
+## Conceitos de webservice
+
+## Integrando aplicação Angular 2 com webservices
+
+## Sobre o framework Demoiselle
+
+## Criando um webservice com Demoiselle 3
+
+## Demoiselle 3 e persistência
+
+## Implementando os módulos http e security do Demoiselle 3
+
+## O gerador de código (Angular 2 e Java)  Demoiselle 3
 
 
 ## Referências
