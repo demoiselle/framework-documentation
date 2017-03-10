@@ -26,8 +26,13 @@ Ao completar esta sessão o leitor terá compreendido a sintaxe básica da lingu
 necessárias ao desenvolvimento de aplicação em TypeScript.
 
 A linguagem de programação TypeScript foi criada com o objetivo de oferecer uma opção a linguagem
-JavasScript poe meio de uma sintaxe mais adequada a programadores acostumados ao
-paradigma da Orientação a Objetos. 
+JavasScript por meio de uma sintaxe mais adequada a programadores acostumados ao
+paradigma da Orientação a Objetos. Um dos principais destaques da linguagem é o fato de permitir a 
+tipagem de variáveis, funções, metodos, classes e parâmetros que são validados em tempo de compilação.
+O uso de tipos permite uma significativa redução de erros melhorando a qualidade do produto final.
+
+É possível perceber a linguagem TypeScript como um super conjunto do JavaScript capaz de ser interpretado
+pela maioria dos navegadores atuais.
 
 
 Este tutorial de Typescript é adequado a desenvolvedores de aplicação com conhecimentos em Javascript mas sem a necessidade
@@ -51,7 +56,9 @@ tsc nome_do_arquivo.ts
 
 O resultado deste comando, caso não exista nenhum erro no código, é um arquivo do tipo JavaScript com o mesmo nome do
 arquivo .ts mas com o sufixo .js. Para executar a aplicação é possível utilizar um navegador web acessando uma página
-html que deve importar o arquivo que contém o código Javascript.
+html que deve importar o arquivo que contém o código Javascript. Vale destacar que códigos mais complexos podem apresentar
+erros nos interpretadores dos navegadores, sendo necessária uma etapa adicional na geração do arquivo JavaScript, passo
+este que será apresentado ao final desta sessão.
 
 ```html
 <html>
@@ -70,10 +77,10 @@ node nome_do_arquivo.js
 
 
 ### Tipos em Typscript
-Uma das grandes diferenças entre Javascript e Typescript é a possibilidade de tipagem de variáveis. Esta é uma característica
-útil para o ambiente de desenvolvimento mas que não tem nenhuma funcionalidade no código transpilado sendo necessário criar
-funções específicas no caso de necessidade da implementação de funcionalidades adequadas a verificação quando houver necessidade
-de validação de tipos. Variáveis devem ser declaradas explicitamente como tais utilizando as palavras reservadas let e var. 
+Como já comentado anteriormente uma das grandes diferenças entre Javascript e Typescript é a possibilidade de tipagem de 
+variáveis. Esta característica da linguagem permite previnir erros difíceis de serem identificados pelo desenvolvedor. 
+Variáveis devem ser declaradas explicitamente como tais utilizando as palavras reservadas let e var, o uso de var é o mais
+comum nas documentações de TypeScript mas neste trabalho serão utilizadas as duas palavras reservadas. 
 Não existe, no entanto, a necessidade de definir o tipo para uma variável mas quando está recebe algum valor
 não é possível tentar carrega-lá com outro tipo de dado como por exemplo:
 
@@ -197,7 +204,7 @@ console.log(minhaClasse.umMetodo("Hello metodo"));
 
 ## Criando uma aplicação web Angular 2
 
-Ao concluir esta sessão o leitor estará apto a construir e executar uma aplicação básica 
+Ao concluir esta sessão o leitor estará apto par construir e executar uma aplicação básica 
 utilizando o framework Angular 2.
 
 O framework Angular 2 foi concebido como uma ferramenta para oferecer maior qualidade e agilidade
