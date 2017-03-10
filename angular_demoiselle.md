@@ -197,7 +197,7 @@ console.log(minhaClasse.umMetodo("Hello metodo"));
 
 ## Criando uma aplicação web Angular 2
 
-Ao concluir esta sessão o leitor estará apto a construir e executar uma aplicação básica 
+Ao concluir esta sessão o leitor estará apto par construir e executar uma aplicação básica 
 utilizando o framework Angular 2.
 
 O framework Angular 2 foi concebido como uma ferramenta para oferecer maior qualidade e agilidade
