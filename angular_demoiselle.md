@@ -202,6 +202,9 @@ console.log(minhaClasse.umMetodo("Hello metodo"));
 
 ```
 
+O livro TypeScript Deep Dive, disponível em https://basarat.gitbooks.io/typescript/content/docs/why-typescript.html,
+oferece uma visão completa sobre o uso da linguagem.
+
 ## Criando uma aplicação web Angular 2
 
 Ao concluir esta sessão o leitor estará apto par construir e executar uma aplicação básica 
@@ -214,6 +217,12 @@ de ser possível o desenvolvimento de todas as funcionalidades proporcionadas pe
 em JavaScript grande parte do esforço de desenvolvimento da solução está fundamentado no uso
 da linguagem TypeScript:
 
+
+A versão 2 do está baseada em um conceito de modularidade e padrões de desenvolvimento que permitem maior 
+organização da aplicação. Neste trabalho serão utilizadas as boas práticas recomendadas para o desenvolvimento
+de aplicações, respeitando a nomenclatura dos arquivos e organização de pastas recomendadas pelas
+principais referências no uso do framework.
+
 É possível implementar aplicações Angular 2 utilizando apenas
 JavaScript mas grande parte da documentação é baseada em TypeScript e a implementação do framework Demoiselle
 optou por esta linguagem de programação come referência para o desenvolvimento de aplicações.
@@ -223,12 +232,14 @@ executada por um navegador HTTP. Apesar da simplicidade da transpilação de arq
 TypeScript para JavaScript, a adequação das funcionalidade para seu correto funcionamento nos 
 interpretadores JavaScript dos navegadores demanda algumas configurações.
 
+
+A arquitetura do Angular 2 é detalhada em https://docs.google.com/document/d/13-LUm1QvOff2631tHz6C4goIHuMzma2_1_PFiLryoIs/edit
+
 ### Iniciando e carregando as dependências
 
+```bash
 npn init -f
 
-
-```bash
 npm install @angular/common @angular/compiler @angular/core @angular/forms @angular/http @angular/platform-browser @angular/platform-browser-dynamic @angular/router core-js rxjs zone.js reflect-metadata systemjs --save
 ```
 
@@ -243,7 +254,8 @@ npm install typescript typings @types/core-js --save-dev
 
 ### Criando os arquivos
 
-Arquivo inicial utilizado para carregar as dependências da aplicação
+Arquivo inicial utilizado para carregar as dependências da aplicação, este arquivo é utilizado como referência
+para a criação da estrutura da aplicação. 
 
 **main.ts**
 ```javascript
@@ -252,7 +264,8 @@ import { AppModule } from './app.module';
 platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-Criar um módulo da aplicação
+**Criar um módulo da aplicação**
+
 
 **app.module.ts**
 ```javascript
@@ -260,18 +273,23 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 @NgModule({
-    imports: [
-        BrowserModule
-    ],
-    declarations: [
-        AppComponent
-    ],
+    imports: [BrowserModule],
+    declarations: [AppComponent],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
 ```
 
-Criar o componente do módulo
+@NgModule é necessário para a configuração de um modelo e compilação e definir como sera criada a injeção de código
+nos módulos e a importação recursiva dos arquivos necessários para o desenvolvimento da aplicação. 
+
+A importação de BrowserModules oferece para a aplicação um conjunto de diretivas para como NgIf e NgFor.
+
+Maiores informações sobre o funcionamento de @NgModule estão disponíveis em 
+https://docs.google.com/document/d/1isijHlib4fnukj-UxX5X1eWdUar6UkiGKPDFlOuNy1U/edit#heading=h.ojlpbvom40mh
+
+
+**Criar um componente do módulo**
 
 **app.component.ts**
 ```javascript
@@ -290,11 +308,19 @@ export class AppComponent {
 
 Como o componente aponta para um arquivo de modelo será necessário criar o mesmo:
 
-**app.component.ts**
+**app.component.html**
 ```html
-<h1>{{title}}</h1>
-    <h2>Um nome: {{nome}}
+<h1>{{titulo}}</h1>
+    <h2>O Nome: {{nome}}
 </h2>
+
+<ul>
+  <li *ngFor="let item of lista">
+    {{item}}
+  </li>
+</ul>
+
+
 ```
 Para a transpilação do código é possível passar parâmetros para a aplicação por meio da linha de comando 
 que permitem tanto alterar o código gerado quanto resultados relativos ao armazenamento forma de análise,
@@ -306,14 +332,14 @@ Para o nosso exemplo utilizaremos os seguintes parâmetros no tsconfig.json:
 ```javascript
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors":true,
-    "rootDir":"app",
+    "rootDir":"src",
     "outDir": "./js"
   },
   "compileOnSave": false,
@@ -346,30 +372,40 @@ da aplicação
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <base href="/">
-    <script src="angular2/node_modules/zone.js/dist/zone.js"></script>
-    <script src="angular2/node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="angular2/node_modules/systemjs/dist/system.src.js"></script>
-
-    <script src='./angular2/bundle.js'></script>
-    <title>Angular With Webpack</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-    <my-app>Loading...</my-app>
-</body>
+    <head>
+        <title>Aplicação Simples com Angular 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <my-app>Loading...</my-app>
+    </body>
+    <script src="zone.js"></script>
+    <script src="Reflect.js"></script>
+    <script src='bundle.js'></script>
 </html>
 ```
 Para finalizar a construção do ambiente copie o arquivo index.html e as dependências para um diretório 
 visível por seu servidor http, no caso do exemplo acima foi criada a pasta angular2.
 
 ```bash
-cp js/bundle.js index.js node_modules /var/www/html/angular2
+cp js/bundle.js src/index.html src/app/app.component.html /var/www/html/angular2
+
+cp node_modules/zone.js/dist/zone.js node_modules/reflect-metadata/Reflect.js /var/www/html/angular2
 ``` 
 
 Acesse a aplicação pelo navegador.
+
+
+### Alterando a aplicação
+
+Para alterar apenas o conteúdo html e a interação do mesmo com o script provido pelo angular basta editar
+o arquivo e copia-lo para o ambiente de produção sem a necessidade de transpilação. No caso de alteração
+de variáveis ou configurações em arquivos .ts os processos de transpilação e a adequação ao navegador
+devem ser realizados novamente mas apenas o arquivo js gerado pelo browserify precisa ser copiado para
+a pasta onde a aplicação está sendo acessada pelo navegador.
+
+
 
 
 ## Configurando o ambiente com webpack
