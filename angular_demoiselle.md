@@ -117,6 +117,19 @@ de objetos javascript como por exemplo:
 var p:Pessoa = {firstName:"Fulano", lastName:"Beltano"}
 ```
 
+### Loops e tomada de decisão
+
+A sintaxe é a mesma utilizada em JavaScript, utilizando os simbolos {} para definição de blocos if..else ou 
+switch case para controle de fluxo; for(;;) e while() para loops.
+
+É permitida a notação ternária para tomada de decisão de fluxos de execução de programas.
+
+
+```javascript
+let tst:number = 1;
+let result:string = tst > 0 ? "Maior que zero":"Menor que zero";
+```
+
 ### Funções
 
 A implementação de funções também permite a tipagem de retorno podendo ser construídas utilizando diversas sintaxes.
@@ -140,10 +153,6 @@ Módulos e namespaces são utilizados para agrupar fragmentos de código como cl
 pode ser exportada para outro módulos. No passado utilizava-se o conceito de módulos internos ao invés de namespace mas
 este tipo de uso é considerado obsoleto. Módulos permitem uma maior organização do código é geralmente são construído 
 em um arquivo para cadas módulo ou namespace.
-
-
-
-
 
 ### Classes
 
@@ -185,7 +194,170 @@ console.log(minhaClasse.umMetodo("Hello metodo"));
 
 ```
 
-## Configurando o ambiente
+## Criando uma aplicação web Angular 2
+
+O framework Angular 2 foi concebido como uma ferramenta para oferecer maior qualidade e agilidade
+no desenvolvimento de aplicações web. Uma aplicação Angular 2 é baseada em componente que 
+correspondem à uma combinação de modelos em HTML e classes que controlam partes da tela. Apesar
+de ser possível o desenvolvimento de todas as funcionalidades proporcionadas pelo Angular 2
+em JavaScript grande parte do esforço de desenvolvimento da solução está fundamentado no uso
+da linguagem TypeScript:
+
+Nesta sessão serão explorados conceitos básicos para a criação e execução de uma aplicação capaz de ser
+executada por um navegador HTTP. Apesar da simplicidade da transpilação de arquivos escritos em 
+TypeScript para JavaScript, a adequação das funcionalidade para seu correto funcionamento nos 
+interpretadores JavaScript dos navegadores demanda algumas configurações.
+
+### Iniciando e carregando as dependências
+
+npn init -f
+
+
+```bash
+npm install @angular/common @angular/compiler @angular/core @angular/forms @angular/http @angular/platform-browser @angular/platform-browser-dynamic @angular/router core-js rxjs zone.js reflect-metadata systemjs --save
+```
+
+Para instalar o transpilador, ferramenta que faz a conversão de uma linguagem para outra, da linguagem Typescript para Javascript
+é necessário instalar a ferramenta typescript na sessão que mantem as informações das dependências para o ambiente de
+desenvolvimento no arquivo package.json com o comando
+
+```bash
+npm install typescript typings @types/core-js --save-dev
+```
+
+
+### Criando os arquivos
+
+Arquivo inicial utilizado para carregar as dependências da aplicação
+
+**main.ts**
+```javascript
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app.module';
+platformBrowserDynamic().bootstrapModule(AppModule);
+```
+
+Criar um módulo da aplicação
+
+**app.module.ts**
+```javascript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+@NgModule({
+    imports: [
+        BrowserModule
+    ],
+    declarations: [
+        AppComponent
+    ],
+    bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+```
+
+Criar o componente do módulo
+
+**app.component.ts**
+```javascript
+import { Component } from '@angular/core';
+@Component({
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+})
+
+export class AppComponent {
+    titulo:string = "Titulo da aplicacação";
+    nome:string = "Fulando de tal";
+    lista:Array<string>=["Nome 1", "Nome 2", "Nome 3"];
+}
+```
+
+Como o componente aponta para um arquivo de modelo será necessário criar o mesmo:
+
+**app.component.ts**
+```html
+<h1>{{title}}</h1>
+    <h2>Um nome: {{nome}}
+</h2>
+```
+Para a transpilação do código é possível passar parâmetros para a aplicação por meio da linha de comando 
+que permitem tanto alterar o código gerado quanto resultados relativos ao armazenamento forma de análise,
+dependências, etc. Para facilitar o uso de parâmetros pelo tsc é possível utilizar um arquivo de configuração
+com o nome tsconfig.json onde estes parâmetros podem ser armazenados.
+
+Para o nosso exemplo utilizaremos os seguintes parâmetros no tsconfig.json:
+
+```javascript
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "suppressImplicitAnyIndexErrors":true,
+    "rootDir":"app",
+    "outDir": "./js"
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
+}
+```
+
+Para maiores informações sobre parêmetros consulte https://www.typescriptlang.org/docs/handbook/compiler-options.html
+
+Para gerar o código JavaScript tsc básico basta digitar o comando tsc. Será criada uma pasta chamada js no diretório
+corrente contendo arquivos .js que realizaram as funcionalidades necessárias a aplicação. Apesar dos arquivos 
+já estarem em um formato de JavaScript os interpretadores dos navegadores não serão capazes de processa-los, é 
+necessário adequar a informação utilizando uma ferramenta capaz de realizar esta tarefa. Neste trabalho
+será utilizado o programa browserify que pode ser instalado com o seguinte comando:
+
+```bash
+npm install --global browserify
+```
+
+Na pasta js execute o processo de adequação do conteúdo gerando o arquivo que será importado pela interface HTML 
+com o comando:
+
+```bash
+browserify main.js -o bundle.js
+```
+
+Para testar o funcionamento da aplicação basta criar um arquivo HTML importando os scripts necessários a execução
+da aplicação
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <script src="angular2/node_modules/zone.js/dist/zone.js"></script>
+    <script src="angular2/node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="angular2/node_modules/systemjs/dist/system.src.js"></script>
+
+    <script src='./angular2/bundle.js'></script>
+    <title>Angular With Webpack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <my-app>Loading...</my-app>
+</body>
+</html>
+```
+Para finalizar a construção do ambiente copie o arquivo index.html e as dependências para um diretório 
+visível por seu servidor http, no caso do exemplo acima foi criada a pasta angular2.
+
+```bash
+cp js/bundle.js index.js node_modules /var/www/html/angular2
+``` 
+
+Acesse a aplicação pelo navegador.
+
+
+## Configurando o ambiente com webpack
 
 Um aspecto importante no desenvolvimento de aplicações Angular 2 e pouco explorado nos tutoriais e treinamentos no
 framework está relacionado a construção e configuração do ambiente para a execução da aplicação. Em geral os 
@@ -225,7 +397,7 @@ npm install typescript typings --save-dev
 ```
 
 Para garantir a validação de tipos em módulos desenvolvidos em Javascript é necessário o uso de uma ferramenta para
-evitar problemas com o compilador typescript, para isso e necessário o uso da ferramenta typings.
+evitar problemas com o compilador typescript, para isso a demanda do uso da ferramenta typings.
 
 Para o uso no ambiente de desenvolvimento é recomendada a adoção de um servidor http capaz de processar os programas em
 typescript sem a necessidade de uma nova compilação a cada alteração. O servidor Webpack faz este papel de servidor
@@ -235,8 +407,8 @@ neste estudo.
 npm install webpack webpack-dev-server --save-dev
 ```
 
-Para o correto funcionamento do Webpack é necesário que sejam instalados alguns complementos que fazem o processamento
-de arquivos utilizados em eplicações web 
+Para o correto funcionamento do Webpack é necessário que sejam instalados alguns complementos que fazem o processamento
+de arquivos utilizados em aplicações web 
 
 ```bash
 npm install angular2-template-loader awesome-typescript-loader css-loader file-loader html-loader null-loader raw-loader style-loader to-string-loader --save-dev
@@ -535,6 +707,10 @@ npm start
 No endereço local da sua máquina na porta 8080, http://localhost:8080, estará disponível a aplicação criada.
 
 ## Gerando os arquivos de produção
+
+
+## Construindo uma aplicação mais
+para compilar com tst npm install @types/core-js
 
 
 ## Referências
