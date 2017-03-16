@@ -406,7 +406,72 @@ devem ser realizados novamente mas apenas o arquivo js gerado pelo browserify pr
 a pasta onde a aplicação está sendo acessada pelo navegador.
 
 
+### Adicionando vários módulos em aplicações Angular 2
 
+Para promover uma maior organização na estrutura de arquivos é recomendável a divisão do programa em módulos responsáveis
+pela realização de funcionalidades específicas demandadas pela aplicação.
+
+Utilizando os mesmos arquivos apresentados na sessão anterior basta aplicar as seguintes alterações para que
+a aplicação seja capaz de manipular os dados e fluxos a partir de novos módulos. Os novos arquivos serão
+armazenados em uma pasta chamada new que deverá ser persistida no diretório src/app
+
+**app.new.module.ts**
+
+```javascript
+import { NgModule } from '@angular/core';
+import { AppNewComponent } from './app.new.component';
+@NgModule({
+    imports: [
+    ],
+    declarations: [
+        AppNewComponent
+    ],
+    exports: [ AppNewComponent ]
+})
+export class AppNewModule { }
+```
+
+**app.new.component.ts**
+
+```javascript
+import { Component } from '@angular/core';
+@Component({
+    selector: 'new-module',
+    template: `<p>Texto do novo componente é {{texto}}</p>`
+})
+
+export class AppNewComponent {
+    texto:string = "Um texto";
+}
+```
+
+O arquivo app.module.ts deve ser alterado para incluir o arquivo app.new.module.ts conforme apresentado
+a seguir:
+
+```javascript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { AppNewModule } from './new/app.new.module';
+@NgModule({
+    imports: [BrowserModule, AppNewModule],
+    declarations: [AppComponent],
+    bootstrap: [ AppComponent ]
+})
+export class AppModule { }
+
+```
+
+Basta compilar com tsc, realizar a conversão do javascript com browserify e copiar o arquivo bundle.js
+para o diretório do servidor http. 
+
+```bash
+tsc
+cd js
+browserify main.js -o bundle.js
+cd ..
+cp js/bundle.js /var/www/html/angular2
+```
 
 ## Configurando o ambiente com webpack
 
@@ -501,6 +566,7 @@ Para instalar os pacotes execute o comando
 ```bash
 typings install
 ```
+
 
 
 ### Configurando o Webpack
@@ -710,7 +776,6 @@ Finalmente o arquivo html de inicio da aplicação index.html que deve ser criad
 <!DOCTYPE html>
 <html>
 <head>
-    <base href="/">
     <title>Angular With Webpack</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -760,7 +825,6 @@ npm start
 
 No endereço local da sua máquina na porta 8080, http://localhost:8080, estará disponível a aplicação criada.
 
-## Adicionando vários módulos em aplicações Angular 2
 
 ## Trabalhando com formulários
 
