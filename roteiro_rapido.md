@@ -141,7 +141,7 @@ public class Noticia {
         this.titulo = titulo;
     }
     public String getDescricao() {
-        return descricao
+        return descricao;
     }
     public void setDescricao(String descricao) {
         this.descricao = descricao;
